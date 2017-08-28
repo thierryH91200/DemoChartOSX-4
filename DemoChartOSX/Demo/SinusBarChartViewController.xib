@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SinusBarChartViewController" customModule="graphMeteo">
+            <connections>
+                <outlet property="chartView" destination="TPY-KM-MB4" id="bkc-ef-bID"/>
+                <outlet property="sliderTextX" destination="B3s-Id-yOx" id="ygd-2D-Bko"/>
+                <outlet property="sliderX" destination="ja5-yA-HXK" id="NcB-cw-NIF"/>
+                <outlet property="view" destination="EiT-Mj-1SZ" id="aIA-yj-0ah"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="750" height="500"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="750" height="500"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ja5-yA-HXK">
+                        <rect key="frame" x="-2" y="15" width="299" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="295" id="U0D-eh-e7O"/>
+                        </constraints>
+                        <sliderCell key="cell" state="on" alignment="left" maxValue="8000" doubleValue="150" tickMarkPosition="above" sliderType="linear" id="FXS-Oc-W0O"/>
+                        <connections>
+                            <action selector="slidersValueChanged:" target="-2" id="e0H-Ok-2e9"/>
+                        </connections>
+                    </slider>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B3s-Id-yOx">
+                        <rect key="frame" x="307" y="20" width="37" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Vhl-EJ-4gj">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="TPY-KM-MB4" customClass="BarChartView" customModule="Charts">
+                        <rect key="frame" x="-3" y="63" width="753" height="437"/>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ja5-yA-HXK" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="4We-eX-XYi"/>
+                    <constraint firstItem="ja5-yA-HXK" firstAttribute="top" secondItem="TPY-KM-MB4" secondAttribute="bottom" constant="31" id="BeF-2A-DoQ"/>
+                    <constraint firstItem="TPY-KM-MB4" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="Mui-Qk-Ske"/>
+                    <constraint firstAttribute="bottom" secondItem="B3s-Id-yOx" secondAttribute="bottom" constant="20" id="OmV-99-isY"/>
+                    <constraint firstAttribute="trailing" secondItem="TPY-KM-MB4" secondAttribute="trailing" id="j9j-oO-il7"/>
+                    <constraint firstItem="B3s-Id-yOx" firstAttribute="leading" secondItem="ja5-yA-HXK" secondAttribute="trailing" constant="14" id="rCX-IY-IrZ"/>
+                    <constraint firstItem="TPY-KM-MB4" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="-3" id="s1T-RZ-zHl"/>
+                    <constraint firstAttribute="bottom" secondItem="ja5-yA-HXK" secondAttribute="bottom" constant="17" id="ukf-oQ-WrL"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="333" y="137"/>
+        </window>
+    </objects>
+</document>

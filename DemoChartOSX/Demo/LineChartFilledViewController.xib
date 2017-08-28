@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="LineChartFilledViewController" customModule="graphMeteo">
+            <connections>
+                <outlet property="chartView" destination="T2Z-xr-tUt" id="Dk4-t2-WyH"/>
+                <outlet property="view" destination="EiT-Mj-1SZ" id="TmU-8m-7xO"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="750" height="500"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="750" height="500"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="T2Z-xr-tUt" customClass="LineChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="74" width="750" height="426"/>
+                    </customView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iIE-xR-nX7">
+                        <rect key="frame" x="559" y="26" width="92" height="32"/>
+                        <buttonCell key="cell" type="push" title="Drag Off" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sk7-0g-In3">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eLy-pQ-Tg4">
+                        <rect key="frame" x="-2" y="34" width="358" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="354" id="1DF-l0-JE5"/>
+                        </constraints>
+                        <sliderCell key="cell" state="on" alignment="left" maxValue="500" doubleValue="20" tickMarkPosition="above" sliderType="linear" id="ZwU-iS-BTZ"/>
+                    </slider>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="chd-OW-yzr">
+                        <rect key="frame" x="387" y="28" width="37" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Aar-mx-UeT">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="chd-OW-yzr" firstAttribute="top" secondItem="T2Z-xr-tUt" secondAttribute="bottom" constant="29" id="507-Zd-MSX"/>
+                    <constraint firstItem="eLy-pQ-Tg4" firstAttribute="leading" secondItem="T2Z-xr-tUt" secondAttribute="leading" id="5Ei-r7-oCg"/>
+                    <constraint firstItem="iIE-xR-nX7" firstAttribute="top" secondItem="T2Z-xr-tUt" secondAttribute="bottom" constant="20" symbolic="YES" id="8gC-Jh-sNq"/>
+                    <constraint firstAttribute="bottom" secondItem="T2Z-xr-tUt" secondAttribute="bottom" constant="74" id="9HI-2O-XdG"/>
+                    <constraint firstAttribute="trailing" secondItem="iIE-xR-nX7" secondAttribute="trailing" constant="105" id="CSw-SH-0dd"/>
+                    <constraint firstItem="eLy-pQ-Tg4" firstAttribute="baseline" secondItem="iIE-xR-nX7" secondAttribute="baseline" id="NFJ-Lz-Q3Z"/>
+                    <constraint firstItem="chd-OW-yzr" firstAttribute="leading" secondItem="eLy-pQ-Tg4" secondAttribute="trailing" constant="35" id="WIc-fD-In8"/>
+                    <constraint firstAttribute="trailing" secondItem="T2Z-xr-tUt" secondAttribute="trailing" id="gEf-dl-rXh"/>
+                    <constraint firstItem="T2Z-xr-tUt" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="hxx-x4-AAb"/>
+                    <constraint firstItem="eLy-pQ-Tg4" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="kAN-N8-nTj"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="556" y="-81"/>
+        </window>
+    </objects>
+</document>

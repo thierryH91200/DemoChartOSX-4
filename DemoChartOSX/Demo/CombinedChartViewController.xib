@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CombinedChartViewController" customModule="graphMeteo">
+            <connections>
+                <outlet property="chartView" destination="vou-mx-KDz" id="fTD-cq-e0R"/>
+                <outlet property="view" destination="EiT-Mj-1SZ" id="AXd-xZ-vuL"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="633" height="478"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="633" height="478"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="vou-mx-KDz" customClass="CombinedChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="0.0" width="633" height="478"/>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="vou-mx-KDz" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="LIO-Vq-I7N"/>
+                    <constraint firstAttribute="trailing" secondItem="vou-mx-KDz" secondAttribute="trailing" id="VqZ-Gh-st2"/>
+                    <constraint firstAttribute="bottom" secondItem="vou-mx-KDz" secondAttribute="bottom" id="Wmt-IG-vGZ"/>
+                    <constraint firstItem="vou-mx-KDz" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="cJA-Jl-c8z"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="158.5" y="265"/>
+        </window>
+    </objects>
+</document>

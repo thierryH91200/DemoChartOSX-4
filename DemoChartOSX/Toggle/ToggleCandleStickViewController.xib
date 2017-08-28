@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ToggleBarViewController" customModule="graphMeteo">
+            <connections>
+                <outlet property="view" destination="Kij-wZ-mx8" id="GZc-Cc-t9g"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="Kij-wZ-mx8">
+            <rect key="frame" x="0.0" y="0.0" width="327" height="626"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Dw-uu-KKf">
+                    <rect key="frame" x="58" y="577" width="210" height="29"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Toggle Candle Stick" id="XyO-lT-JmM">
+                        <font key="font" metaFont="system" size="24"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7OT-N7-GiD" userLabel="Stack View Base">
+                    <rect key="frame" x="103" y="87" width="120" height="190"/>
+                    <subviews>
+                        <button translatesAutoresizingMaskIntoConstraints="NO" id="R0d-8L-rkQ">
+                            <rect key="frame" x="0.0" y="165" width="120" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="ZbC-MV-im6"/>
+                            </constraints>
+                            <buttonCell key="cell" type="square" title="Values" bezelStyle="shadowlessSquare" imagePosition="left" alignment="center" state="on" borderStyle="border" inset="2" id="sw2-T8-uMc">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="toggleButton:" target="-2" id="3sF-LL-0TK"/>
+                            </connections>
+                        </button>
+                        <button translatesAutoresizingMaskIntoConstraints="NO" id="p7i-FU-Fqn">
+                            <rect key="frame" x="0.0" y="132" width="120" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="Obg-GB-9c0"/>
+                            </constraints>
+                            <buttonCell key="cell" type="square" title="Icons" bezelStyle="shadowlessSquare" imagePosition="left" alignment="center" state="on" borderStyle="border" inset="2" id="bUY-YN-FYu">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="toggleButton:" target="-2" id="X0U-II-MWE"/>
+                            </connections>
+                        </button>
+                        <button translatesAutoresizingMaskIntoConstraints="NO" id="jkK-xa-sgY">
+                            <rect key="frame" x="0.0" y="99" width="120" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="CVR-vc-VVN"/>
+                            </constraints>
+                            <buttonCell key="cell" type="square" title="Highlight" bezelStyle="shadowlessSquare" imagePosition="left" alignment="center" state="on" borderStyle="border" inset="2" id="Dny-5I-bZo">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="toggleButton:" target="-2" id="e8U-lY-bFi"/>
+                            </connections>
+                        </button>
+                        <button translatesAutoresizingMaskIntoConstraints="NO" id="nir-kX-YfY">
+                            <rect key="frame" x="0.0" y="66" width="120" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="RSU-TZ-P1m"/>
+                            </constraints>
+                            <buttonCell key="cell" type="square" title="Animate X" bezelStyle="shadowlessSquare" imagePosition="left" alignment="center" state="on" borderStyle="border" inset="2" id="Btg-FA-iW4">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="toggleButton:" target="-2" id="7QI-by-ctC"/>
+                            </connections>
+                        </button>
+                        <button translatesAutoresizingMaskIntoConstraints="NO" id="rCY-GW-Eqc">
+                            <rect key="frame" x="0.0" y="33" width="120" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="abk-9f-JdR"/>
+                            </constraints>
+                            <buttonCell key="cell" type="square" title="Animate Y" bezelStyle="shadowlessSquare" imagePosition="left" alignment="center" state="on" borderStyle="border" inset="2" id="sd9-Lh-AL9">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="toggleButton:" target="-2" id="30h-Ls-Dkw"/>
+                            </connections>
+                        </button>
+                        <button translatesAutoresizingMaskIntoConstraints="NO" id="Vrb-A2-SvT">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="Ipq-Py-p9M"/>
+                            </constraints>
+                            <buttonCell key="cell" type="square" title="Animate XY" bezelStyle="shadowlessSquare" imagePosition="left" alignment="center" state="on" borderStyle="border" inset="2" id="R7C-Qc-sKi">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="toggleButton:" target="-2" id="edL-PU-oPr"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0pK-Uh-2mf">
+                    <rect key="frame" x="103" y="522" width="120" height="25"/>
+                    <subviews>
+                        <button translatesAutoresizingMaskIntoConstraints="NO" id="kzE-qc-bVU">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="kdG-y7-O1E"/>
+                            </constraints>
+                            <buttonCell key="cell" type="square" title="Shadow Color" bezelStyle="shadowlessSquare" imagePosition="left" alignment="center" state="on" borderStyle="border" inset="2" id="khl-1y-SpO">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="toggleButton:" target="-2" id="XIL-s0-5dZ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="0pK-Uh-2mf" firstAttribute="centerX" secondItem="5Dw-uu-KKf" secondAttribute="centerX" id="A1B-gv-6zz"/>
+                <constraint firstItem="7OT-N7-GiD" firstAttribute="centerX" secondItem="5Dw-uu-KKf" secondAttribute="centerX" id="MxB-Mf-VTA"/>
+                <constraint firstItem="0pK-Uh-2mf" firstAttribute="top" secondItem="5Dw-uu-KKf" secondAttribute="bottom" constant="30" id="UNd-zR-ZHS"/>
+                <constraint firstItem="7OT-N7-GiD" firstAttribute="top" secondItem="5Dw-uu-KKf" secondAttribute="bottom" constant="300" id="VPr-b8-hcO"/>
+                <constraint firstItem="5Dw-uu-KKf" firstAttribute="leading" secondItem="Kij-wZ-mx8" secondAttribute="leading" constant="60" id="WsG-zZ-k4n"/>
+                <constraint firstItem="5Dw-uu-KKf" firstAttribute="top" secondItem="Kij-wZ-mx8" secondAttribute="top" constant="20" id="kfX-Tc-tr4"/>
+            </constraints>
+            <accessibility description="toggleView" identifier="idBubble"/>
+            <point key="canvasLocation" x="431.5" y="633"/>
+        </customView>
+    </objects>
+</document>

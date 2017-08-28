@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="BarChartViewControllerColumnWithDrilldown" customModule="graphMeteo">
+            <connections>
+                <outlet property="backToBrands" destination="r5b-bZ-Tyi" id="1wa-iX-0Dv"/>
+                <outlet property="chartView" destination="fJh-hW-yyt" id="8lc-BK-Cx8"/>
+                <outlet property="view" destination="EiT-Mj-1SZ" id="LKr-j3-ea7"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="700" height="500"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="700" height="500"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="fJh-hW-yyt" customClass="BarChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="91" width="700" height="409"/>
+                    </customView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="r5b-bZ-Tyi">
+                        <rect key="frame" x="364" y="37" width="132" height="32"/>
+                        <buttonCell key="cell" type="push" title="Back to Brands" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qt5-1O-2Yq">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="actionBack:" target="-2" id="0ie-DM-fG4"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="r5b-bZ-Tyi" firstAttribute="top" secondItem="fJh-hW-yyt" secondAttribute="bottom" constant="26" id="9hH-Ae-oen"/>
+                    <constraint firstItem="r5b-bZ-Tyi" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="370" id="Jz0-Kd-fjY"/>
+                    <constraint firstAttribute="bottom" secondItem="r5b-bZ-Tyi" secondAttribute="bottom" constant="44" id="NZj-Pv-XGw"/>
+                    <constraint firstItem="fJh-hW-yyt" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="bkj-ps-xMZ"/>
+                    <constraint firstAttribute="trailing" secondItem="fJh-hW-yyt" secondAttribute="trailing" id="oGT-pX-MZL"/>
+                    <constraint firstItem="fJh-hW-yyt" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="oTt-tA-BVQ"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="213" y="244"/>
+        </window>
+    </objects>
+</document>

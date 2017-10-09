@@ -7,7 +7,7 @@
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="DemoChartOSX" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="DemoChartOSX_V4" customModuleProvider="target">
             <connections>
                 <outlet property="albumArtView" destination="M4o-nI-Oef" id="KXN-5N-RhA"/>
                 <outlet property="artToggle" destination="aLT-7j-MYS" id="a5Z-qO-WeK"/>
@@ -67,16 +67,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <customView fixedFrame="YES" id="XSh-5z-7Wt">
-                                        <rect key="frame" x="0.0" y="0.0" width="1179" height="464"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    </customView>
-                                    <customView fixedFrame="YES" id="dfy-zY-WS6">
-                                        <rect key="frame" x="0.0" y="465" width="1179" height="511"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1179" height="976"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     </customView>
                                 </subviews>
                                 <holdingPriorities>
-                                    <real value="250"/>
                                     <real value="250"/>
                                 </holdingPriorities>
                             </splitView>

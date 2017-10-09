@@ -347,15 +347,15 @@
 		C3AE379E1F4C7D0B003AD9C4 /* DemoChartOSX */ = {
 			isa = PBXGroup;
 			children = (
-				C3FC55FD1F4C8C450090991B /* Demo */,
 				C3AE379F1F4C7D0B003AD9C4 /* AppDelegate.swift */,
 				C3AE37A11F4C7D0B003AD9C4 /* Assets.xcassets */,
 				C3AE37A71F4C7D0B003AD9C4 /* DemoChartOSX.entitlements */,
-				C3FC55B31F4C8B920090991B /* Formatters */,
 				C3AE37A61F4C7D0B003AD9C4 /* Info.plist */,
 				C3AE37A31F4C7D0B003AD9C4 /* MainMenu.xib */,
 				C3AE37CB1F4C7E80003AD9C4 /* MainWindowController.swift */,
 				C3AE37C91F4C7D40003AD9C4 /* MainWindowController.xib */,
+				C3FC55FD1F4C8C450090991B /* Demo */,
+				C3FC55B31F4C8B920090991B /* Formatters */,
 				C3FC562A1F4CA2F40090991B /* Collection */,
 				C37583EB1F4CCDFD00FC5531 /* Album */,
 				C3FC55901F4C8AF60090991B /* SourceList */,

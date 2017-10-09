@@ -538,8 +538,8 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
 extension NSView {
     
     override open var description: String {
-        let id = identifier //?? ""
-        return "id: \(String(describing: id))"
+        let id = identifier?._rawValue
+        return "id: \(String(describing: id!))"
     }
 }
 

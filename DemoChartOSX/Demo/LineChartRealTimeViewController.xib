@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13526" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13526"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="LineChartRealTimeViewController" customModule="graphMeteo" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="LineChartRealTimeViewController" customModule="DemoChartOSX_V4" customModuleProvider="target">
             <connections>
                 <outlet property="chartView" destination="ewu-Ar-XhF" id="ZSJ-qR-1ed"/>
                 <outlet property="time" destination="XCy-hy-6zB" id="eRe-hH-xfU"/>
@@ -61,6 +61,16 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dCH-vM-6oW">
+                        <rect key="frame" x="14" y="20" width="75" height="32"/>
+                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aYa-i8-YtK">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="resetData:" target="-2" id="Tr6-2g-h3G"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="bc6-pM-0Cp" firstAttribute="top" secondItem="ewu-Ar-XhF" secondAttribute="bottom" constant="20" id="0Gc-u1-o89"/>
@@ -71,6 +81,8 @@
                     <constraint firstAttribute="bottom" secondItem="ewu-Ar-XhF" secondAttribute="bottom" constant="68" id="FHs-DT-BfA"/>
                     <constraint firstItem="SGf-Jr-yFv" firstAttribute="top" secondItem="ewu-Ar-XhF" secondAttribute="bottom" constant="20" id="Tvy-da-QYd"/>
                     <constraint firstAttribute="trailing" secondItem="ewu-Ar-XhF" secondAttribute="trailing" id="UXa-C8-GcN"/>
+                    <constraint firstItem="dCH-vM-6oW" firstAttribute="top" secondItem="ewu-Ar-XhF" secondAttribute="bottom" constant="20" id="dK5-6Q-Tnm"/>
+                    <constraint firstItem="dCH-vM-6oW" firstAttribute="leading" secondItem="Arn-JX-UQJ" secondAttribute="leading" constant="20" id="dbL-NI-Ihm"/>
                     <constraint firstItem="bc6-pM-0Cp" firstAttribute="leading" secondItem="Arn-JX-UQJ" secondAttribute="leading" constant="200" id="tsk-tb-G0w"/>
                     <constraint firstItem="SGf-Jr-yFv" firstAttribute="leading" secondItem="bc6-pM-0Cp" secondAttribute="trailing" constant="5" id="wHJ-vt-WGv"/>
                 </constraints>

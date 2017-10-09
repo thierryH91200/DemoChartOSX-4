@@ -47,6 +47,53 @@ class Feed: NSObject
     }
 }
 
+struct SettingsFeedItem: Codable {
+    var type: String
+    var comment : String
+    var id : String
+    var name : String
+    
+    enum CodingKeys: String, CodingKey {
+        case type = "type"
+        case comment = "description"
+        case id = "id"
+        case name = "name"
+    }
+}
+
+struct SettingsArray: Codable {
+    
+    struct SettingsFeed: Codable {
+        let name : String
+        let isSourceGroup: Bool
+        let children : [SettingsFeedItem]
+        
+        enum CodingKeys: String, CodingKey {
+            case name = "name"
+            case isSourceGroup = "isSourceGroup"
+            case children = "items"
+        }
+    }
+    var item: [SettingsFeed]
+//    var item2: SettingsFeed
+//
+//    enum CodingKeys: String, CodingKey {
+//        case item = "New item"
+//        case item2 = "New item2"
+//    }
+}
+
+
+
+//Struct SettingsFeedItem: Codable {
+//    let type: String
+//    let comment : String
+//    let id : String
+//    let name : String
+//}
+
+
+
 
 //class Tests {
 //    static func runTests() {

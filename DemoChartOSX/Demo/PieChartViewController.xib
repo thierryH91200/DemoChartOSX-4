@@ -18,19 +18,19 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="750" height="500"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
-            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+            <view key="contentView" identifier="controllerPie" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="750" height="500"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="H83-Zy-EMN" customClass="PieChartView" customModule="Charts">
-                        <rect key="frame" x="0.0" y="0.0" width="842" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="750" height="500"/>
                     </customView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="H83-Zy-EMN" secondAttribute="bottom" id="BPD-wf-41S"/>
-                    <constraint firstItem="H83-Zy-EMN" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="Cet-Q7-038"/>
-                    <constraint firstItem="H83-Zy-EMN" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="Fhm-QP-REh"/>
-                    <constraint firstAttribute="trailing" secondItem="H83-Zy-EMN" secondAttribute="trailing" constant="-92" id="V6Z-jI-290"/>
+                    <constraint firstAttribute="bottom" secondItem="H83-Zy-EMN" secondAttribute="bottom" id="H6Y-DK-3nZ"/>
+                    <constraint firstItem="H83-Zy-EMN" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="bPp-uH-shZ"/>
+                    <constraint firstAttribute="trailing" secondItem="H83-Zy-EMN" secondAttribute="trailing" id="v80-w8-jtn"/>
+                    <constraint firstItem="H83-Zy-EMN" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="wSF-Of-nOH"/>
                 </constraints>
             </view>
             <point key="canvasLocation" x="611.5" y="276.5"/>

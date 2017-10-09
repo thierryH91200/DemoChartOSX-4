@@ -17,10 +17,10 @@ class LineChartRealTimeViewController: NSViewController {
     @IBOutlet weak var time: NSTextField!
     
     var yEntries = [ChartDataEntry]()
-    var currentCount = 0
+    var currentCount = 0.0
     
     var timer  : Timer?
-    var step = 0
+    var step = 0.0
     
     override func viewWillDisappear()
     {
@@ -39,17 +39,13 @@ class LineChartRealTimeViewController: NSViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
+        
         chartView.isDrawBordersEnabled = true
         chartView.isDrawGridBackgroundEnabled = true
         chartView.gridBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         chartView.chartDescription?.isEnabled = false
         
-        let xAxis = chartView.xAxis
-        xAxis.labelPosition = .bottom
-        xAxis.axisMinimum = 0.0
-        xAxis.axisMaximum = 50.0
         
         let leftAxis = chartView.leftAxis
         leftAxis.axisMaximum = 15
@@ -63,12 +59,31 @@ class LineChartRealTimeViewController: NSViewController {
         marker.minimumSize = CGSize(width: CGFloat(60.0), height: CGFloat(30.0))
         chartView.marker = marker
         
+        initData()
+    }
+    
+    func initData()
+    {
+        let xAxis = chartView.xAxis
+        xAxis.labelPosition = .bottom
+        xAxis.axisMinimum = 0.0
+        xAxis.axisMaximum = 50.0
+        
         currentCount = 10
         time.intValue = Int32(currentCount)
+        
+        yEntries.removeAll()
+        
+//        yEntries = (0..<Int(currentCount)).map { (i) -> ChartDataEntry in
+//            let val = Double(arc4random_uniform(UInt32(10))) + 2
+//            return ChartDataEntry(x: Double(i), y: val)
+//        }
+        
+        step = 0.2
 
-        yEntries = (0..<currentCount).map { (i) -> ChartDataEntry in
+        for i in stride(from: 0, to: 10, by: step) {
             let val = Double(arc4random_uniform(UInt32(10))) + 2
-            return ChartDataEntry(x: Double(i), y: val)
+            yEntries.append(ChartDataEntry(x: i, y: val))
         }
         
         var set1 = LineChartDataSet()
@@ -80,6 +95,7 @@ class LineChartRealTimeViewController: NSViewController {
         
         set1.isDrawCirclesEnabled = false
         set1.isDrawFilledEnabled = false
+        set1.isDrawValuesEnabled = false
         set1.mode = .cubicBezier
         
         var dataSets = [LineChartDataSet]()
@@ -90,28 +106,31 @@ class LineChartRealTimeViewController: NSViewController {
         data.setValueFont(Font(name: "HelveticaNeue-Light", size: CGFloat(9.0))!)
         chartView.data = data
     }
-
+    
     @objc func addValuesToChart()
     {
         let yValue = Double(arc4random_uniform(UInt32(10))) + 2
-        
-        let chartEntry = ChartDataEntry(x: Double(currentCount), y: yValue)
+        let chartEntry = ChartDataEntry(x: currentCount, y: yValue)
         yEntries.append(chartEntry)
+        
+        print(currentCount,"   ", yEntries.count,"   ", (50 / step))
+
+        
         if yEntries.count == Int(50 / step)
         {
             chartView.xAxis.resetCustomAxisMax()
             chartView.xAxis.resetCustomAxisMin()
         }
-
+        
         if yEntries.count >= Int(50 / step)
         {
             yEntries.removeFirst()
         }
-
+        
         chartView.moveViewToX(Double(currentCount))
         time.intValue = Int32(currentCount)
-        currentCount += step
- 
+        currentCount = currentCount + step
+        
         var set1 = LineChartDataSet()
         set1 = (chartView.data?.dataSets[0] as? LineChartDataSet)!
         
@@ -133,7 +152,11 @@ class LineChartRealTimeViewController: NSViewController {
             timer!.invalidate()
             timer = nil
         }
-        step = 1
-        timer = Timer.scheduledTimer(timeInterval: Double(step), target: self, selector: #selector(self.addValuesToChart), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: step, target: self, selector: #selector(self.addValuesToChart), userInfo: nil, repeats: true)
+    }
+    
+    
+    @IBAction func resetData(_ sender: Any) {
+        initData()
     }
 }

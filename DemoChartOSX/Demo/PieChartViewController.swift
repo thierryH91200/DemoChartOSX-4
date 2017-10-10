@@ -31,7 +31,7 @@ open class PieChartViewController: NSViewController
         chartView.minOffset = 0.0
         
         chartView.legend.isEnabled = false
-        chartView.isRotationEnabled = false
+        chartView.isRotationEnabled = true
         chartView.rotationAngle = 270.0
         
         let paragraphStyle: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
@@ -58,10 +58,12 @@ open class PieChartViewController: NSViewController
         let data = PieChartData()
         data.addDataSet(ds1)
         chartView.data = data
+
     }
     
     override open func viewWillAppear()
     {
-        chartView.animate(xAxisDuration: 0.0, yAxisDuration: 1.0)
+//        chartView.animate(xAxisDuration: 0.0, yAxisDuration: 1.0)
+        chartView.spin(duration: 3, fromAngle: 0, toAngle: 720.0)
     }
 }

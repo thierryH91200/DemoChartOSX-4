@@ -46,6 +46,7 @@ class LineChartRealTimeViewController: NSViewController {
         
         chartView.chartDescription?.isEnabled = false
         
+        step = 0.2
         
         let leftAxis = chartView.leftAxis
         leftAxis.axisMaximum = 15
@@ -74,13 +75,6 @@ class LineChartRealTimeViewController: NSViewController {
         
         yEntries.removeAll()
         
-//        yEntries = (0..<Int(currentCount)).map { (i) -> ChartDataEntry in
-//            let val = Double(arc4random_uniform(UInt32(10))) + 2
-//            return ChartDataEntry(x: Double(i), y: val)
-//        }
-        
-        step = 0.2
-
         for i in stride(from: 0, to: 10, by: step) {
             let val = Double(arc4random_uniform(UInt32(10))) + 2
             yEntries.append(ChartDataEntry(x: i, y: val))
@@ -113,8 +107,7 @@ class LineChartRealTimeViewController: NSViewController {
         let chartEntry = ChartDataEntry(x: currentCount, y: yValue)
         yEntries.append(chartEntry)
         
-        print(currentCount,"   ", yEntries.count,"   ", (50 / step))
-
+//        print(currentCount,"   ", yEntries.count,"   ", (50 / step))
         
         if yEntries.count == Int(50 / step)
         {

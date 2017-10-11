@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		034434A71F8D5E8400861B50 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034434A41F8D5E7C00861B50 /* Charts.framework */; };
+		034434A81F8D5E8400861B50 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 034434A41F8D5E7C00861B50 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C30A49A41F52E9EE0019F1C0 /* AAPLCircularLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A49A21F52E9EE0019F1C0 /* AAPLCircularLayout.swift */; };
 		C30A49A61F52EBFB0019F1C0 /* AAPLSlideLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A49A51F52EBFB0019F1C0 /* AAPLSlideLayout.swift */; };
 		C328964A1F5181B2000A7E51 /* CustomChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32896481F5181B2000A7E51 /* CustomChart.swift */; };
 		C328964B1F5181B2000A7E51 /* CustomChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32896491F5181B2000A7E51 /* CustomChart.xib */; };
-		C3408C091F530C690016C918 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3408C061F530C490016C918 /* Charts.framework */; };
-		C3408C0A1F530C690016C918 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3408C061F530C490016C918 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C34661C01F506D0200E5FB3F /* LineChartRealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34661BE1F506D0200E5FB3F /* LineChartRealTimeViewController.swift */; };
 		C34661C11F506D0200E5FB3F /* LineChartRealTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34661BF1F506D0200E5FB3F /* LineChartRealTimeViewController.xib */; };
 		C3AE37A01F4C7D0B003AD9C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE379F1F4C7D0B003AD9C4 /* AppDelegate.swift */; };
@@ -114,25 +114,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C3408C051F530C490016C918 /* PBXContainerItemProxy */ = {
+		034434A31F8D5E7C00861B50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C3408C001F530C490016C918 /* Charts.xcodeproj */;
+			containerPortal = 0344349E1F8D5E7C00861B50 /* Charts.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
 			remoteInfo = Charts;
 		};
-		C3408C071F530C490016C918 /* PBXContainerItemProxy */ = {
+		034434A51F8D5E7C00861B50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C3408C001F530C490016C918 /* Charts.xcodeproj */;
+			containerPortal = 0344349E1F8D5E7C00861B50 /* Charts.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
 			remoteInfo = ChartsTests;
 		};
-		C3408C0B1F530C690016C918 /* PBXContainerItemProxy */ = {
+		034434A91F8D5E8400861B50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C3408C001F530C490016C918 /* Charts.xcodeproj */;
+			containerPortal = 0344349E1F8D5E7C00861B50 /* Charts.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteGlobalIDString = A58A4ED274A941CA248EA921;
 			remoteInfo = Charts;
 		};
 		C3AE37AD1F4C7D0B003AD9C4 /* PBXContainerItemProxy */ = {
@@ -158,7 +158,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C3408C0A1F530C690016C918 /* Charts.framework in Embed Frameworks */,
+				034434A81F8D5E8400861B50 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,11 +166,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0344349E1F8D5E7C00861B50 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../../Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		C30A49A21F52E9EE0019F1C0 /* AAPLCircularLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAPLCircularLayout.swift; sourceTree = "<group>"; };
 		C30A49A51F52EBFB0019F1C0 /* AAPLSlideLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAPLSlideLayout.swift; sourceTree = "<group>"; };
 		C32896481F5181B2000A7E51 /* CustomChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChart.swift; sourceTree = "<group>"; };
 		C32896491F5181B2000A7E51 /* CustomChart.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomChart.xib; sourceTree = "<group>"; };
-		C3408C001F530C490016C918 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../Charts-swift-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		C34661BE1F506D0200E5FB3F /* LineChartRealTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartRealTimeViewController.swift; sourceTree = "<group>"; };
 		C34661BF1F506D0200E5FB3F /* LineChartRealTimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineChartRealTimeViewController.xib; sourceTree = "<group>"; };
 		C3AE379C1F4C7D0B003AD9C4 /* DemoChartOSX V4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DemoChartOSX V4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -283,7 +283,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3408C091F530C690016C918 /* Charts.framework in Frameworks */,
+				034434A71F8D5E8400861B50 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,11 +304,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C3408C011F530C490016C918 /* Products */ = {
+		0344349F1F8D5E7C00861B50 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C3408C061F530C490016C918 /* Charts.framework */,
-				C3408C081F530C490016C918 /* ChartsTests.xctest */,
+				034434A41F8D5E7C00861B50 /* Charts.framework */,
+				034434A61F8D5E7C00861B50 /* ChartsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 		C3AE37931F4C7D0B003AD9C4 = {
 			isa = PBXGroup;
 			children = (
-				C3408C001F530C490016C918 /* Charts.xcodeproj */,
+				0344349E1F8D5E7C00861B50 /* Charts.xcodeproj */,
 				C3B791171F51BA5A0051C1D4 /* README.md */,
 				C3AE379E1F4C7D0B003AD9C4 /* DemoChartOSX */,
 				C3AE37AF1F4C7D0B003AD9C4 /* DemoChartOSXTests */,
@@ -524,7 +524,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				C3408C0C1F530C690016C918 /* PBXTargetDependency */,
+				034434AA1F8D5E8400861B50 /* PBXTargetDependency */,
 			);
 			name = "DemoChartOSX V4";
 			productName = graphMeteo;
@@ -606,8 +606,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = C3408C011F530C490016C918 /* Products */;
-					ProjectRef = C3408C001F530C490016C918 /* Charts.xcodeproj */;
+					ProductGroup = 0344349F1F8D5E7C00861B50 /* Products */;
+					ProjectRef = 0344349E1F8D5E7C00861B50 /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -620,18 +620,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		C3408C061F530C490016C918 /* Charts.framework */ = {
+		034434A41F8D5E7C00861B50 /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = C3408C051F530C490016C918 /* PBXContainerItemProxy */;
+			remoteRef = 034434A31F8D5E7C00861B50 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C3408C081F530C490016C918 /* ChartsTests.xctest */ = {
+		034434A61F8D5E7C00861B50 /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
-			remoteRef = C3408C071F530C490016C918 /* PBXContainerItemProxy */;
+			remoteRef = 034434A51F8D5E7C00861B50 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -787,10 +787,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C3408C0C1F530C690016C918 /* PBXTargetDependency */ = {
+		034434AA1F8D5E8400861B50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Charts;
-			targetProxy = C3408C0B1F530C690016C918 /* PBXContainerItemProxy */;
+			targetProxy = 034434A91F8D5E8400861B50 /* PBXContainerItemProxy */;
 		};
 		C3AE37AE1F4C7D0B003AD9C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

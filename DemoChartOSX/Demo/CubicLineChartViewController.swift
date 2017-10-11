@@ -43,36 +43,36 @@ open class CubicLineChartViewController: DemoBaseViewController
 //        chartView.backgroundColor = Color(red: 104 / 255.0, green: 241 / 255.0, blue: 175 / 255.0, alpha: 1.0)
         
         chartView.gridBackgroundColor =  #colorLiteral(red: 0.215686274509804, green: 0.709803921568627, blue: 0.898039215686275, alpha: 0.588235294117647)
-        chartView.isDrawGridBackgroundEnabled = false
-        chartView.isDragEnabled               = true
+        chartView.drawGridBackgroundEnabled = false
+        chartView.dragEnabled               = true
         chartView.setScaleEnabled(true)
-        chartView.isDrawGridBackgroundEnabled = true
+        chartView.drawGridBackgroundEnabled = true
         chartView.maxHighlightDistance      = 300.0
         
         // MARK: xAxis
         let xAxis    = chartView.xAxis
-        xAxis.isEnabled    = true
+        xAxis.enabled    = true
         xAxis.labelPosition = .bottomInside
         xAxis.labelTextColor       = .white
         xAxis.axisLineColor        = .black
         
         // MARK: leftAxis
         let leftAxis                  = chartView.leftAxis
-        leftAxis.labelFont            = Font(name: "HelveticaNeue-Light", size: CGFloat(12.0))!
+        leftAxis.labelFont            = NSFont(name: "HelveticaNeue-Light", size: CGFloat(12.0))!
         leftAxis.setLabelCount(6, force: false)
         leftAxis.labelTextColor       = .white
         leftAxis.labelPosition        = .insideChart
-        leftAxis.isDrawGridLinesEnabled = true
+        leftAxis.drawGridLinesEnabled = true
         leftAxis.axisLineColor        = .black
         
         // MARK: rightAxis
-        chartView.rightAxis.isEnabled = false
+        chartView.rightAxis.enabled = false
         
         // MARK: legend
-        chartView.legend.isEnabled = false
+        chartView.legend.enabled = false
         
         // MARK: description
-        chartView.chartDescription?.isEnabled = false
+        chartView.chartDescription?.enabled = false
         
         sliderX.doubleValue = 45.0
         sliderY.doubleValue = 100.0
@@ -106,23 +106,23 @@ open class CubicLineChartViewController: DemoBaseViewController
         else
         {
             set1 = LineChartDataSet(values: yVals1, label: "DataSet 1")
-            set1.valueFont = Font(name: "HelveticaNeue-Light", size: CGFloat(9.0))!
-            set1.isDrawValuesEnabled = false
+            set1.valueFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(9.0))!
+            set1.drawValuesEnabled = false
             
             set1.mode                                    = .cubicBezier
             set1.cubicIntensity                          = 0.2
-            set1.isDrawCirclesEnabled                      = false
+            set1.drawCirclesEnabled                      = false
             set1.lineWidth                               = 1.8
             set1.circleRadius                            = 4.0
-            set1.highlightColor                          = Color(red: CGFloat(244 / 255.0), green: CGFloat(117 / 255.0), blue: CGFloat(117 / 255.0), alpha: 1.0)
-            set1.colors                                  = [Color.white]
-            set1.fillColor                               = Color.white
+            set1.highlightColor                          = NSColor(red: CGFloat(244 / 255.0), green: CGFloat(117 / 255.0), blue: CGFloat(117 / 255.0), alpha: 1.0)
+            set1.colors                                  = [NSColor.white]
+            set1.fillColor                               = NSColor.white
             set1.fillAlpha                               = 1.0
-            set1.isHorizontalHighlightIndicatorEnabled = false
+            set1.drawHorizontalHighlightIndicatorEnabled = false
                        
              // MARK: LineChartData
             let data = LineChartData(dataSet: set1)
-            data.setValueFont(Font(name: "HelveticaNeue-Light", size: CGFloat(9.0))!)
+            data.setValueFont(NSFont(name: "HelveticaNeue-Light", size: CGFloat(9.0))!)
             data.setDrawValues(false)
             chartView.data = data
         }

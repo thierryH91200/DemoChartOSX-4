@@ -33,15 +33,15 @@ open class ScatterChartViewController: NSViewController
         super.viewDidLoad()
         
         // MARK: General
-        chartView.isDrawGridBackgroundEnabled = false
+        chartView.drawGridBackgroundEnabled = false
         chartView.setScaleEnabled ( true)
         chartView.maxVisibleCount = 200
-        chartView.isDrawBordersEnabled = true
+        chartView.drawBordersEnabled = true
         
         // MARK: xAxis
         let xAxis = chartView.xAxis
-        xAxis.labelFont = Font(name: "HelveticaNeue-Light", size: 10.0)!
-        xAxis.isDrawGridLinesEnabled = true
+        xAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: 10.0)!
+        xAxis.drawGridLinesEnabled = true
         xAxis.labelPosition = .bottom
         
 //        xAxis.nameAxis = "Normal Name"
@@ -49,28 +49,28 @@ open class ScatterChartViewController: NSViewController
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
-        leftAxis.labelFont = Font(name: "HelveticaNeue-Light", size: 10.0)!
+        leftAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: 10.0)!
         leftAxis.axisMinimum = 0.0
         
 //        leftAxis.nameAxis = "Left name"
 //        leftAxis.nameAxisEnabled = true
         
         // MARK: rightAxis
-        chartView.rightAxis.isEnabled = false
+        chartView.rightAxis.enabled = false
         
         // MARK: legend
-        var legend = chartView.legend
+        let legend = chartView.legend
         legend.horizontalAlignment = .right
         legend.verticalAlignment = .top
         legend.orientation = .vertical
         legend.drawInside = false
-        legend.font = Font(name: "HelveticaNeue-Light", size: 10.0)!
+        legend.font = NSFont(name: "HelveticaNeue-Light", size: 10.0)!
         legend.xOffset = 5.0
         
         // MARK: description
-        chartView.chartDescription?.isEnabled = false
+        chartView.chartDescription?.enabled = false
         
-        let marker = BalloonMarker(color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), font: Font.systemFont(ofSize: CGFloat(12.0)), textColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
+        let marker = BalloonMarker(color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), font: NSFont.systemFont(ofSize: CGFloat(12.0)), textColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
         marker.chartView = chartView
         marker.minimumSize = CGSize(width: CGFloat(60.0), height: CGFloat(30.0))
         chartView.marker = marker
@@ -98,19 +98,19 @@ open class ScatterChartViewController: NSViewController
         // MARK: ScatterChartDataSet
         let set1 = ScatterChartDataSet(values: yVals1, label: "DS 1")
         set1.setScatterShape(.square )
-        set1.colors =  ChartColorTemplates.liberty
+        set1.colors =  ChartColorTemplates.liberty()
         set1.scatterShapeSize = 10.0
         
         let set2 = ScatterChartDataSet(values: yVals2, label: "DS 2")
         set2.setScatterShape( .circle)
-        set2.scatterShapeHoleColor = Color.blue
+        set2.scatterShapeHoleColor = NSColor.blue
         set2.scatterShapeHoleRadius = 3.5
-        set2.colors = ChartColorTemplates.material
+        set2.colors = ChartColorTemplates.material()
         set2.scatterShapeSize = 10.0
         
         let set3 = ScatterChartDataSet(values: yVals3, label: "DS 3")
         set3.setScatterShape(.triangle)
-        set3.colors = [Color.orange] //ChartColorTemplates.pastel()
+        set3.colors = [NSColor.orange] //ChartColorTemplates.pastel()
         set3.scatterShapeSize = 10.0
         
         var dataSets = [ScatterChartDataSet]()
@@ -120,7 +120,7 @@ open class ScatterChartViewController: NSViewController
         
         // MARK: ScatterChartData
         let data = ScatterChartData(dataSets: dataSets)
-        data.setValueFont( Font(name: "HelveticaNeue-Light", size: CGFloat(10.0))!)
+        data.setValueFont( NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!)
         chartView.data = data
     }
 }

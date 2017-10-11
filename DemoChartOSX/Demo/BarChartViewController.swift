@@ -43,18 +43,18 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         // MARK: General
         chartView.delegate                  = self
         
-        chartView.isPinchZoomEnabled          = false
-        chartView.isDoubleTapToZoomEnabled    = false
-        chartView.isDrawBarShadowEnabled      = false
-        chartView.isDrawGridBackgroundEnabled = true
+        chartView.pinchZoomEnabled          = false
+        chartView.doubleTapToZoomEnabled    = false
+        chartView.drawBarShadowEnabled      = false
+        chartView.drawGridBackgroundEnabled = true
         chartView.fitBars                   = true
-        chartView.isDrawValueAboveBarEnabled = true
-        chartView.isDrawBordersEnabled = true
+        chartView.drawValueAboveBarEnabled = true
+        chartView.drawBordersEnabled = true
         
         // MARK: xAxis
         let xAxis                  = chartView.xAxis
         xAxis.labelPosition        = .bottom
-        xAxis.isDrawGridLinesEnabled = true
+        xAxis.drawGridLinesEnabled = true
         //xAxis.valueFormatter       = IndexAxisValueFormatter(values:months)
         xAxis.granularity          = 1
         xAxis.labelPosition  = .bottom
@@ -64,8 +64,8 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         
         // MARK: leftAxis
         let leftAxis                  = chartView.leftAxis
-        leftAxis.isDrawGridLinesEnabled = true
-        leftAxis.isDrawZeroLineEnabled  = false
+        leftAxis.drawGridLinesEnabled = true
+        leftAxis.drawZeroLineEnabled  = false
         leftAxis.valueFormatter       = HourValueFormatter()
         
 //        leftAxis.nameAxis = "Hour (s)"
@@ -76,25 +76,25 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         
         // MARK: rightAxis
         let rightAxis                  = chartView.rightAxis
-        rightAxis.isDrawGridLinesEnabled = true
+        rightAxis.drawGridLinesEnabled = true
         rightAxis.valueFormatter       = HourValueFormatter()
         
 //        rightAxis.nameAxis = "Hour (s)"
 //        rightAxis.nameAxisEnabled = true
         
         // MARK: legend
-        var legend = chartView.legend
-        legend.isEnabled = true
+        let legend = chartView.legend
+        legend.enabled = true
         legend.orientation = .horizontal
         legend.horizontalAlignment = .left
         legend.verticalAlignment = .bottom
         legend.drawInside = false
         
         // MARK: description
-        chartView.chartDescription?.isEnabled = false
+        chartView.chartDescription?.enabled = false
         
         // MARK: marker
-        let  marker = YMarkerView( color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), font: Font.systemFont(ofSize: 12.0),
+        let  marker = YMarkerView( color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), font: NSFont.systemFont(ofSize: 12.0),
                                    textColor: .white,
                                    insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0),
                                    yAxisValueFormatter: HourValueFormatter())
@@ -127,7 +127,7 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
             set1 = BarChartDataSet(values: yVals, label: "DataSet")
             //set1.colors = ChartColorTemplates.vordiplom
             set1.colors = [.orange, .orange, .orange, .orange, .orange, .orange, .orange]
-            set1.isDrawValuesEnabled = false
+            set1.drawValuesEnabled = false
             set1.stackLabels = ["Births"]
             
             var dataSets = [ChartDataSet]()

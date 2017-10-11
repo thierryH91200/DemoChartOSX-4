@@ -39,19 +39,19 @@ open class HorizontalBarChartViewController: DemoBaseViewController
         super.viewDidLoad()
         
         // MARK: General
-        chartView.isDrawBarShadowEnabled = false
-        chartView.isDrawValueAboveBarEnabled = false
+        chartView.drawBarShadowEnabled = false
+        chartView.drawValueAboveBarEnabled = false
         chartView.maxVisibleCount = 60
         chartView.fitBars = true
-        chartView.isDrawGridBackgroundEnabled = true
+        chartView.drawGridBackgroundEnabled = true
 
         // MARK: xAxis
         let xAxis = chartView.xAxis
-        xAxis.isEnabled = true
+        xAxis.enabled = true
         xAxis.labelPosition = .bottom
-        xAxis.labelFont = Font.systemFont(ofSize: CGFloat(10.0))
-        xAxis.isDrawAxisLineEnabled = true
-        xAxis.isDrawGridLinesEnabled = true
+        xAxis.labelFont = NSFont.systemFont(ofSize: CGFloat(10.0))
+        xAxis.drawAxisLineEnabled = true
+        xAxis.drawGridLinesEnabled = true
         xAxis.granularity = 0.0
         
 //        xAxis.nameAxis = "Name Axis X"
@@ -59,10 +59,10 @@ open class HorizontalBarChartViewController: DemoBaseViewController
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
-        leftAxis.labelFont = Font.systemFont(ofSize: CGFloat(10.0))
+        leftAxis.labelFont = NSFont.systemFont(ofSize: CGFloat(10.0))
         leftAxis.labelTextColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-        leftAxis.isDrawAxisLineEnabled = true
-        leftAxis.isDrawGridLinesEnabled = true
+        leftAxis.drawAxisLineEnabled = true
+        leftAxis.drawGridLinesEnabled = true
         leftAxis.axisMinimum = 0.0
         
 //        leftAxis.nameAxis = "Left name"
@@ -70,11 +70,11 @@ open class HorizontalBarChartViewController: DemoBaseViewController
 
         // MARK: rightAxis
         let rightAxis                  = chartView.rightAxis
-        rightAxis.isEnabled              = true
-        rightAxis.labelFont            = Font.systemFont(ofSize: CGFloat(10.0))
+        rightAxis.enabled              = true
+        rightAxis.labelFont            = NSFont.systemFont(ofSize: CGFloat(10.0))
         rightAxis.labelTextColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
-        rightAxis.isDrawAxisLineEnabled  = true
-        rightAxis.isDrawGridLinesEnabled = true
+        rightAxis.drawAxisLineEnabled  = true
+        rightAxis.drawGridLinesEnabled = true
         rightAxis.axisMinimum          = 0.0
         
 //        rightAxis.nameAxis = "Right Name"
@@ -84,8 +84,8 @@ open class HorizontalBarChartViewController: DemoBaseViewController
 //        chartView.rightAxis1.axisSecondaryEnabled = false
         
         // MARK: legend
-        var legend = chartView.legend
-        legend.font = Font(name: "HelveticaNeue-Light", size: CGFloat(11.0))!
+        let legend = chartView.legend
+        legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(11.0))!
         legend.form = .square
         legend.formSize = 8.0
         legend.drawInside = false
@@ -94,7 +94,7 @@ open class HorizontalBarChartViewController: DemoBaseViewController
         legend.verticalAlignment = .bottom
         
         // MARK: description
-        chartView.chartDescription?.isEnabled = false
+        chartView.chartDescription?.enabled = true
         chartView.chartDescription?.text = "Horizontal Bar Chart"
 
         sliderX.doubleValue = 12.0
@@ -136,7 +136,7 @@ open class HorizontalBarChartViewController: DemoBaseViewController
             
             // MARK: BarChartData
             let data            = BarChartData(dataSets: [set1])
-            data.setValueFont(Font(name: "HelveticaNeue-Light", size: CGFloat(10.0))!)
+            data.setValueFont(NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!)
             data.barWidth       = barWidth
             chartView.data = data
         }

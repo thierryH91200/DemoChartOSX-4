@@ -51,7 +51,7 @@ open class PiePolylineChartViewController: DemoBaseViewController
         centerText.addAttributes([NSAttributedStringKey.font: NSFont(name: "HelveticaNeue-LightItalic", size: 13.0)!, NSAttributedStringKey.foregroundColor: NSColor(red: 51 / 255.0, green: 181 / 255.0, blue: 229 / 255.0, alpha: 1.0)], range: NSMakeRange(centerText.length - 19, 19))
         chartView.centerAttributedText = centerText
 
-        chartView.legend.isEnabled = false
+        chartView.legend.enabled = false
         
         sliderX.doubleValue = 4.0
         sliderY.doubleValue = 100.0
@@ -78,11 +78,11 @@ open class PiePolylineChartViewController: DemoBaseViewController
         
         // add a lot of colors
         var colors = [NSColor]()
-        colors.append( ChartColorTemplates.vordiplom[0] )
-        colors.append( ChartColorTemplates.joyful[0] )
-        colors.append( ChartColorTemplates.colorful[0] )
-        colors.append( ChartColorTemplates.liberty[0])
-        colors.append( ChartColorTemplates.pastel[0] )
+        colors.append( ChartColorTemplates.vordiplom()[0] )
+        colors.append( ChartColorTemplates.joyful()[0] )
+        colors.append( ChartColorTemplates.colorful()[0] )
+        colors.append( ChartColorTemplates.liberty()[0])
+        colors.append( ChartColorTemplates.pastel()[0] )
         colors.append(#colorLiteral(red: 0.215686274509804, green: 0.709803921568627, blue: 0.898039215686275, alpha: 1.0))
         
         dataSet.colors = colors
@@ -103,8 +103,8 @@ open class PiePolylineChartViewController: DemoBaseViewController
         pFormatter.percentSymbol = " %"
  
         data.setValueFormatter(DefaultValueFormatter(formatter: pFormatter))
-        data.setValueFont(Font(name: "HelveticaNeue-Light", size: CGFloat(11.0))!)
-        data.setValueTextColor(Color.black)
+        data.setValueFont(NSFont(name: "HelveticaNeue-Light", size: CGFloat(11.0))!)
+        data.setValueTextColor(NSColor.black)
         chartView.data = data
         chartView.highlightValues(nil)
     }

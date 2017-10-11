@@ -36,27 +36,27 @@ open class LineChartTimeViewController: DemoBaseViewController
         super.viewDidLoad()
         
         // MARK: General
-        chartView.isDragEnabled = true
+        chartView.dragEnabled = true
         chartView.setScaleEnabled(true)
-        chartView.isPinchZoomEnabled = false
-        chartView.isDrawGridBackgroundEnabled = false
-        chartView.isHighlightPerDragEnabled = true
+        chartView.pinchZoomEnabled = false
+        chartView.drawGridBackgroundEnabled = false
+        chartView.highlightPerDragEnabled = true
         chartView.backgroundColor = .white
         
-        chartView.isScaleYEnabled = false
-        chartView.isScaleXEnabled = true
+        chartView.scaleYEnabled = false
+        chartView.scaleXEnabled = true
 //        chartView.dragYEnabled = false
 //        chartView.dragXEnabled = true
         
         // MARK: xAxis
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
-        xAxis.labelFont = Font(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
+        xAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
         xAxis.labelTextColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-        xAxis.isDrawAxisLineEnabled = true
-        xAxis.isDrawGridLinesEnabled = true
-        xAxis.isDrawLimitLinesBehindDataEnabled = true
-        xAxis.isAvoidFirstLastClippingEnabled = false
+        xAxis.drawAxisLineEnabled = true
+        xAxis.drawGridLinesEnabled = true
+        xAxis.drawLimitLinesBehindDataEnabled = true
+        xAxis.avoidFirstLastClippingEnabled = false
         xAxis.granularity = 1.0
         xAxis.spaceMin = xAxis.granularity / 5
         xAxis.spaceMax = xAxis.granularity / 5
@@ -68,21 +68,21 @@ open class LineChartTimeViewController: DemoBaseViewController
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
         leftAxis.labelPosition = .outsideChart
-        leftAxis.labelFont = Font(name: "HelveticaNeue-Light", size: CGFloat(12.0))!
+        leftAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(12.0))!
         leftAxis.labelTextColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
-        leftAxis.isDrawGridLinesEnabled = true
-        leftAxis.isGranularityEnabled = true
+        leftAxis.drawGridLinesEnabled = true
+        leftAxis.granularityEnabled = true
         leftAxis.yOffset = -9.0
         
 //        leftAxis.nameAxis = "Event"
 //        leftAxis.nameAxisEnabled = true
         
         // MARK: rightAxis
-        chartView.rightAxis.isEnabled = false
+        chartView.rightAxis.enabled = false
         
         // MARK: legend
-        var legend = chartView.legend
-        legend.isEnabled = true
+        let legend = chartView.legend
+        legend.enabled = true
         legend.form = .square
         legend.drawInside = false
         legend.orientation = .horizontal
@@ -90,7 +90,7 @@ open class LineChartTimeViewController: DemoBaseViewController
         legend.horizontalAlignment = .left
         
         // MARK: description
-        chartView.chartDescription?.isEnabled = true
+        chartView.chartDescription?.enabled = true
         chartView.chartDescription?.text = "Time Line Chart"
         
         sliderX.doubleValue = 20.0
@@ -174,15 +174,15 @@ open class LineChartTimeViewController: DemoBaseViewController
             set1.valueTextColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
             set1.lineWidth = 1.5
             
-            set1.isDrawCirclesEnabled = false
-            set1.isDrawValuesEnabled = true
+            set1.drawCirclesEnabled = false
+            set1.drawValuesEnabled = true
             
-            set1.isDrawFilledEnabled = true
+            set1.drawFilledEnabled = true
             set1.fillAlpha = 0.26
             set1.fillColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
             set1.highlightColor = #colorLiteral(red: 0.4513868093, green: 0.9930960536, blue: 1, alpha: 1)
             set1.highlightLineWidth = 10.0
-            set1.isHorizontalHighlightIndicatorEnabled = false
+            set1.drawHorizontalHighlightIndicatorEnabled = false
             set1.formSize = 15.0
             set1.colors = [#colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)]
             
@@ -191,13 +191,13 @@ open class LineChartTimeViewController: DemoBaseViewController
             set2.valueTextColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
             set2.lineWidth = 1.5
             
-            set2.isDrawCirclesEnabled = false
-            set2.isDrawValuesEnabled = true
-            set2.isDrawFilledEnabled = false
+            set2.drawCirclesEnabled = false
+            set2.drawValuesEnabled = true
+            set2.drawFilledEnabled = false
             
             set2.highlightColor = #colorLiteral(red: 0.4513868093, green: 0.9930960536, blue: 1, alpha: 1)
             set2.highlightLineWidth = 10.0
-            set2.isHorizontalHighlightIndicatorEnabled = false
+            set2.drawHorizontalHighlightIndicatorEnabled = false
             
             set2.formLineDashLengths = [5.0, 2.5]
             set2.formLineWidth = 1.0
@@ -212,7 +212,7 @@ open class LineChartTimeViewController: DemoBaseViewController
             // MARK: LineChartData
             let data = LineChartData(dataSets: dataSets)
             data.setValueTextColor ( #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
-            data.setValueFont ( Font(name: "HelveticaNeue-Light", size: CGFloat(9.0))!)
+            data.setValueFont ( NSFont(name: "HelveticaNeue-Light", size: CGFloat(9.0))!)
             chartView.data = data
         }
     }
@@ -225,7 +225,7 @@ open class LineChartTimeViewController: DemoBaseViewController
     
     @IBAction func toggleDrag(_ sender: Any)
     {
-        chartView.isDragEnabled = !chartView.isDragEnabled
+        chartView.dragEnabled = !chartView.isDragEnabled
         if chartView.isDragEnabled == true
         {
             (sender as! NSButton).title = "Drag On"

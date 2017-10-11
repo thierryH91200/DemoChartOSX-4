@@ -30,21 +30,21 @@ open class NegativeStackedBarChartViewController: DemoBaseViewController
         super.viewDidLoad()
         
         // MARK: General
-        chartView.isDrawBarShadowEnabled = false
-        chartView.isDrawValueAboveBarEnabled = true
-        chartView.isHighlightFullBarEnabled = false
+        chartView.drawBarShadowEnabled = false
+        chartView.drawValueAboveBarEnabled = true
+        chartView.highlightFullBarEnabled = false
         
         // scaling can now only be done on x- and y-axis separately
-        chartView.isPinchZoomEnabled = false
+        chartView.pinchZoomEnabled = false
         
         // MARK: xAxis
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bothSided
-        xAxis.isDrawGridLinesEnabled = true
-        xAxis.isDrawAxisLineEnabled = true
+        xAxis.drawGridLinesEnabled = true
+        xAxis.drawAxisLineEnabled = true
         xAxis.axisMinimum = 0.0
         xAxis.axisMaximum = 22.0
-        xAxis.isCenterAxisLabelsEnabled = true
+        xAxis.centerAxisLabelsEnabled = true
         xAxis.labelCount = categories.count
         xAxis.granularity = 1
         xAxis.valueFormatter = IndexAxisValueFormatter(values: categories)
@@ -53,7 +53,7 @@ open class NegativeStackedBarChartViewController: DemoBaseViewController
 //        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
-        chartView.leftAxis.isEnabled = false
+        chartView.leftAxis.enabled = false
         
         // MARK: rightAxis
         let customFormatter = NumberFormatter()
@@ -66,17 +66,17 @@ open class NegativeStackedBarChartViewController: DemoBaseViewController
         let rightAxis = chartView.rightAxis
         rightAxis.axisMaximum = 5.0
         rightAxis.axisMinimum = -5.0
-        rightAxis.isDrawGridLinesEnabled = false
-        rightAxis.isDrawZeroLineEnabled = true
+        rightAxis.drawGridLinesEnabled = false
+        rightAxis.drawZeroLineEnabled = true
         rightAxis.labelCount = 7
         rightAxis.valueFormatter = DefaultAxisValueFormatter(formatter : customFormatter)
-        rightAxis.labelFont = Font.systemFont(ofSize: CGFloat(9.0))
+        rightAxis.labelFont = NSFont.systemFont(ofSize: CGFloat(9.0))
         
 //        rightAxis.nameAxis = "Name rightAxis"
 //        rightAxis.nameAxisEnabled = true
 
         // MARK: legend
-        var legend = chartView.legend
+        let legend = chartView.legend
         legend.horizontalAlignment = .right
         legend.verticalAlignment = .bottom
         legend.orientation = .vertical
@@ -86,10 +86,10 @@ open class NegativeStackedBarChartViewController: DemoBaseViewController
         legend.xEntrySpace = 6.0
         
         // MARK: description
-        chartView.chartDescription?.isEnabled = true
+        chartView.chartDescription?.enabled = true
         chartView.chartDescription?.text = "Population pyramid"
         chartView.chartDescription?.textAlign = .right
-        chartView.chartDescription?.textColor = Color.blue
+        chartView.chartDescription?.textColor = .blue
         
         updateChartData()
     }
@@ -132,7 +132,7 @@ open class NegativeStackedBarChartViewController: DemoBaseViewController
             
             set = BarChartDataSet(values: yValues, label: "Age Distribution")
             set.valueFormatter = DefaultValueFormatter(formatter : customFormatter)
-            set.valueFont = Font.systemFont(ofSize: CGFloat(7.0))
+            set.valueFont = NSFont.systemFont(ofSize: CGFloat(7.0))
             set.axisDependency = .right
             set.colors = [#colorLiteral(red: 0.262745098039216, green: 0.262745098039216, blue: 0.282352941176471, alpha: 1.0), #colorLiteral(red: 0.486274509803922, green: 0.709803921568627, blue: 0.925490196078431, alpha: 1.0)]
             set.stackLabels = ["Men", "Women"]

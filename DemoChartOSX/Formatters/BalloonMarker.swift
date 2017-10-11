@@ -15,10 +15,10 @@ import Charts
 
 open class BalloonMarker: MarkerImage
 {
-    open var color: Color?
+    open var color: NSColor?
     open var arrowSize = CGSize(width: 15, height: 11)
-    open var font: Font?
-    open var textColor: Color?
+    open var font: NSFont?
+    open var textColor: NSColor?
     open var insets = NSEdgeInsets()
     open var minimumSize = CGSize()
     
@@ -28,7 +28,7 @@ open class BalloonMarker: MarkerImage
     fileprivate var _drawAttributes = [NSAttributedStringKey : Any]()
     
      
-    public init(color: Color, font: Font, textColor: Color, insets: NSEdgeInsets)
+    public init(color: NSColor, font: NSFont, textColor: NSColor, insets: NSEdgeInsets)
     {
         super.init()
         

@@ -30,7 +30,7 @@ open class BarChartViewControllerColumnWithDrilldown: DemoBaseViewController
     
     var label  = [String]()
     var dataWebIE = [String]()
-    let colors = [Color.blue, Color.black, Color.green, Color.orange, Color.purple, Color.gray]
+    let colors = [NSColor.blue, NSColor.black, NSColor.green, NSColor.orange, NSColor.purple, NSColor.gray]
     
     var browsers = [Browser]()
     
@@ -63,54 +63,54 @@ open class BarChartViewControllerColumnWithDrilldown: DemoBaseViewController
         
           // MARK: General
         chartView.delegate = self
-        chartView.isDrawBarShadowEnabled = false
-        chartView.isDrawValueAboveBarEnabled = true
+        chartView.drawBarShadowEnabled = false
+        chartView.drawValueAboveBarEnabled = true
         chartView.maxVisibleCount = 60
-        chartView.isDrawGridBackgroundEnabled = true
-        chartView.gridBackgroundColor = Color.yellow
+        chartView.drawGridBackgroundEnabled = true
+        chartView.gridBackgroundColor = NSColor.yellow
         
-        chartView.isHighlightPerTapEnabled = true
-        chartView.isPinchZoomEnabled = false
-        chartView.isDragEnabled = false
+        chartView.highlightPerTapEnabled = true
+        chartView.pinchZoomEnabled = false
+        chartView.dragEnabled = false
         chartView.setScaleEnabled(false)
         
         // MARK: xAxis
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
-        xAxis.labelFont = Font(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
-        xAxis.isDrawGridLinesEnabled = false
-        xAxis.isEnabled = true
+        xAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
+        xAxis.drawGridLinesEnabled = false
+        xAxis.enabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
-        leftAxis.labelFont = Font(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
+        leftAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
         leftAxis.labelCount = 6
         leftAxis.axisMinimum = 0
-        leftAxis.isGranularityEnabled = true
+        leftAxis.granularityEnabled = true
         leftAxis.granularity = 0.1
         leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter : formatter)
         
         // MARK: rightAxis
-        chartView.rightAxis.isEnabled = false
+        chartView.rightAxis.enabled = false
         
         // MARK: legend
-        var legend = chartView.legend
+        let legend = chartView.legend
         legend.horizontalAlignment = .left
         legend.verticalAlignment = .bottom
         legend.orientation = .horizontal
         legend.drawInside = false
         legend.form = .square
         legend.formSize = 9.0
-        legend.font = Font.systemFont(ofSize: CGFloat(11.0))
+        legend.font = NSFont.systemFont(ofSize: CGFloat(11.0))
         legend.xEntrySpace = 4.0
         
         // MARK: description
         let bounds = chartView.bounds
         let point = CGPoint( x:bounds.width / 2, y:bounds.height * 0.25)
-        chartView.chartDescription?.isEnabled = true
+        chartView.chartDescription?.enabled = true
         chartView.chartDescription?.text = "Browsers"
         chartView.chartDescription?.position = point
-        chartView.chartDescription?.font = Font(name: "HelveticaNeue-Light", size: CGFloat(24.0))!
+        chartView.chartDescription?.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(24.0))!
         
         setData(data : dataWebIE, label: label, colors: colors)
     }
@@ -119,7 +119,7 @@ open class BarChartViewControllerColumnWithDrilldown: DemoBaseViewController
     {
     }
     
-    func setData(data : [String], label : [String], colors : [Color])
+    func setData(data : [String], label : [String], colors : [NSColor])
     {
         chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: label)
         
@@ -147,8 +147,8 @@ open class BarChartViewControllerColumnWithDrilldown: DemoBaseViewController
             set.colors = colors
         }
         
-        set.valueFont = Font(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
-        set.isDrawValuesEnabled = true
+        set.valueFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
+        set.drawValuesEnabled = true
         set.barBorderWidth = 0.1
         set.valueFormatter = DefaultValueFormatter(formatter : formatter)
         

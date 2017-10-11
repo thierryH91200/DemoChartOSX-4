@@ -30,8 +30,8 @@ open class PieChartViewController: NSViewController
         
         chartView.minOffset = 0.0
         
-        chartView.legend.isEnabled = false
-        chartView.isRotationEnabled = true
+        chartView.legend.enabled = false
+        chartView.rotationEnabled = true
         chartView.rotationAngle = 270.0
         
         let paragraphStyle: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
@@ -52,7 +52,7 @@ open class PieChartViewController: NSViewController
         
         // MARK: PieChartDataSet
         let ds1 = PieChartDataSet(values: yse1, label: "Hello")
-        ds1.colors = ChartColorTemplates.vordiplom
+        ds1.colors = ChartColorTemplates.vordiplom()
         
         // MARK: PieChartData
         let data = PieChartData()

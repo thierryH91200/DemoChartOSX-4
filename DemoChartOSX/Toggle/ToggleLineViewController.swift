@@ -24,13 +24,13 @@ class ToggleLineViewController: DemoBaseViewController
         switch option {
         case "Filled":
             for set in chartView?.data!.dataSets as! [LineChartDataSet] {
-                set.isDrawFilledEnabled = !set.isDrawFilledEnabled
+                set.drawFilledEnabled = !set.isDrawFilledEnabled
             }
             chartView?.needsDisplay = true
             
         case "Circles":
             for set in chartView?.data!.dataSets as! [LineChartDataSet] {
-                set.isDrawCirclesEnabled = !set.isDrawCirclesEnabled
+                set.drawCirclesEnabled = !set.isDrawCirclesEnabled
             }
             chartView?.needsDisplay = true
             

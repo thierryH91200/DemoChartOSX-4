@@ -23,7 +23,7 @@ class ToggleCandleStickViewController: DemoBaseViewController
         switch option {
         case "Shadow Color":
             for set in chartView?.data!.dataSets as! [CandleChartDataSet] {
-                set.isShadowColorSameAsCandle = !set.isShadowColorSameAsCandle
+                set.shadowColorSameAsCandle = !set.isShadowColorSameAsCandle
             }
 
             chartView?.data?.notifyDataChanged()

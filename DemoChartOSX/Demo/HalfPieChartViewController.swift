@@ -39,15 +39,15 @@ open class HalfPieChartViewController: DemoBaseViewController
         chartView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         chartView.holeColor              =  #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
-        chartView.transparentCircleColor = Color.white.withAlphaComponent(0.43)
+        chartView.transparentCircleColor = NSColor.white.withAlphaComponent(0.43)
         chartView.holeRadiusPercent      = 0.58
-        chartView.isRotationEnabled        = false
-        chartView.isHighlightPerTapEnabled = true
+        chartView.rotationEnabled        = false
+        chartView.highlightPerTapEnabled = true
         chartView.maxAngle               = 180.0
         
         // entry label styling
         chartView.entryLabelColor =  #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
-        chartView.entryLabelFont = Font(name: "HelveticaNeue-Light", size: CGFloat(12.0))
+        chartView.entryLabelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(12.0))
         
         // Half chart
         chartView.rotationAngle = 180.0
@@ -55,7 +55,7 @@ open class HalfPieChartViewController: DemoBaseViewController
         chartView.centerTextOffset = CGPoint(x: CGFloat(0.0), y: CGFloat(-20.0))
         
         // MARK: legend
-        var legend = chartView.legend
+        let legend = chartView.legend
         legend.horizontalAlignment = .center
         legend.verticalAlignment = .top
         legend.orientation = .horizontal
@@ -88,7 +88,7 @@ open class HalfPieChartViewController: DemoBaseViewController
         let dataSet = PieChartDataSet(values: values, label: "Election Results")
         dataSet.sliceSpace = 3.0
         dataSet.selectionShift = 5.0
-        dataSet.colors = ChartColorTemplates.material
+        dataSet.colors = ChartColorTemplates.material()
         
         // MARK: PieChartData
         let data = PieChartData()
@@ -101,8 +101,8 @@ open class HalfPieChartViewController: DemoBaseViewController
         pFormatter.percentSymbol = " %"
         data.setValueFormatter(DefaultValueFormatter(formatter : pFormatter  ))
         
-        data.setValueFont( Font(name: "HelveticaNeue-Light", size: CGFloat(11.0))!)
-        data.setValueTextColor( Color.white)
+        data.setValueFont( NSFont(name: "HelveticaNeue-Light", size: CGFloat(11.0))!)
+        data.setValueTextColor( NSColor.white)
         chartView.data = data
         chartView.needsDisplay = true
     }

@@ -35,13 +35,13 @@ open class CandleStickChartViewController: NSViewController
         // MARK: General
         chartView.delegate = self
         chartView.maxVisibleCount = 60;
-        chartView.isDrawGridBackgroundEnabled = false
-        chartView.isDrawBordersEnabled = true
+        chartView.drawGridBackgroundEnabled = false
+        chartView.drawBordersEnabled = true
         
         // MARK: xAxis
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
-        xAxis.isDrawGridLinesEnabled = true
+        xAxis.drawGridLinesEnabled = true
         
 //        xAxis.nameAxis = "Name xAxis"
 //        xAxis.nameAxisEnabled = true
@@ -49,18 +49,18 @@ open class CandleStickChartViewController: NSViewController
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
         leftAxis.labelCount = 7
-        leftAxis.isDrawGridLinesEnabled = true
-        leftAxis.isDrawAxisLineEnabled = false
+        leftAxis.drawGridLinesEnabled = true
+        leftAxis.drawAxisLineEnabled = false
         
 //        leftAxis.nameAxis = "Name xAxis"
 //        leftAxis.nameAxisEnabled = true
         
         // MARK: rightAxis
         let rightAxis = chartView.rightAxis
-        rightAxis.isEnabled = false
+        rightAxis.enabled = false
         
         // MARK: legend
-        chartView.legend.isEnabled = true
+        chartView.legend.enabled = true
         
         setDataCount(40, range: 2.0)
     }
@@ -90,14 +90,14 @@ open class CandleStickChartViewController: NSViewController
         // MARK: CandleChartDataSet
         let set1 = CandleChartDataSet(values: yVals1 , label: "Data Set")
         set1.axisDependency = .left
-        set1.setColor(Color(white: CGFloat(80 / 255.0), alpha: 1.0))
-        set1.shadowColor = Color.darkGray
+        set1.setColor(NSColor(white: CGFloat(80 / 255.0), alpha: 1.0))
+        set1.shadowColor = NSColor.darkGray
         set1.shadowWidth = 0.7
-        set1.decreasingColor = Color.red
-        set1.isDecreasingFilled = true
-        set1.increasingColor = Color(red: CGFloat(122 / 255.0), green: CGFloat(242 / 255.0), blue: CGFloat(84 / 255.0), alpha: 1.0)
-        set1.isIncreasingFilled = false
-        set1.neutralColor = Color.blue
+        set1.decreasingColor = NSColor.red
+        set1.decreasingFilled = true
+        set1.increasingColor = NSColor(red: CGFloat(122 / 255.0), green: CGFloat(242 / 255.0), blue: CGFloat(84 / 255.0), alpha: 1.0)
+        set1.increasingFilled = false
+        set1.neutralColor = NSColor.blue
         
         // MARK: CandleChartData
         let data = CandleChartData(dataSet: set1)

@@ -40,11 +40,11 @@ class LineChartRealTimeViewController: NSViewController {
     {
         super.viewDidLoad()
         
-        chartView.isDrawBordersEnabled = true
-        chartView.isDrawGridBackgroundEnabled = true
+        chartView.drawBordersEnabled = true
+        chartView.drawGridBackgroundEnabled = true
         chartView.gridBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-        chartView.chartDescription?.isEnabled = false
+        chartView.chartDescription?.enabled = false
         
         step = 0.2
         
@@ -53,9 +53,9 @@ class LineChartRealTimeViewController: NSViewController {
         leftAxis.axisMinimum = 0
         
         let rightAxis = chartView.rightAxis
-        rightAxis.isEnabled = false
+        rightAxis.enabled = false
         
-        let marker = RectMarker(color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), font: Font.systemFont(ofSize: CGFloat(12.0)), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
+        let marker = RectMarker(color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), font: NSFont.systemFont(ofSize: CGFloat(12.0)), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
         marker.chartView = chartView
         marker.minimumSize = CGSize(width: CGFloat(60.0), height: CGFloat(30.0))
         chartView.marker = marker
@@ -87,9 +87,9 @@ class LineChartRealTimeViewController: NSViewController {
         set1.highlightColor = .black
         set1.highlightLineDashPhase = 1.0
         
-        set1.isDrawCirclesEnabled = false
-        set1.isDrawFilledEnabled = false
-        set1.isDrawValuesEnabled = false
+        set1.drawCirclesEnabled = false
+        set1.drawFilledEnabled = false
+        set1.drawValuesEnabled = false
         set1.mode = .cubicBezier
         
         var dataSets = [LineChartDataSet]()
@@ -97,7 +97,7 @@ class LineChartRealTimeViewController: NSViewController {
         
         let data = LineChartData(dataSets: dataSets)
         data.setValueTextColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
-        data.setValueFont(Font(name: "HelveticaNeue-Light", size: CGFloat(9.0))!)
+        data.setValueFont(NSFont(name: "HelveticaNeue-Light", size: CGFloat(9.0))!)
         chartView.data = data
     }
     

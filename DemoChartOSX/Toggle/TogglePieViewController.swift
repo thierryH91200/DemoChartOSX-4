@@ -23,19 +23,19 @@ class TogglePieViewController: DemoBaseViewController
         
         switch option {
         case "X-Values":
-            chartView?.isDrawEntryLabelsEnabled = !(chartView?.isDrawEntryLabelsEnabled)!
+            chartView?.drawEntryLabelsEnabled = !(chartView?.isDrawEntryLabelsEnabled)!
             chartView?.needsDisplay = true
             
         case "Percent":
-            chartView?.usePercentValues = !(chartView?.usePercentValues)!
+            chartView?.usePercentValuesEnabled = !(chartView?.usePercentValuesEnabled)!
             chartView?.needsDisplay = true
             
         case "Hole":
-            chartView?.isDrawHoleEnabled = !(chartView?.isDrawHoleEnabled)!
+            chartView?.drawHoleEnabled = !(chartView?.isDrawHoleEnabled)!
             chartView?.needsDisplay = true
             
         case "Draw CenterText":
-            chartView?.isDrawCenterTextEnabled = !(chartView?.isDrawCenterTextEnabled)!
+            chartView?.drawCenterTextEnabled = !(chartView?.isDrawCenterTextEnabled)!
             chartView?.needsDisplay = true
             
         case "Spin":

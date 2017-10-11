@@ -37,10 +37,10 @@ open class CombinedChartViewController: NSViewController
         
         // MARK: General
         chartView.delegate                  = self
-        chartView.isDrawGridBackgroundEnabled = false
-        chartView.isDrawBarShadowEnabled      = false
-        chartView.isHighlightFullBarEnabled   = false
-        chartView.drawOrder                 = [.bar, .bubble, .candle, .line, .scatter]
+        chartView.drawGridBackgroundEnabled = false
+        chartView.drawBarShadowEnabled      = false
+        chartView.highlightFullBarEnabled   = false
+        chartView.drawOrder                 = [  DrawOrder.bar.rawValue, DrawOrder.bubble.rawValue, DrawOrder.candle.rawValue, DrawOrder.line.rawValue, DrawOrder.scatter.rawValue]
         
         // MARK: xAxis
         let xAxis                           = chartView.xAxis
@@ -48,12 +48,12 @@ open class CombinedChartViewController: NSViewController
         xAxis.axisMinimum                   = 0.0
         xAxis.granularity                   = 1.0
         xAxis.valueFormatter                = BarChartFormatter()
-        xAxis.isCenterAxisLabelsEnabled = true
+        xAxis.centerAxisLabelsEnabled = true
         xAxis.setLabelCount( 12, force: true)
         
         // MARK: leftAxis
         let leftAxis                        = chartView.leftAxis
-        leftAxis.isDrawGridLinesEnabled       = false
+        leftAxis.drawGridLinesEnabled       = false
         leftAxis.axisMinimum                = 0.0
         
 //        leftAxis.nameAxis = "left Axis"
@@ -61,28 +61,27 @@ open class CombinedChartViewController: NSViewController
 
         // MARK: rightAxis
         let rightAxis                       = chartView.rightAxis
-        rightAxis.isDrawGridLinesEnabled      = false
+        rightAxis.drawGridLinesEnabled      = false
         rightAxis.axisMinimum               = 0.0
         
 //        rightAxis.nameAxis = "right Axis"
 //        rightAxis.nameAxisEnabled = true
     
         // MARK: legend
-        var legend                          = chartView.legend
-        legend.isWordWrapEnabled              = true
+        let legend                          = chartView.legend
+        legend.wordWrapEnabled              = true
         legend.horizontalAlignment          = .center
         legend.verticalAlignment            = .bottom
         legend.orientation                  = .vertical
         legend.drawInside                   = false
         
         // MARK: description
-        chartView.chartDescription?.isEnabled = false
+        chartView.chartDescription?.enabled = false
         
-        let marker = RectMarker(color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), font: Font.systemFont(ofSize: CGFloat(12.0)), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
+        let marker = RectMarker(color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), font: .systemFont(ofSize: CGFloat(12.0)), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
         marker.chartView = chartView
         marker.minimumSize = CGSize(width: CGFloat(60.0), height: CGFloat(30.0))
         chartView.marker = marker
-        
         
         setChartData()
     }
@@ -116,8 +115,8 @@ open class CombinedChartViewController: NSViewController
         set.circleHoleRadius = 2.5
         set.fillColor = #colorLiteral(red: 0.941176470588235, green: 0.933333333333333, blue: 0.274509803921569, alpha: 1.0)
         set.mode = .cubicBezier
-        set.isDrawValuesEnabled = true
-        set.valueFont = Font.systemFont(ofSize: CGFloat(10.0))
+        set.drawValuesEnabled = true
+        set.valueFont = .systemFont(ofSize: CGFloat(10.0))
         set.valueTextColor = #colorLiteral(red: 0.941176470588235, green: 0.933333333333333, blue: 0.274509803921569, alpha: 1.0)
         set.axisDependency = .left
         
@@ -143,14 +142,14 @@ open class CombinedChartViewController: NSViewController
         let set1            = BarChartDataSet(values: entries1, label: "Bar 1")
         set1.colors         = [#colorLiteral(red: 0.235294117647059, green: 0.862745098039216, blue: 0.305882352941176, alpha: 1.0)]
         set1.valueTextColor = #colorLiteral(red: 0.235294117647059, green: 0.862745098039216, blue: 0.305882352941176, alpha: 1.0)
-        set1.valueFont      = Font.systemFont(ofSize: CGFloat(10.0))
+        set1.valueFont      = .systemFont(ofSize: CGFloat(10.0))
         set1.axisDependency = .left
         
         let set2            = BarChartDataSet(values: entries2, label: "Bar 2")
         set2.stackLabels    = ["Stack 1", "Stack 2"]
         set2.colors         = [#colorLiteral(red: 0.23921568627451, green: 0.647058823529412, blue: 1.0, alpha: 1.0),  #colorLiteral(red: 0.090196078431373, green: 0.772549019607843, blue: 1.0, alpha: 1.0)]
         set2.valueTextColor = #colorLiteral(red: 0.23921568627451, green: 0.647058823529412, blue: 1.0, alpha: 1.0)
-        set2.valueFont      = Font.systemFont(ofSize: CGFloat(10.0))
+        set2.valueFont      = .systemFont(ofSize: CGFloat(10.0))
         set2.axisDependency = .left
         
         // MARK: BarChartData
@@ -180,11 +179,10 @@ open class CombinedChartViewController: NSViewController
         
         // MARK: ScatterChartDataSet
         let set = ScatterChartDataSet(values: entries, label: "Scatter DataSet")
-        set.colors = ChartColorTemplates.material
+        set.colors = ChartColorTemplates.material()
         set.scatterShapeSize = 4.5
-        set.isDrawValuesEnabled = false
-        set.valueFont = Font.systemFont(ofSize: CGFloat(10.0))
-        
+        set.drawValuesEnabled = false
+        set.valueFont = .systemFont(ofSize: CGFloat(10.0))
         
         // MARK: ScatterChartData
         let data = ScatterChartData()
@@ -208,8 +206,8 @@ open class CombinedChartViewController: NSViewController
         
         set.decreasingColor = #colorLiteral(red: 0.556862745098039, green: 0.588235294117647, blue: 0.686274509803922, alpha: 1.0)
         set.shadowColor = NSColor.darkGray
-        set.valueFont = Font.systemFont(ofSize: CGFloat(10.0))
-        set.isDrawValuesEnabled = false
+        set.valueFont = .systemFont(ofSize: CGFloat(10.0))
+        set.drawValuesEnabled = false
         
         // MARK: CandleChartData
         let data = CandleChartData()
@@ -230,11 +228,11 @@ open class CombinedChartViewController: NSViewController
         
         // MARK: BubbleChartDataSet
         let set = BubbleChartDataSet(values: entries, label: "Bubble DataSet")
-        set.colors = ChartColorTemplates.vordiplom
-        set.valueTextColor = Color.white
-        set.valueFont = Font.systemFont(ofSize: CGFloat(10.0))
-        set.isDrawValuesEnabled = true
-        set.isNormalizeSizeEnabled  = true
+        set.colors = ChartColorTemplates.vordiplom()
+        set.valueTextColor = .white
+        set.valueFont = NSFont.systemFont(ofSize: CGFloat(10.0))
+        set.drawValuesEnabled = true
+        set.normalizeSizeEnabled  = true
         
         // MARK: BubbleChartData
         let data = BubbleChartData()
@@ -265,7 +263,7 @@ extension CombinedChartViewController: ChartViewDelegate
         print("chartValueNothingSelected")
     }
     
-    public class BarChartFormatter: NSObject, AxisValueFormatter
+    public class BarChartFormatter: NSObject, IAxisValueFormatter
     {
         var months: [String]! = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         

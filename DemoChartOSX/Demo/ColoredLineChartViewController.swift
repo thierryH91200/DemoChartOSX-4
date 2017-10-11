@@ -46,40 +46,40 @@ open class ColoredLineChartViewController: DemoBaseViewController
         
         for (i, chartView) in chartViews.enumerated() {
             let data = dataWithCount(count: 36, range: 100)
-            data.setValueFont ( Font(name: "HelveticaNeue-Light", size: CGFloat(7.0))!)
+            data.setValueFont ( NSFont(name: "HelveticaNeue-Light", size: CGFloat(7.0))!)
             
             setupChart(chartView, data: data, color: colors[i % colors.count])
         }
     }
     
-    func setupChart(_ chart: LineChartView, data: LineChartData, color: Color)
+    func setupChart(_ chart: LineChartView, data: LineChartData, color: NSColor)
     {
         // MARK: General
         chart.delegate = self
-        chart.isHighlightPerTapEnabled = true
-        chart.isPinchZoomEnabled = false
-        chart.isDragEnabled = false
+        chart.highlightPerTapEnabled = true
+        chart.pinchZoomEnabled = false
+        chart.dragEnabled = false
         chart.setScaleEnabled(false)
         chart.backgroundColor           = color
-        chart.isDrawGridBackgroundEnabled = false
+        chart.drawGridBackgroundEnabled = false
         chart.setViewPortOffsets( left : 10.0, top: 0.0, right: 10.0, bottom: 0.0)
         
         // MARK: xAxis
-        chart.xAxis.isEnabled        = false
+        chart.xAxis.enabled        = false
 
         // MARK: leftAxis
-        chart.leftAxis.isEnabled     = false
+        chart.leftAxis.enabled     = false
         chart.leftAxis.spaceTop    = 0.4
         chart.leftAxis.spaceBottom = 0.4
         
         // MARK: rightAxis
-        chart.rightAxis.isEnabled    = false
+        chart.rightAxis.enabled    = false
         
         // MARK: legend
-        chart.legend.isEnabled       = false
+        chart.legend.enabled       = false
         
         // MARK: description
-        chart.chartDescription?.isEnabled = false
+        chart.chartDescription?.enabled = false
         
         let set             = data.dataSets[0] as! LineChartDataSet
         set.circleHoleColor = color
@@ -104,7 +104,7 @@ open class ColoredLineChartViewController: DemoBaseViewController
         set1.colors            = [.white]
         set1.circleColors      = [.white]
         set1.highlightColor    = .white
-        set1.isDrawValuesEnabled = false
+        set1.drawValuesEnabled = false
         
         // MARK: LineChartData
         let data = LineChartData(dataSet: set1)

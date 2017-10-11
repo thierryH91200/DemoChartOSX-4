@@ -43,28 +43,28 @@ open class StackedBarChartViewController: NSViewController
         
         // MARK: General
         chartView.maxVisibleCount = 40
-        chartView.isPinchZoomEnabled = false
-        chartView.isDrawGridBackgroundEnabled = true
-        chartView.isDrawBarShadowEnabled = false
-        chartView.isDrawValueAboveBarEnabled = false
-        chartView.isHighlightFullBarEnabled = false
+        chartView.pinchZoomEnabled = false
+        chartView.drawGridBackgroundEnabled = true
+        chartView.drawBarShadowEnabled = false
+        chartView.drawValueAboveBarEnabled = false
+        chartView.highlightFullBarEnabled = false
         
         // MARK: xAxis
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .top
-        xAxis.isDrawGridLinesEnabled = true
+        xAxis.drawGridLinesEnabled = true
         
          // MARK: leftAxis
         let leftAxis = chartView.leftAxis
         leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
         leftAxis.axisMinimum = 0.0
-        leftAxis.isDrawGridLinesEnabled = true
+        leftAxis.drawGridLinesEnabled = true
         
         // MARK: rightAxis
-        chartView.rightAxis.isEnabled = false
+        chartView.rightAxis.enabled = false
         
         // MARK: legend
-        var legend = chartView.legend
+        let legend = chartView.legend
         legend.horizontalAlignment = .right
         legend.verticalAlignment = .bottom
         legend.orientation = .horizontal
@@ -75,9 +75,9 @@ open class StackedBarChartViewController: NSViewController
         legend.xEntrySpace = 6.0
         
         // MARK: description
-        chartView.chartDescription?.isEnabled = false
+        chartView.chartDescription?.enabled = false
         
-        let marker = RectMarker(color: #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1), font: Font.systemFont(ofSize: CGFloat(12.0)), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 20.0, right: 8.0))
+        let marker = RectMarker(color: #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1), font: NSFont.systemFont(ofSize: CGFloat(12.0)), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 20.0, right: 8.0))
         marker.chartView = chartView
         marker.minimumSize = CGSize(width: CGFloat(60.0), height: CGFloat(30.0))
         chartView.marker = marker
@@ -111,7 +111,7 @@ open class StackedBarChartViewController: NSViewController
              set1 = BarChartDataSet(values: yVals, label: "Statistics Vienna 2014")
             set1.colors = [#colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1), #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)]
             set1.stackLabels = ["data1", "data2"]
-            set1.valueFont = Font(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
+            set1.valueFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
             set1.valueFormatter = DefaultValueFormatter(formatter: formatter )
             set1.valueTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             set1.stackLabels = ["Births", "Divorces", "Marriages"]

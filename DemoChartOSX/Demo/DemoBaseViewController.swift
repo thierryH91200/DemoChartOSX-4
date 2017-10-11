@@ -29,18 +29,18 @@ open class DemoBaseViewController: NSViewController
         switch option {
         case "Values":
             for set in chartView.data!.dataSets {
-                set.isDrawValuesEnabled = !set.isDrawValuesEnabled
+                set.drawValuesEnabled = !set.isDrawValuesEnabled
             }
             chartView.needsDisplay = true
             
         case "Icons":
             for set in chartView.data!.dataSets {
-                set.isDrawIconsEnabled = !set.isDrawIconsEnabled
+                set.drawIconsEnabled = !set.isDrawIconsEnabled
             }
             chartView.needsDisplay = true
             
         case "Highlight":
-            chartView.data!.isHighlightEnabled = !chartView.data!.isHighlightEnabled
+            chartView.data!.highlightEnabled = !chartView.data!.isHighlightEnabled
             chartView.needsDisplay = true
             
         case "Animate X":
@@ -59,12 +59,12 @@ open class DemoBaseViewController: NSViewController
             
         case "PinchZoom":
             let barLineChart = chartView as! BarLineChartViewBase
-            barLineChart.isPinchZoomEnabled = !barLineChart.isPinchZoomEnabled
+            barLineChart.pinchZoomEnabled = !barLineChart.isPinchZoomEnabled
             chartView.needsDisplay = true
             
         case "Auto scale min/max":
             let barLineChart = chartView as! BarLineChartViewBase
-            barLineChart.isAutoScaleMinMaxEnabled = !barLineChart.isAutoScaleMinMaxEnabled
+            barLineChart.autoScaleMinMaxEnabled = !barLineChart.isAutoScaleMinMaxEnabled
             chartView.notifyDataSetChanged()
             
         case "Data":
@@ -89,13 +89,13 @@ open class DemoBaseViewController: NSViewController
 
     func setupPieChartView(_ chartView: PieChartView)
     {
-        chartView.usePercentValues = true
-        chartView.isDrawSlicesUnderHoleEnabled = false
+        chartView.usePercentValuesEnabled = true
+        chartView.drawSlicesUnderHoleEnabled = false
         chartView.holeRadiusPercent = 0.58
         chartView.transparentCircleRadiusPercent = 0.61
-        chartView.chartDescription?.isEnabled = false
+        chartView.chartDescription?.enabled = false
         //        chartView.setExtraOffsetsWithLeft(5.0, top: 10.0, right: 5.0, bottom: 5.0)
-        chartView.isDrawCenterTextEnabled = true
+        chartView.drawCenterTextEnabled = true
         
         let paragraphStyle: NSMutableParagraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         paragraphStyle.lineBreakMode = .byTruncatingTail
@@ -110,12 +110,12 @@ open class DemoBaseViewController: NSViewController
         
         chartView.centerAttributedText = centerText
         
-        chartView.isDrawHoleEnabled = true
+        chartView.drawHoleEnabled = true
         chartView.rotationAngle = 0.0
-        chartView.isRotationEnabled = true
-        chartView.isHighlightPerTapEnabled = true
+        chartView.rotationEnabled = true
+        chartView.highlightPerTapEnabled = true
         
-        var l = chartView.legend
+        let l = chartView.legend
         l.horizontalAlignment = .right
         l.verticalAlignment = .top
         l.orientation = .vertical
@@ -126,22 +126,22 @@ open class DemoBaseViewController: NSViewController
     }
     
     func setup(barLineChartView chartView: BarLineChartViewBase) {
-        chartView.chartDescription?.isEnabled = false
+        chartView.chartDescription?.enabled = false
         
-        chartView.isDragEnabled = true
+        chartView.dragEnabled = true
         chartView.setScaleEnabled(true)
-        chartView.isPinchZoomEnabled = false
+        chartView.pinchZoomEnabled = false
         
         // ChartYAxis *leftAxis = chartView.leftAxis;
         
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
         
-        chartView.rightAxis.isEnabled = false
+        chartView.rightAxis.enabled = false
     }
 
     func setup(radarChartView chartView: RadarChartView) {
-        chartView.chartDescription?.isEnabled = false
+        chartView.chartDescription?.enabled = false
     }
 }
 

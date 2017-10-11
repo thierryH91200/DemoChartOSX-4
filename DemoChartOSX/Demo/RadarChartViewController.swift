@@ -44,37 +44,37 @@ open class RadarChartViewController: DemoBaseViewController
         
         // MARK: xAxis
         let xAxis = chartView.xAxis
-        xAxis.isEnabled = true
-        xAxis.labelFont = Font(name: "HelveticaNeue-Light", size: CGFloat(9.0))!
+        xAxis.enabled = true
+        xAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(9.0))!
         xAxis.xOffset = 0.0
         xAxis.yOffset = 0.0
         xAxis.labelTextColor = .white
         xAxis.valueFormatter = RadarChartXValueFormatter(withLabels: activities)
-        xAxis.isDrawLabelsEnabled = true
+        xAxis.drawLabelsEnabled = true
         xAxis.labelTextColor = .white
         
         // MARK: yAxis
         let yAxis = chartView.yAxis
-        yAxis.labelFont = Font(name: "HelveticaNeue-Light", size: CGFloat(9.0))!
+        yAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(9.0))!
         yAxis.labelCount = 5
         yAxis.axisMinimum = 0.0
         yAxis.axisMaximum = 80.0
-        yAxis.isDrawLabelsEnabled = true
+        yAxis.drawLabelsEnabled = true
         yAxis.labelTextColor = .white
         
         // MARK: legend
-        var legend = chartView.legend
+        let legend = chartView.legend
         legend.horizontalAlignment = .center
         legend.verticalAlignment = .top
         legend.orientation = .horizontal
         legend.drawInside = false
-        legend.font = Font(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
+        legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
         legend.xEntrySpace = 7.0
         legend.yEntrySpace = 5.0
         legend.textColor = .white
         
         // MARK: description
-        chartView.chartDescription?.isEnabled = true
+        chartView.chartDescription?.enabled = true
         chartView.chartDescription?.text = "Radar demo"
         chartView.chartDescription?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
@@ -98,28 +98,28 @@ open class RadarChartViewController: DemoBaseViewController
         
         // MARK: RadarChartDataSet
         let set1 = RadarChartDataSet(values: entries1, label: "Last Week")
-        set1.colors = [Color(red: CGFloat(103 / 255.0), green: CGFloat(110 / 255.0), blue: CGFloat(129 / 255.0), alpha: 1.0)]
-        set1.fillColor = Color(red: CGFloat(103 / 255.0), green: CGFloat(110 / 255.0), blue: CGFloat(129 / 255.0), alpha: 1.0)
-        set1.isDrawFilledEnabled = true
+        set1.colors = [NSColor(red: CGFloat(103 / 255.0), green: CGFloat(110 / 255.0), blue: CGFloat(129 / 255.0), alpha: 1.0)]
+        set1.fillColor = NSColor(red: CGFloat(103 / 255.0), green: CGFloat(110 / 255.0), blue: CGFloat(129 / 255.0), alpha: 1.0)
+        set1.drawFilledEnabled = true
         set1.fillAlpha = 0.7
         set1.lineWidth = 2.0
-        set1.isDrawHighlightCircleEnabled = true
+        set1.drawHighlightCircleEnabled = true
         set1.setDrawHighlightIndicators(false)
         
         let set2 = RadarChartDataSet(values: entries2, label: "This Week")
-        set2.colors = [Color(red: CGFloat(121 / 255.0), green: CGFloat(162 / 255.0), blue: CGFloat(175 / 255.0), alpha: 1.0)]
-        set2.fillColor = Color(red: CGFloat(121 / 255.0), green: CGFloat(162 / 255.0), blue: CGFloat(175 / 255.0), alpha: 1.0)
-        set2.isDrawFilledEnabled = true
+        set2.colors = [NSColor(red: CGFloat(121 / 255.0), green: CGFloat(162 / 255.0), blue: CGFloat(175 / 255.0), alpha: 1.0)]
+        set2.fillColor = NSColor(red: CGFloat(121 / 255.0), green: CGFloat(162 / 255.0), blue: CGFloat(175 / 255.0), alpha: 1.0)
+        set2.drawFilledEnabled = true
         set2.fillAlpha = 0.7
         set2.lineWidth = 2.0
-        set2.isDrawHighlightCircleEnabled = true
+        set2.drawHighlightCircleEnabled = true
         set2.setDrawHighlightIndicators(false)
         
         // MARK: RadarChartData
         let data = RadarChartData(dataSets: [set1, set2])
-        data.setValueFont ( Font(name: "HelveticaNeue-Light", size: CGFloat(8.0))!)
+        data.setValueFont ( NSFont(name: "HelveticaNeue-Light", size: CGFloat(8.0))!)
         data.setDrawValues ( false )
-        data.setValueTextColor(  Color.white)
+        data.setValueTextColor(  NSColor.white)
         chartView.data = data
     }
     
@@ -129,7 +129,7 @@ open class RadarChartViewController: DemoBaseViewController
     }
 }
 
-class RadarChartXValueFormatter: NSObject, AxisValueFormatter {
+class RadarChartXValueFormatter: NSObject, IAxisValueFormatter {
     
     
     init(withLabels labels: String...) {

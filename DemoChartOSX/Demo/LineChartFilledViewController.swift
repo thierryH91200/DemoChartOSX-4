@@ -36,17 +36,17 @@ open class LineChartFilledViewController: DemoBaseViewController
         super.viewDidLoad()
                 
         // MARK: General
-        chartView.backgroundColor = Color.white
+        chartView.backgroundColor = NSColor.white
         chartView.gridBackgroundColor = #colorLiteral(red: 0.215686274509804, green: 0.709803921568627, blue: 0.898039215686275, alpha: 0.588235294117647)
-        chartView.isDrawGridBackgroundEnabled = true
-        chartView.isDrawBordersEnabled = true
-        chartView.isPinchZoomEnabled = false
-        chartView.isDragEnabled = true
+        chartView.drawGridBackgroundEnabled = true
+        chartView.drawBordersEnabled = true
+        chartView.pinchZoomEnabled = false
+        chartView.dragEnabled = true
         chartView.setScaleEnabled ( true)
         
         // MARK: xAxis
         let xAxis  = chartView.xAxis
-        xAxis.isEnabled = true
+        xAxis.enabled = true
         xAxis.labelPosition = .bottom
         xAxis.valueFormatter = DateValueFormatter(miniTime: range1[0][0] / 1000, interval: interval)
         xAxis.labelCount = 7
@@ -59,24 +59,24 @@ open class LineChartFilledViewController: DemoBaseViewController
         let leftAxis = chartView.leftAxis
         leftAxis.axisMaximum = 40.0
         leftAxis.axisMinimum = -20.0
-        leftAxis.isDrawAxisLineEnabled = true
-        leftAxis.isDrawZeroLineEnabled = false
-        leftAxis.isDrawGridLinesEnabled = true
-        leftAxis.axisLineColor = Color.black
+        leftAxis.drawAxisLineEnabled = true
+        leftAxis.drawZeroLineEnabled = false
+        leftAxis.drawGridLinesEnabled = true
+        leftAxis.axisLineColor = NSColor.black
         
 //        leftAxis.nameAxis = "left Axis"
 //        leftAxis.nameAxisEnabled = true
         
         // MARK: rightAxis
-        chartView.rightAxis.isEnabled = false
+        chartView.rightAxis.enabled = false
         
         // MARK: legend
-        var legend = chartView.legend
-        legend.isEnabled = false
+        let legend = chartView.legend
+        legend.enabled = false
         
         
         // MARK: description
-        chartView.chartDescription?.isEnabled = false
+        chartView.chartDescription?.enabled = false
         
         setDataCount()
     }
@@ -119,33 +119,33 @@ open class LineChartFilledViewController: DemoBaseViewController
         {
             set1 = LineChartDataSet(values: yVals1, label: "DataSet 1")
             set1.axisDependency = .left
-            set1.colors = [Color(red: CGFloat(255 / 255.0), green: CGFloat(241 / 255.0), blue: CGFloat(46 / 255.0), alpha: 1.0)]
-            set1.isDrawCirclesEnabled = false
+            set1.colors = [NSColor(red: CGFloat(255 / 255.0), green: CGFloat(241 / 255.0), blue: CGFloat(46 / 255.0), alpha: 1.0)]
+            set1.drawCirclesEnabled = false
             set1.lineWidth = 2.0
             set1.circleRadius = 3.0
             set1.fillAlpha = 1.0
-            set1.isDrawFilledEnabled = true
-            set1.fillColor = Color.white
-            set1.highlightColor = Color(red: CGFloat(244 / 255.0), green: CGFloat(117 / 255.0), blue: CGFloat(117 / 255.0), alpha: 1.0)
-            set1.isDrawCircleHoleEnabled = false
-            set1.fillFormatter = DefaultFillFormatter(block: {(_ dataSet: LineChartDataSet, _ dataProvider: LineChartDataProvider) -> CGFloat in
-                return CGFloat(self.chartView.leftAxis.axisMinimum)
-            })
+            set1.drawFilledEnabled = true
+            set1.fillColor = NSColor.white
+            set1.highlightColor = NSColor(red: CGFloat(244 / 255.0), green: CGFloat(117 / 255.0), blue: CGFloat(117 / 255.0), alpha: 1.0)
+            set1.drawCircleHoleEnabled = false
+//            set1.fillFormatter = DefaultFillFormatter(block: {(_ dataSet: LineChartDataSet, _ dataProvider: LineChartDataProvider) -> CGFloat in
+//                return CGFloat(self.chartView.leftAxis.axisMinimum)
+//            })
             
             set2 = LineChartDataSet(values: yVals2, label: "DataSet 2")
             set2.axisDependency = .left
-            set2.colors = [Color(red: CGFloat(255 / 255.0), green: CGFloat(241 / 255.0), blue: CGFloat(46 / 255.0), alpha: 1.0)]
-            set2.isDrawCirclesEnabled = false
+            set2.colors = [NSColor(red: CGFloat(255 / 255.0), green: CGFloat(241 / 255.0), blue: CGFloat(46 / 255.0), alpha: 1.0)]
+            set2.drawCirclesEnabled = false
             set2.lineWidth = 2.0
             set2.circleRadius = 3.0
             set2.fillAlpha = 1.0
-            set2.isDrawFilledEnabled = true
-            set2.fillColor = Color.white
-            set2.highlightColor = Color(red: CGFloat(244 / 255.0), green: CGFloat(117 / 255.0), blue: CGFloat(117 / 255.0), alpha: 1.0)
-            set2.isDrawCircleHoleEnabled = false
-            set2.fillFormatter = DefaultFillFormatter(block: {(_ dataSet: LineChartDataSet, _ dataProvider: LineChartDataProvider) -> CGFloat in
-                return CGFloat(self.chartView.leftAxis.axisMaximum)
-            })
+            set2.drawFilledEnabled = true
+            set2.fillColor = NSColor.white
+            set2.highlightColor = NSColor(red: CGFloat(244 / 255.0), green: CGFloat(117 / 255.0), blue: CGFloat(117 / 255.0), alpha: 1.0)
+            set2.drawCircleHoleEnabled = false
+//            set2.fillFormatter = DefaultFillFormatter(block: {(_ dataSet: LineChartDataSet, _ dataProvider: LineChartDataProvider) -> CGFloat in
+//                return CGFloat(self.chartView.leftAxis.axisMaximum)
+//            })
             
             var dataSets = [LineChartDataSet]()
             dataSets.append(set1)

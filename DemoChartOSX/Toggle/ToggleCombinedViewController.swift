@@ -24,7 +24,7 @@ class ToggleCombinedViewController: DemoBaseViewController
         case "Line Values":
             for set in (chartView?.data!.dataSets)! {
                 if let set = set as? LineChartDataSet {
-                    set.isDrawValuesEnabled = !set.isDrawValuesEnabled
+                    set.drawValuesEnabled = !set.isDrawValuesEnabled
                     
                 }
             }
@@ -33,7 +33,7 @@ class ToggleCombinedViewController: DemoBaseViewController
         case "Bar Values":
             for set in (chartView?.data!.dataSets)! {
                 if let set = set as? BarChartDataSet {
-                    set.isDrawValuesEnabled = !set.isDrawValuesEnabled
+                    set.drawValuesEnabled = !set.isDrawValuesEnabled
                 }
             }
             chartView?.needsDisplay = true

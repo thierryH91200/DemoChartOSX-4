@@ -38,30 +38,30 @@ open class SinusBarChartViewController: DemoBaseViewController
         super.viewDidLoad()
         
         // MARK: General
-        chartView.isDrawBarShadowEnabled = false
-        chartView.isDrawValueAboveBarEnabled = true
+        chartView.drawBarShadowEnabled = false
+        chartView.drawValueAboveBarEnabled = true
         chartView.maxVisibleCount = 60
-        chartView.isPinchZoomEnabled = false
-        chartView.isDrawGridBackgroundEnabled = false
-        chartView.isDrawBordersEnabled = true
+        chartView.pinchZoomEnabled = false
+        chartView.drawGridBackgroundEnabled = false
+        chartView.drawBordersEnabled = true
         
         // MARK: xAxis
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
-        xAxis.labelFont = Font(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
-        xAxis.isDrawGridLinesEnabled = false
-        xAxis.isEnabled = true
+        xAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
+        xAxis.drawGridLinesEnabled = false
+        xAxis.enabled = true
         
 //        xAxis.nameAxis = "Date"
 //        xAxis.nameAxisEnabled = true
 
          // MARK: leftAxis
         let leftAxis = chartView.leftAxis
-        leftAxis.labelFont = Font(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
+        leftAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
         leftAxis.labelCount = 6
         leftAxis.axisMinimum = -2.5
         leftAxis.axisMaximum = 2.5
-        leftAxis.isGranularityEnabled = true
+        leftAxis.granularityEnabled = true
         leftAxis.granularity = 0.1
         
 //        leftAxis.nameAxis = "Amplitude"
@@ -69,22 +69,22 @@ open class SinusBarChartViewController: DemoBaseViewController
 
         // MARK: rightAxis
         let rightAxis = chartView.rightAxis
-        rightAxis.isEnabled = false
+        rightAxis.enabled = false
 //        rightAxis.nameAxisEnabled = false
         
         // MARK: legend
-        var legend = chartView.legend
+        let legend = chartView.legend
         legend.horizontalAlignment = .left
         legend.verticalAlignment = .bottom
         legend.orientation = .horizontal
         legend.drawInside = false
         legend.form = .square
         legend.formSize = 9.0
-        legend.font = Font.systemFont(ofSize: CGFloat(11.0))
+        legend.font = NSFont.systemFont(ofSize: CGFloat(11.0))
         legend.xEntrySpace = 4.0
         
         // MARK: description
-        chartView.chartDescription?.isEnabled = false
+        chartView.chartDescription?.enabled = false
         
         sliderX.doubleValue  = 150.0
         slidersValueChanged(sliderX)
@@ -117,10 +117,10 @@ open class SinusBarChartViewController: DemoBaseViewController
         else
         {
             set = BarChartDataSet(values: entries, label: "Sinus Function")
-            set.colors = [Color(red: CGFloat(240 / 255.0), green: CGFloat(120 / 255.0), blue: CGFloat(124 / 255.0), alpha: 1.0)]
+            set.colors = [NSColor(red: CGFloat(240 / 255.0), green: CGFloat(120 / 255.0), blue: CGFloat(124 / 255.0), alpha: 1.0)]
         }
-        set.valueFont = Font(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
-        set.isDrawValuesEnabled = false
+        set.valueFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
+        set.drawValuesEnabled = false
         set.barBorderWidth = 0.1
         
         // MARK: BarChartData

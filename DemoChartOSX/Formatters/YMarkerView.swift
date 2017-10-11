@@ -14,10 +14,10 @@ import Charts
 
 open class YMarkerView: BalloonMarker
 {
-    open var yAxisValueFormatter: AxisValueFormatter?
+    open var yAxisValueFormatter: IAxisValueFormatter?
     fileprivate var yFormatter = NumberFormatter()
     
-    public init(color: NSColor, font: NSFont, textColor: NSColor, insets: NSEdgeInsets, yAxisValueFormatter : AxisValueFormatter)
+    public init(color: NSColor, font: NSFont, textColor: NSColor, insets: NSEdgeInsets, yAxisValueFormatter : IAxisValueFormatter)
     {
         super.init(color: color, font: font, textColor: textColor, insets: insets)
         

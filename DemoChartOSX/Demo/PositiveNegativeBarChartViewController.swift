@@ -32,45 +32,45 @@ open class PositiveNegativeBarChartViewController: DemoBaseViewController
         chartView.extraBottomOffset = 10.0
         chartView.extraLeftOffset = 70.0
         chartView.extraRightOffset = 70.0
-        chartView.isDrawBarShadowEnabled = false
-        chartView.isDrawValueAboveBarEnabled = true
-        chartView.isDrawBordersEnabled = true
+        chartView.drawBarShadowEnabled = false
+        chartView.drawValueAboveBarEnabled = true
+        chartView.drawBordersEnabled = true
         
         // scaling can now only be done on x- and y-axis separately
-        chartView.isPinchZoomEnabled = false
-        chartView.isDrawGridBackgroundEnabled = true
+        chartView.pinchZoomEnabled = false
+        chartView.drawGridBackgroundEnabled = true
         
         // MARK: xAxis
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
-        xAxis.labelFont = Font.systemFont(ofSize: CGFloat(13.0))
-        xAxis.isDrawGridLinesEnabled = true
-        xAxis.isDrawAxisLineEnabled = true
-        xAxis.labelTextColor = Color.lightGray
+        xAxis.labelFont = NSFont.systemFont(ofSize: CGFloat(13.0))
+        xAxis.drawGridLinesEnabled = true
+        xAxis.drawAxisLineEnabled = true
+        xAxis.labelTextColor = NSColor.lightGray
         xAxis.labelCount = 5
-        xAxis.isCenterAxisLabelsEnabled = true
+        xAxis.centerAxisLabelsEnabled = true
         xAxis.granularity = 1.0
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
-        leftAxis.isEnabled = true
-        leftAxis.isDrawLabelsEnabled = true
+        leftAxis.enabled = true
+        leftAxis.drawLabelsEnabled = true
         leftAxis.spaceTop = 0.25
         leftAxis.spaceBottom = 0.25
-        leftAxis.isDrawAxisLineEnabled = true
-        leftAxis.isDrawGridLinesEnabled = true
-        leftAxis.isDrawZeroLineEnabled = true
-        leftAxis.zeroLineColor = Color.gray
+        leftAxis.drawAxisLineEnabled = true
+        leftAxis.drawGridLinesEnabled = true
+        leftAxis.drawZeroLineEnabled = true
+        leftAxis.zeroLineColor = NSColor.gray
         leftAxis.zeroLineWidth = 0.7
         
         // MARK: rightAxis
-        chartView.rightAxis.isEnabled = false
+        chartView.rightAxis.enabled = false
         
         // MARK: legend
-        chartView.legend.isEnabled = false
+        chartView.legend.enabled = false
         
         // MARK: description
-        chartView.chartDescription?.isEnabled = false
+        chartView.chartDescription?.enabled = false
         
         updateChartData()
     }
@@ -92,9 +92,9 @@ open class PositiveNegativeBarChartViewController: DemoBaseViewController
         
         // MARK: BarChartDataEntry
         var values = [BarChartDataEntry]()
-        var colors = [Color]()
-        let green = Color.green
-        let red = Color.red
+        var colors = [NSColor]()
+        let green = NSColor.green
+        let red = NSColor.red
         
         for data in dataList
         {
@@ -121,7 +121,7 @@ open class PositiveNegativeBarChartViewController: DemoBaseViewController
         formatter.maximumFractionDigits = 1
         
         let data = BarChartData(dataSet: set)
-        data.setValueFont(Font.systemFont(ofSize: CGFloat(13.0)))
+        data.setValueFont(NSFont.systemFont(ofSize: CGFloat(13.0)))
         data.setValueFormatter( DefaultValueFormatter(formatter: formatter ))
         data.barWidth = 0.8
         chartView.data = data

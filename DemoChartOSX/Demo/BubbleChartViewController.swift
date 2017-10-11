@@ -33,16 +33,16 @@ open class BubbleChartViewController: NSViewController, ChartViewDelegate
         
         // MARK: General
         chartView.delegate                  = self
-        chartView.isPinchZoomEnabled          = false
+        chartView.pinchZoomEnabled          = false
         
-        chartView.isDoubleTapToZoomEnabled    = false
-        chartView.isDrawGridBackgroundEnabled = true
-        chartView.isDrawBordersEnabled = true
+        chartView.doubleTapToZoomEnabled    = false
+        chartView.drawGridBackgroundEnabled = true
+        chartView.drawBordersEnabled = true
         
         // MARK: xAxis
         let xAxis                  = chartView.xAxis
         xAxis.labelPosition        = .bottom
-        xAxis.isDrawGridLinesEnabled = true
+        xAxis.drawGridLinesEnabled = true
         xAxis.granularity          = 1
         xAxis.axisMaximum          = 120.0
         xAxis.axisMinimum          = 0.0
@@ -52,8 +52,8 @@ open class BubbleChartViewController: NSViewController, ChartViewDelegate
         
         // MARK: leftAxis
         let leftAxis                  = chartView.leftAxis
-        leftAxis.isDrawGridLinesEnabled = true
-        leftAxis.isDrawZeroLineEnabled  = true
+        leftAxis.drawGridLinesEnabled = true
+        leftAxis.drawZeroLineEnabled  = true
         leftAxis.axisMaximum          = 10.0
         
 //        leftAxis.nameAxis = "Probability"
@@ -61,21 +61,21 @@ open class BubbleChartViewController: NSViewController, ChartViewDelegate
         
         // MARK: rightAxis
         let rightAxis                  = chartView.rightAxis
-        rightAxis.isEnabled = false
+        rightAxis.enabled = false
         
 //        chartView.leftAxis1.isEnabled = false
 //        chartView.rightAxis1.isEnabled = false
         
         // MARK: legend
-        var legend = chartView.legend
-        legend.isEnabled = true
+        let legend = chartView.legend
+        legend.enabled = true
         legend.verticalAlignment = .center
         legend.horizontalAlignment = .right
         legend.orientation = .vertical
         legend.form = .line
         
         // MARK: description
-        chartView.chartDescription?.isEnabled = false
+        chartView.chartDescription?.enabled = false
         
         self.updateChartData()
     }
@@ -105,10 +105,10 @@ open class BubbleChartViewController: NSViewController, ChartViewDelegate
             // MARK: BubbleChartDataSet
             let set = BubbleChartDataSet(values: entries, label: label[index])
             set.setColor(colors[index])
-            set.valueTextColor = Color.black
-            set.valueFont = Font.systemFont(ofSize: CGFloat(10.0))
-            set.isDrawValuesEnabled = true
-            set.isNormalizeSizeEnabled = false
+            set.valueTextColor = NSColor.black
+            set.valueFont = NSFont.systemFont(ofSize: CGFloat(10.0))
+            set.drawValuesEnabled = true
+            set.normalizeSizeEnabled = false
             set.formSize = 30.0
             
             data.addDataSet(set)

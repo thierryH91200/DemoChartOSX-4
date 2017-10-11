@@ -41,13 +41,13 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         // MARK: General
         chartView.delegate = self
         
-        chartView.isPinchZoomEnabled          = false
-        chartView.isDoubleTapToZoomEnabled    = false
-        chartView.isDrawBarShadowEnabled      = false
-        chartView.isDrawGridBackgroundEnabled = true
+        chartView.pinchZoomEnabled          = false
+        chartView.doubleTapToZoomEnabled    = false
+        chartView.drawBarShadowEnabled      = false
+        chartView.drawGridBackgroundEnabled = true
         chartView.fitBars                   = true
-        chartView.isDrawValueAboveBarEnabled = true
-        chartView.isDrawBordersEnabled = true
+        chartView.drawValueAboveBarEnabled = true
+        chartView.drawBordersEnabled = true
         
 //        chartView.isPinchZoomEnabled = false
 //        chartView.isDrawBarShadowEnabled = false
@@ -56,9 +56,9 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         
         // MARK: xAxis
         let xAxis = chartView.xAxis
-        xAxis.labelFont = Font(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
+        xAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
         xAxis.granularity = 1.0
-        xAxis.isCenterAxisLabelsEnabled = true
+        xAxis.centerAxisLabelsEnabled = true
         xAxis.labelCount = 20
         xAxis.gridLineWidth = 2.0
         xAxis.labelPosition = .bottom
@@ -70,9 +70,9 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         let leftAxis = chartView.leftAxis
         //leftAxis.isEnabled = true
         leftAxis.labelTextColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
-        leftAxis.labelFont = Font(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
+        leftAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
         leftAxis.valueFormatter = LargeValueFormatter()
-        leftAxis.isDrawGridLinesEnabled = false
+        leftAxis.drawGridLinesEnabled = false
         leftAxis.spaceTop = 0.35
         leftAxis.axisMinimum = 0
         
@@ -84,7 +84,7 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         leftAxis1.valueFormatter = LargeValueFormatter()
         leftAxis1.axisMaximum = 10000000
         leftAxis1.axisMinimum = 0
-        leftAxis1.isDrawGridLinesEnabled = false
+        leftAxis1.drawGridLinesEnabled = false
 //        leftAxis1.axisSecondaryEnabled = true
         leftAxis1.labelTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
@@ -95,7 +95,7 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         rightAxis1.valueFormatter = LargeValueFormatter()
         rightAxis1.axisMinimum = 0
         rightAxis1.axisMaximum = 10000000
-        rightAxis1.isDrawGridLinesEnabled = false
+        rightAxis1.drawGridLinesEnabled = false
 //        rightAxis1.axisSecondaryEnabled = true
         rightAxis1.labelTextColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
         
@@ -106,7 +106,7 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         let rightAxis = chartView.rightAxis
         rightAxis.valueFormatter = LargeValueFormatter()
         rightAxis.axisMinimum = 0
-        rightAxis.isDrawGridLinesEnabled = false
+        rightAxis.drawGridLinesEnabled = false
         //rightAxis.isEnabled = true
         rightAxis.labelTextColor = #colorLiteral(red: 1, green: 0.1474981606, blue: 0, alpha: 1)
         
@@ -114,19 +114,19 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
 //        rightAxis.nameAxisEnabled = true
         
         // MARK: legend
-        var legend = chartView.legend
+        let legend = chartView.legend
         legend.horizontalAlignment = .right
         legend.verticalAlignment = .top
         legend.orientation = .vertical
         legend.drawInside = true
-        legend.font = Font(name: "HelveticaNeue-Light", size: CGFloat(8.0))!
+        legend.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(8.0))!
         legend.xOffset = 10.0
         legend.yEntrySpace = 0.0
         
         // MARK: description
-        chartView.chartDescription?.isEnabled = false
+        chartView.chartDescription?.enabled = false
         
-        let marker = BalloonMarker(color: Color(white: CGFloat(180 / 255.0), alpha: 1.0), font: Font.systemFont(ofSize: CGFloat(12.0)), textColor: Color.white, insets: NSEdgeInsetsMake(8.0, 8.0, 20.0, 8.0))
+        let marker = BalloonMarker(color: NSColor(white: CGFloat(180 / 255.0), alpha: 1.0), font: NSFont.systemFont(ofSize: CGFloat(12.0)), textColor: .white, insets: NSEdgeInsetsMake(8.0, 8.0, 20.0, 8.0))
         marker.chartView = chartView
         marker.minimumSize = CGSize(width: CGFloat(80.0), height: CGFloat(40.0))
         chartView.marker = marker
@@ -223,7 +223,7 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
             // MARK: BarChartData
             let data = BarChartData(dataSets: dataSets)
             
-            data.setValueFont( Font(name: "HelveticaNeue-Light", size: CGFloat(10.0))!)
+            data.setValueFont( NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!)
             data.setValueFormatter(LargeValueFormatter())
             
             // specify the width each bar should have

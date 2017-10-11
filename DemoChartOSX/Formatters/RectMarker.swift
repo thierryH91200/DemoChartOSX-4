@@ -15,8 +15,8 @@ import Charts
 
 open class RectMarker: MarkerImage
 {
-    open var color: Color?
-    open var font: Font?
+    open var color: NSColor?
+    open var font: NSFont?
     open var insets = NSEdgeInsets()
     
     open var minimumSize = CGSize()
@@ -24,7 +24,7 @@ open class RectMarker: MarkerImage
     fileprivate var label: NSMutableAttributedString?
     fileprivate var _labelSize: CGSize = CGSize()
     
-    public init(color: Color, font: Font, insets: NSEdgeInsets)
+    public init(color: NSColor, font: NSFont, insets: NSEdgeInsets)
     {
         super.init()
         
@@ -133,7 +133,7 @@ open class RectMarker: MarkerImage
             str = "\nTime : " + String(dataEntry[0].x)
             let labelAttributes:[NSAttributedStringKey: Any]? = [
                 NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):NSFont( name: "Georgia",  size: 12.0)!,
-                NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue) : Color.red ]
+                NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue) : NSColor.red ]
             
             let addedString = NSAttributedString(string: str, attributes: labelAttributes)
             mutableString.append(addedString)
@@ -149,7 +149,7 @@ open class RectMarker: MarkerImage
                 
                 let labelAttributes:[NSAttributedStringKey:AnyObject]? = [
                     NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):NSFont( name: "Georgia",  size: 14.0)!,
-                    NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue) : Color.red
+                    NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue) : NSColor.red
                 ]
                 let addedString = NSAttributedString(string: str, attributes: labelAttributes)
                 mutableString.append(addedString)

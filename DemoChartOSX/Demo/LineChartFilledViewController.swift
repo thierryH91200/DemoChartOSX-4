@@ -128,9 +128,9 @@ open class LineChartFilledViewController: DemoBaseViewController
             set1.fillColor = NSColor.white
             set1.highlightColor = NSColor(red: CGFloat(244 / 255.0), green: CGFloat(117 / 255.0), blue: CGFloat(117 / 255.0), alpha: 1.0)
             set1.drawCircleHoleEnabled = false
-//            set1.fillFormatter = DefaultFillFormatter(block: {(_ dataSet: LineChartDataSet, _ dataProvider: LineChartDataProvider) -> CGFloat in
-//                return CGFloat(self.chartView.leftAxis.axisMinimum)
-//            })
+            set1.fillFormatter = DefaultFillFormatter(block: {(_ dataSet: ILineChartDataSet, _ dataProvider: LineChartDataProvider) -> CGFloat in
+                return CGFloat(self.chartView.leftAxis.axisMinimum)
+            })
             
             set2 = LineChartDataSet(values: yVals2, label: "DataSet 2")
             set2.axisDependency = .left
@@ -143,9 +143,9 @@ open class LineChartFilledViewController: DemoBaseViewController
             set2.fillColor = NSColor.white
             set2.highlightColor = NSColor(red: CGFloat(244 / 255.0), green: CGFloat(117 / 255.0), blue: CGFloat(117 / 255.0), alpha: 1.0)
             set2.drawCircleHoleEnabled = false
-//            set2.fillFormatter = DefaultFillFormatter(block: {(_ dataSet: LineChartDataSet, _ dataProvider: LineChartDataProvider) -> CGFloat in
-//                return CGFloat(self.chartView.leftAxis.axisMaximum)
-//            })
+           set2.fillFormatter = DefaultFillFormatter(block: {(_ dataSet: ILineChartDataSet, _ dataProvider: LineChartDataProvider) -> CGFloat in
+                return CGFloat(self.chartView.leftAxis.axisMaximum)
+            })
             
             var dataSets = [LineChartDataSet]()
             dataSets.append(set1)

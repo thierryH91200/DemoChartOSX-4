@@ -122,15 +122,15 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
 //        rightAxis1.nameAxis = "Name Secondaire"
 //        rightAxis1.nameAxisEnabled = true
         
-        //        self.chartView.leftAxis.resetCustomAxisMin()
-        //        self.chartView.leftAxis.resetCustomAxisMax()
-        //        self.chartView.rightAxis.resetCustomAxisMin()
-        //        self.chartView.rightAxis.resetCustomAxisMax()
-        //
-        //        self.chartView.leftAxis1.resetCustomAxisMin()
-        //        self.chartView.leftAxis1.resetCustomAxisMax()
-        //        self.chartView.rightAxis1.resetCustomAxisMin()
-        //        self.chartView.rightAxis1.resetCustomAxisMax()
+                self.chartView.leftAxis.resetCustomAxisMin()
+                self.chartView.leftAxis.resetCustomAxisMax()
+                self.chartView.rightAxis.resetCustomAxisMin()
+                self.chartView.rightAxis.resetCustomAxisMax()
+        
+//                self.chartView.leftAxis1.resetCustomAxisMin()
+//                self.chartView.leftAxis1.resetCustomAxisMax()
+//                self.chartView.rightAxis1.resetCustomAxisMin()
+//                self.chartView.rightAxis1.resetCustomAxisMax()
         
         // MARK: legend
         let legend = chartView.legend
@@ -163,20 +163,20 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
     {
         let yVals1 = (0..<count).map { (i) -> ChartDataEntry in
             let mult : UInt32 = range / 2
-            let val = Double(arc4random_uniform(mult)) - 30.0
+            let val = -Double(arc4random_uniform(mult)) - 30.0
             return ChartDataEntry(x: Double(i), y: val)
         }
         let yVals2 = (0..<count).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(range) + 950)
+            let val = -Double(arc4random_uniform(range) + 950)
             return ChartDataEntry(x: Double(i), y: val)
         }
         let yVals3 = (0..<count).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(range)) - 30.0
+            let val = -Double(arc4random_uniform(range)) - 30.0
             return ChartDataEntry(x: Double(i), y: val)
         }
         
         let yVals4 = (0..<count).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(range) + 450)
+            let val = -Double(arc4random_uniform(range) + 450)
             return ChartDataEntry(x: Double(i), y: val)
         }
         

@@ -39,31 +39,38 @@ open class CubicLineChartViewController: DemoBaseViewController
         super.viewDidLoad()
         
         // MARK: General
-        chartView.setViewPortOffsets(left: 0.0, top: 20.0, right: 0.0, bottom: 0.0)
-//        chartView.backgroundColor = Color(red: 104 / 255.0, green: 241 / 255.0, blue: 175 / 255.0, alpha: 1.0)
+        //chartView.setViewPortOffsets(left: 0.0, top: 20.0, right: 0.0, bottom: 0.0)
+        chartView.backgroundColor = #colorLiteral(red: 0.1215522066, green: 0.1215801612, blue: 0.1215485409, alpha: 1)
         
-        chartView.gridBackgroundColor =  #colorLiteral(red: 0.215686274509804, green: 0.709803921568627, blue: 0.898039215686275, alpha: 0.588235294117647)
-        chartView.drawGridBackgroundEnabled = false
+        chartView.gridBackgroundColor =  #colorLiteral(red: 0.1215522066, green: 0.1215801612, blue: 0.1215485409, alpha: 1)
         chartView.dragEnabled               = true
         chartView.setScaleEnabled(true)
         chartView.drawGridBackgroundEnabled = true
-        chartView.maxHighlightDistance      = 300.0
+//        chartView.maxHighlightDistance      = 300.0
+        chartView.drawBordersEnabled = true
+        chartView.borderColor = .white
+
         
         // MARK: xAxis
         let xAxis    = chartView.xAxis
         xAxis.enabled    = true
-        xAxis.labelPosition = .bottomInside
-        xAxis.labelTextColor       = .white
-        xAxis.axisLineColor        = .black
+        xAxis.labelPosition = .bottom
+        xAxis.labelTextColor       = NSColor.white.withAlphaComponent(0.2)
+        xAxis.axisLineColor        = .white
+        xAxis.axisLineWidth = 2.0
+        xAxis.drawGridLinesEnabled = true
+        xAxis.gridColor = .white
+        xAxis.labelFont            = NSFont.boldSystemFont(ofSize: 24.0)
         
         // MARK: leftAxis
         let leftAxis                  = chartView.leftAxis
-        leftAxis.labelFont            = NSFont(name: "HelveticaNeue-Light", size: CGFloat(12.0))!
+        leftAxis.labelFont            = NSFont(name: "HelveticaNeue-Light", size: CGFloat(20.0))!
         leftAxis.setLabelCount(6, force: false)
         leftAxis.labelTextColor       = .white
-        leftAxis.labelPosition        = .insideChart
+        leftAxis.labelPosition        = .outsideChart
         leftAxis.drawGridLinesEnabled = true
-        leftAxis.axisLineColor        = .black
+        leftAxis.axisLineColor        = .white
+        leftAxis.axisMaximum = 100.0
         
         // MARK: rightAxis
         chartView.rightAxis.enabled = false
@@ -74,8 +81,8 @@ open class CubicLineChartViewController: DemoBaseViewController
         // MARK: description
         chartView.chartDescription?.enabled = false
         
-        sliderX.doubleValue = 45.0
-        sliderY.doubleValue = 100.0
+        sliderX.doubleValue = 132.0
+        sliderY.doubleValue = 42.0
         slidersValueChanged(sliderX)
     }
     
@@ -101,7 +108,15 @@ open class CubicLineChartViewController: DemoBaseViewController
         {
             set1 = chartView.data!.dataSets[0] as! LineChartDataSet
             set1.values = yVals1
+            
+            chartView.fitScreen()
+            chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
+
+
+//            barLineChartViewBase?.data?.notifyDataChanged()
+//            barLineChartViewBase?.notifyDataSetChanged()
+
         }
         else
         {
@@ -110,16 +125,33 @@ open class CubicLineChartViewController: DemoBaseViewController
             set1.drawValuesEnabled = false
             
             set1.mode                                    = .cubicBezier
-            set1.cubicIntensity                          = 0.2
+            set1.cubicIntensity                          = 0.05
             set1.drawCirclesEnabled                      = false
-            set1.lineWidth                               = 1.8
+            set1.lineWidth                               = 1.0
             set1.circleRadius                            = 4.0
-            set1.highlightColor                          = NSColor(red: CGFloat(244 / 255.0), green: CGFloat(117 / 255.0), blue: CGFloat(117 / 255.0), alpha: 1.0)
+            set1.highlightColor                          = .white
             set1.colors                                  = [NSColor.white]
-            set1.fillColor                               = NSColor.white
+//            set1.fillColor                               = NSColor.white
             set1.fillAlpha                               = 1.0
             set1.drawHorizontalHighlightIndicatorEnabled = false
-                       
+            set1.drawFilledEnabled = true
+            set1.fillColor = .darkGray
+            
+            let beginColor =  #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).cgColor
+            let endColor =  #colorLiteral(red: 0.152921766, green: 0.1529546976, blue: 0.1529174447, alpha: 1).cgColor
+            let gradientColors = [ beginColor , (endColor )] as CFArray
+            
+            let gradient = CGGradient(colorsSpace: nil, colors: gradientColors, locations: nil)!
+            
+            set1.fillAlpha = 0.50
+            set1.fill = Fill(linearGradient: gradient, angle: -90.0)
+
+
+            set1.fillFormatter = DefaultFillFormatter(block: {(_ dataSet: ILineChartDataSet, _ dataProvider: LineChartDataProvider) -> CGFloat in
+                return CGFloat(self.chartView.leftAxis.axisMinimum)
+            })
+            
+            
              // MARK: LineChartData
             let data = LineChartData(dataSet: set1)
             data.setValueFont(NSFont(name: "HelveticaNeue-Light", size: CGFloat(9.0))!)

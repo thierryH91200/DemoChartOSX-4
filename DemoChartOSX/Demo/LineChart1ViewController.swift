@@ -204,18 +204,18 @@ open class LineChart1ViewController: DemoBaseViewController
 }
 
 extension CAGradientLayer {
-    
+
     func turquoiseColor() -> CAGradientLayer {
         let topColor = NSColor(red: (15/255.0), green: (118/255.0), blue: (128/255.0), alpha: 1)
         let bottomColor = NSColor(red: (84/255.0), green: (187/255.0), blue: (187/255.0), alpha: 1)
-        
+
         let gradientColors: Array <AnyObject> = [topColor.cgColor, bottomColor.cgColor]
         let gradientLocations: Array <NSNumber> = [0.0 , 1.0 ]
-        
+
         let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.colors = gradientColors
         gradientLayer.locations = gradientLocations
-        
+
         return gradientLayer
     }
 }

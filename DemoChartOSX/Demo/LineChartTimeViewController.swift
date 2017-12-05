@@ -106,7 +106,7 @@ open class LineChartTimeViewController: DemoBaseViewController
     {
         // MARK: ChartDataEntry
         
-        let hourSeconds = 3600.0 * 24.0
+        let hourSeconds = 3600.0
         var values1 = [ChartDataEntry]()
         var values2 = [ChartDataEntry]()
         
@@ -114,31 +114,20 @@ open class LineChartTimeViewController: DemoBaseViewController
         let from: TimeInterval = now - (Double(count) / 2.0) * hourSeconds
         let to: TimeInterval = now + (Double(count) / 2.0) * hourSeconds
         
-        var y = [Double]()
-        
         var x = from
-        var index = 0
-        while x < to {
-            y.append(Double(arc4random_uniform(UInt32(range)) + 50))
-            index += 1
-            x += hourSeconds
-        }
-        
-        x = from
-        index = 0
+        var y1 = 0.0
         while x <= now {
             let x1 = (x - from) / hourSeconds
-            values1.append(ChartDataEntry(x: x1 , y: y[index]))
-            index += 1
+            y1 = Double(arc4random_uniform(UInt32(range)) + 50)
+            values1.append(ChartDataEntry(x: x1 , y: y1))
             x += hourSeconds
         }
         
         x -= hourSeconds
-        index -= 1
         while x < to {
             let x1 = (x - from) / hourSeconds
-            values2.append(ChartDataEntry(x: x1 , y: y[index]))
-            index += 1
+            values2.append(ChartDataEntry(x: x1 , y: y1))
+            y1 = Double(arc4random_uniform(UInt32(range)) + 50)
             x += hourSeconds
         }
         
@@ -181,7 +170,7 @@ open class LineChartTimeViewController: DemoBaseViewController
             set1.fillAlpha = 0.26
             set1.fillColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
             set1.highlightColor = #colorLiteral(red: 0.4513868093, green: 0.9930960536, blue: 1, alpha: 1)
-            set1.highlightLineWidth = 10.0
+            set1.highlightLineWidth = 5.0
             set1.drawHorizontalHighlightIndicatorEnabled = false
             set1.formSize = 15.0
             set1.colors = [#colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)]
@@ -196,7 +185,7 @@ open class LineChartTimeViewController: DemoBaseViewController
             set2.drawFilledEnabled = false
             
             set2.highlightColor = #colorLiteral(red: 0.4513868093, green: 0.9930960536, blue: 1, alpha: 1)
-            set2.highlightLineWidth = 10.0
+            set2.highlightLineWidth = 5.0
             set2.drawHorizontalHighlightIndicatorEnabled = false
             
             set2.formLineDashLengths = [5.0, 2.5]
@@ -213,7 +202,11 @@ open class LineChartTimeViewController: DemoBaseViewController
             let data = LineChartData(dataSets: dataSets)
             data.setValueTextColor ( #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
             data.setValueFont ( NSFont(name: "HelveticaNeue-Light", size: CGFloat(9.0))!)
+            
+
             chartView.data = data
+            chartView.xAxis.axisMaximum += 1
+
         }
     }
         

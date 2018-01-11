@@ -63,8 +63,8 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         xAxis.gridLineWidth = 2.0
         xAxis.labelPosition = .bottom
         
-//        xAxis.nameAxis = "Name xAxis"
-//        xAxis.nameAxisEnabled = true
+        xAxis.nameAxis = "Name xAxis"
+        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
@@ -76,8 +76,8 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         leftAxis.spaceTop = 0.35
         leftAxis.axisMinimum = 0
         
-//        leftAxis.nameAxis = "Company A"
-//        leftAxis.nameAxisEnabled = true
+        leftAxis.nameAxis = "Company A"
+        leftAxis.nameAxisEnabled = true
         
         // MARK: leftAxis1
         let leftAxis1 = chartView.leftAxis
@@ -88,8 +88,8 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
 //        leftAxis1.axisSecondaryEnabled = true
         leftAxis1.labelTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
-//        leftAxis1.nameAxis = "Company B"
-//        leftAxis1.nameAxisEnabled = true
+        leftAxis1.nameAxis = "Company B"
+        leftAxis1.nameAxisEnabled = true
         
         let rightAxis1 = chartView.rightAxis
         rightAxis1.valueFormatter = LargeValueFormatter()
@@ -110,8 +110,8 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         //rightAxis.isEnabled = true
         rightAxis.labelTextColor = #colorLiteral(red: 1, green: 0.1474981606, blue: 0, alpha: 1)
         
-//        rightAxis.nameAxis = "Company C😐"
-//        rightAxis.nameAxisEnabled = true
+        rightAxis.nameAxis = "Company C😐"
+        rightAxis.nameAxisEnabled = true
         
         // MARK: legend
         let legend = chartView.legend

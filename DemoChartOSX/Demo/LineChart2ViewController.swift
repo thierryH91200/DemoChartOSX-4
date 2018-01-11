@@ -65,8 +65,8 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         xAxis.labelPosition = .bottom
         xAxis.labelRotationAngle = 0
         
-//        xAxis.nameAxis = "Name xAxis"
-//        xAxis.nameAxisEnabled = true
+        xAxis.nameAxis = "Name xAxis"
+        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
@@ -79,8 +79,8 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         leftAxis.drawZeroLineEnabled = false
         leftAxis.granularityEnabled = false
         
-//        leftAxis.nameAxis = "Name Principal"
-//        leftAxis.nameAxisEnabled = true
+        leftAxis.nameAxis = "Name Principal"
+        leftAxis.nameAxisEnabled = true
         
         // MARK: leftAxis1
         let leftAxis1 = chartView.leftAxis
@@ -106,8 +106,8 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         rightAxis.drawGridLinesEnabled = false
         rightAxis.granularityEnabled = false
         
-//        rightAxis.nameAxis = "Name Principal"
-//        rightAxis.nameAxisEnabled = true
+        rightAxis.nameAxis = "Name Principal"
+        rightAxis.nameAxisEnabled = true
         
         // MARK: rightAxis1
         let rightAxis1 = chartView.rightAxis

@@ -62,8 +62,8 @@ open class LineChartTimeViewController: DemoBaseViewController
         xAxis.spaceMax = xAxis.granularity / 5
         xAxis.labelRotationAngle = -90.0
         
-//        xAxis.nameAxis = "Date (s)"
-//        xAxis.nameAxisEnabled = true
+        xAxis.nameAxis = "Date (s)"
+        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
@@ -74,8 +74,8 @@ open class LineChartTimeViewController: DemoBaseViewController
         leftAxis.granularityEnabled = true
         leftAxis.yOffset = -9.0
         
-//        leftAxis.nameAxis = "Event"
-//        leftAxis.nameAxisEnabled = true
+        leftAxis.nameAxis = "Event"
+        leftAxis.nameAxisEnabled = true
         
         // MARK: rightAxis
         chartView.rightAxis.enabled = false

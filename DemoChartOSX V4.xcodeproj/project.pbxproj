@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		035E853F2013A328005BBD21 /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E853C2013A328005BBD21 /* CalendarExtension.swift */; };
 		C30A49A41F52E9EE0019F1C0 /* AAPLCircularLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A49A21F52E9EE0019F1C0 /* AAPLCircularLayout.swift */; };
 		C30A49A61F52EBFB0019F1C0 /* AAPLSlideLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A49A51F52EBFB0019F1C0 /* AAPLSlideLayout.swift */; };
 		C328964A1F5181B2000A7E51 /* CustomChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32896481F5181B2000A7E51 /* CustomChart.swift */; };
@@ -112,16 +113,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		03501BA82007B0FD00F2E2A1 /* PBXContainerItemProxy */ = {
+		0312D5BB2007ECD500865DDB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 03501BA32007B0FD00F2E2A1 /* Charts.xcodeproj */;
+			containerPortal = 0312D5B62007ECD500865DDB /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
 			remoteInfo = Charts;
 		};
-		03501BAA2007B0FD00F2E2A1 /* PBXContainerItemProxy */ = {
+		0312D5BD2007ECD500865DDB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 03501BA32007B0FD00F2E2A1 /* Charts.xcodeproj */;
+			containerPortal = 0312D5B62007ECD500865DDB /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
 			remoteInfo = ChartsTests;
@@ -156,7 +157,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		03501BA32007B0FD00F2E2A1 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../../GitHub/Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		0312D5B62007ECD500865DDB /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../../GitHub/ChartsNew/Charts.xcodeproj; sourceTree = "<group>"; };
+		035E853C2013A328005BBD21 /* CalendarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
 		C30A49A21F52E9EE0019F1C0 /* AAPLCircularLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAPLCircularLayout.swift; sourceTree = "<group>"; };
 		C30A49A51F52EBFB0019F1C0 /* AAPLSlideLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAPLSlideLayout.swift; sourceTree = "<group>"; };
 		C32896481F5181B2000A7E51 /* CustomChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChart.swift; sourceTree = "<group>"; };
@@ -293,11 +295,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03501BA42007B0FD00F2E2A1 /* Products */ = {
+		0312D5B72007ECD500865DDB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				03501BA92007B0FD00F2E2A1 /* Charts.framework */,
-				03501BAB2007B0FD00F2E2A1 /* ChartsTests.xctest */,
+				0312D5BC2007ECD500865DDB /* Charts.framework */,
+				0312D5BE2007ECD500865DDB /* ChartsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -314,7 +316,7 @@
 		C3AE37931F4C7D0B003AD9C4 = {
 			isa = PBXGroup;
 			children = (
-				03501BA32007B0FD00F2E2A1 /* Charts.xcodeproj */,
+				0312D5B62007ECD500865DDB /* Charts.xcodeproj */,
 				C3B791171F51BA5A0051C1D4 /* README.md */,
 				C3AE379E1F4C7D0B003AD9C4 /* DemoChartOSX */,
 				C3AE37AF1F4C7D0B003AD9C4 /* DemoChartOSXTests */,
@@ -388,6 +390,7 @@
 		C3FC55B31F4C8B920090991B /* Formatters */ = {
 			isa = PBXGroup;
 			children = (
+				035E853C2013A328005BBD21 /* CalendarExtension.swift */,
 				C3FC55A81F4C8B800090991B /* BalloonMarker.swift */,
 				C3FC55A51F4C8B800090991B /* DateValueFormatter.swift */,
 				C3FC55A71F4C8B800090991B /* DoubleAxisValueFormatter.swift */,
@@ -594,8 +597,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 03501BA42007B0FD00F2E2A1 /* Products */;
-					ProjectRef = 03501BA32007B0FD00F2E2A1 /* Charts.xcodeproj */;
+					ProductGroup = 0312D5B72007ECD500865DDB /* Products */;
+					ProjectRef = 0312D5B62007ECD500865DDB /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -608,18 +611,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		03501BA92007B0FD00F2E2A1 /* Charts.framework */ = {
+		0312D5BC2007ECD500865DDB /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = 03501BA82007B0FD00F2E2A1 /* PBXContainerItemProxy */;
+			remoteRef = 0312D5BB2007ECD500865DDB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		03501BAB2007B0FD00F2E2A1 /* ChartsTests.xctest */ = {
+		0312D5BE2007ECD500865DDB /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
-			remoteRef = 03501BAA2007B0FD00F2E2A1 /* PBXContainerItemProxy */;
+			remoteRef = 0312D5BD2007ECD500865DDB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -749,6 +752,7 @@
 				C3FC55FA1F4C8C0D0090991B /* ScatterChartViewController.swift in Sources */,
 				C3FC55F31F4C8C0D0090991B /* HorizontalBarChartViewController.swift in Sources */,
 				C3FC55E41F4C8C0D0090991B /* NegativeStackedBarChartViewController.swift in Sources */,
+				035E853F2013A328005BBD21 /* CalendarExtension.swift in Sources */,
 				C3FC55FC1F4C8C0D0090991B /* browser.swift in Sources */,
 				C3FC55F61F4C8C0D0090991B /* MultipleBarChartViewController.swift in Sources */,
 				C3FC55E61F4C8C0D0090991B /* CombinedChartViewController.swift in Sources */,

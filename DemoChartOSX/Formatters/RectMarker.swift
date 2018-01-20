@@ -1,5 +1,5 @@
 //
-//  BalloonMarker.swift
+//  RectMarker.swift
 //  ChartsDemo
 //
 //  Copyright 2015 Daniel Cohen Gindi & Philipp Jahoda
@@ -12,25 +12,33 @@
 import Foundation
 import Charts
 
-
 open class RectMarker: MarkerImage
 {
-    open var color: NSColor?
-    open var font: NSFont?
+    open var color: NSUIColor?
+    open var font: NSUIFont?
     open var insets = NSEdgeInsets()
     
+    open var miniTime : Double = 0.0
+    var interval = 3600.0 * 24.0
+    
     open var minimumSize = CGSize()
+    var dateFormatter = DateFormatter()
     
     fileprivate var label: NSMutableAttributedString?
     fileprivate var _labelSize: CGSize = CGSize()
     
-    public init(color: NSColor, font: NSFont, insets: NSEdgeInsets)
+    public init(color: NSUIColor, font: NSUIFont, insets: NSEdgeInsets, miniTime: Double = 0.0, interval: Double = 0.0)
     {
         super.init()
         
         self.color = color
         self.font = font
         self.insets = insets
+        self.miniTime = miniTime
+        self.interval = interval
+        self.dateFormatter = DateFormatter()
+        self.dateFormatter.dateFormat = "dd/MM/yy HH:mm"
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00") as TimeZone!
     }
     
     open override func offsetForDrawing(atPoint point: CGPoint) -> CGPoint
@@ -60,7 +68,7 @@ open class RectMarker: MarkerImage
         {
             offset.x =  -width
         }
-
+        
         if origin.y + offset.y < 0
         {
             offset.y = height
@@ -92,9 +100,7 @@ open class RectMarker: MarkerImage
             context.addRect(rect)
             context.fillPath()
         }
-        
         label.draw(in: rect)
-        
         context.restoreGState()
     }
     
@@ -103,58 +109,39 @@ open class RectMarker: MarkerImage
         var str = ""
         let mutableString = NSMutableAttributedString( string: str )
         
-        let entrie = entry as? BarChartDataEntry
-        if entrie == nil
+        let chartView = self.chartView
+        var dataEntry = [ChartDataEntry]()
+        var dataEntryX = 0.0
+        for  dataSets in chartView!.data!.dataSets
         {
-            let chartView = self.chartView
-            var dataEntry = [ChartDataEntry]()
-            for  dataSets in chartView!.data!.dataSets
-            {
-                dataEntry = dataSets.entriesForXValue(entry.x)
-                let label = dataSets.label
-                
-                if !dataEntry.isEmpty
-                {
-                    let data = dataSets.valueFormatter?.stringForValue(dataEntry[0].y, entry: dataEntry[0], dataSetIndex: 0, viewPortHandler: nil)
-                    str = label! + " : " + data! + "\n"
-                }
-                else
-                {
-                    str = label! + " :\n"
-                }
-                
-                let labelAttributes:[NSAttributedStringKey : Any]? = [
-                    NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):NSFont( name: "Georgia",  size: 12.0)!,
-                    NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue) : dataSets.colors[0]]
-                
-                let addedString = NSAttributedString(string: str, attributes: labelAttributes)
-                mutableString.append(addedString)
-            }
-            str = "\nTime : " + String(dataEntry[0].x)
-            let labelAttributes:[NSAttributedStringKey: Any]? = [
-                NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):NSFont( name: "Georgia",  size: 12.0)!,
-                NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue) : NSColor.red ]
+            dataEntry = dataSets.entriesForXValue(entry.x)
+            let label = dataSets.label
             
+            if !dataEntry.isEmpty
+            {
+                let data = dataSets.valueFormatter?.stringForValue(dataEntry[0].y, entry: dataEntry[0], dataSetIndex: 0, viewPortHandler: nil)
+                str = label! + " : " + data! + "\n"
+                dataEntryX = dataEntry[0].x
+            }
+            else
+            {
+                str = label! + " :\n"
+            }
+            
+            let labelAttributes:[NSAttributedStringKey: Any]? = [
+                .font : NSFont( name: "Georgia",  size: 12.0)!,
+                .foregroundColor : dataSets.colors[0]]
             let addedString = NSAttributedString(string: str, attributes: labelAttributes)
             mutableString.append(addedString)
         }
-        else
-        {
-            let entryY = entrie!.yValues
-            
-            var str = ""
-            for i in 0..<entryY!.count
-            {
-                str = String(entryY![i]) + "\n"
-                
-                let labelAttributes:[NSAttributedStringKey:AnyObject]? = [
-                    NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):NSFont( name: "Georgia",  size: 14.0)!,
-                    NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue) : NSColor.red
-                ]
-                let addedString = NSAttributedString(string: str, attributes: labelAttributes)
-                mutableString.append(addedString)
-            }
-        }
+        
+        str = "\nDate : " + stringForValue( dataEntryX )
+        let labelAttributes:[NSAttributedStringKey : Any]? = [
+            .font : NSFont( name: "Georgia",  size: 12.0)!,
+            .foregroundColor : NSUIColor.black ]
+        
+        let addedString = NSAttributedString(string: str, attributes: labelAttributes)
+        mutableString.append(addedString)
         setLabel(mutableString)
     }
     
@@ -170,18 +157,14 @@ open class RectMarker: MarkerImage
         size.height = max(minimumSize.height, size.height)
         self.size = size
     }
+    
+    func stringForValue(_ value: Double) -> String
+    {
+        self.dateFormatter.dateFormat = "dd/MM/yy"
+        let date2 = Date(timeIntervalSince1970 : ((value * interval) + miniTime)  )
+        let date = dateFormatter.string(from: date2)
+        return  date
+    }
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 

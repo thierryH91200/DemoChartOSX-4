@@ -24,7 +24,7 @@ open class DateValueFormatter : NSObject, IAxisValueFormatter
         self.interval = interval
         self.dateFormatter = DateFormatter()
         self.dateFormatter.dateFormat = "dd/MM HH:mm"
-        self.dateFormatter.dateFormat = "HH:mm"
+        self.dateFormatter.dateFormat = "dd/MM"
         dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00") as TimeZone!
     }
     

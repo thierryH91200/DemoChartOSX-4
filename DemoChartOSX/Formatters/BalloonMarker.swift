@@ -115,9 +115,9 @@ open class BalloonMarker: MarkerImage
         label = newLabel
         
         _drawAttributes.removeAll()
-        _drawAttributes[NSAttributedStringKey.font] = self.font
-        _drawAttributes[NSAttributedStringKey.paragraphStyle] = _paragraphStyle
-        _drawAttributes[NSAttributedStringKey.foregroundColor] = self.textColor
+        _drawAttributes[.font] = self.font
+        _drawAttributes[.paragraphStyle] = _paragraphStyle
+        _drawAttributes[.foregroundColor] = self.textColor
         
         _labelSize = label?.size(withAttributes: _drawAttributes) ?? CGSize.zero
         

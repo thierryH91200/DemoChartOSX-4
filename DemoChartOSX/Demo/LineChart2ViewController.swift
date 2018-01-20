@@ -59,7 +59,7 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         // MARK: xAxis
         let xAxis = chartView.xAxis
         xAxis.labelFont = NSFont.systemFont(ofSize: CGFloat(12.0))
-        xAxis.labelTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        xAxis.labelTextColor = #colorLiteral(red: 1, green: 0.2527923882, blue: 1, alpha: 1)
         xAxis.drawGridLinesEnabled = false
         xAxis.drawAxisLineEnabled = false
         xAxis.labelPosition = .bottom
@@ -86,7 +86,7 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         let leftAxis1 = chartView.leftAxis
 //        leftAxis1.axisSecondaryEnabled = true
 
-        leftAxis1.labelTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        leftAxis1.labelTextColor = #colorLiteral(red: 0.08062536269, green: 0.2148533463, blue: 1, alpha: 1)
         leftAxis1.axisMaximum = 1200
         leftAxis1.axisMinimum = 100
         leftAxis1.drawGridLinesEnabled = false
@@ -113,7 +113,7 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         let rightAxis1 = chartView.rightAxis
 //        rightAxis1.axisSecondaryEnabled = true
 
-        rightAxis1.labelTextColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+        rightAxis1.labelTextColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         rightAxis1.axisMaximum = 500.0
         rightAxis1.axisMinimum = 0
         rightAxis1.drawGridLinesEnabled = false

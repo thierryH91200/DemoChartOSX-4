@@ -86,10 +86,10 @@ open class NegativeStackedBarChartViewController: DemoBaseViewController
         legend.xEntrySpace = 6.0
         
         // MARK: description
-        chartView.chartDescription?.enabled = true
-        chartView.chartDescription?.text = "Population pyramid"
-        chartView.chartDescription?.textAlign = .right
-        chartView.chartDescription?.textColor = .blue
+        chartView.chartDescription.enabled = true
+        chartView.chartDescription.text = "Population pyramid"
+        chartView.chartDescription.textAlign = .right
+        chartView.chartDescription.textColor = .blue
         
         updateChartData()
     }

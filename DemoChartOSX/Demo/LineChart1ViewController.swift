@@ -119,7 +119,7 @@ open class LineChart1ViewController: DemoBaseViewController
         chartView.legend.form = .line
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         let marker = BalloonMarker(color: #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1), font: NSFont.systemFont(ofSize: CGFloat(12.0)), textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 20.0, right: 8.0))
         marker.chartView = chartView
@@ -145,7 +145,7 @@ open class LineChart1ViewController: DemoBaseViewController
         // MARK: ChartDataEntry
         let values = (0..<count).map { (i) -> ChartDataEntry in
             let val = Double(arc4random_uniform(range) + 3)
-            return ChartDataEntry(x: Double(i), y: val, icon: #imageLiteral(resourceName: "icon"))
+            return ChartDataEntry(x: Double(i), y: val, icon: #imageLiteral(resourceName: "Queue"))
         }
 
         // MARK: LineChartDataSet

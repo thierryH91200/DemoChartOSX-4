@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03178AF1205EE191004A3AD1 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03178AEB205EE16C004A3AD1 /* Charts.framework */; };
+		03178AF2205EE191004A3AD1 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03178AEB205EE16C004A3AD1 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		035E853F2013A328005BBD21 /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E853C2013A328005BBD21 /* CalendarExtension.swift */; };
 		C30A49A41F52E9EE0019F1C0 /* AAPLCircularLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A49A21F52E9EE0019F1C0 /* AAPLCircularLayout.swift */; };
 		C30A49A61F52EBFB0019F1C0 /* AAPLSlideLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A49A51F52EBFB0019F1C0 /* AAPLSlideLayout.swift */; };
@@ -81,7 +83,6 @@
 		C3FC56331F4CA3600090991B /* TogglePieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3FC56161F4CA21C0090991B /* TogglePieViewController.xib */; };
 		C3FC56341F4CA5000090991B /* CollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FC56231F4CA2ED0090991B /* CollectionViewItem.swift */; };
 		C3FC56351F4CA5000090991B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FC56251F4CA2ED0090991B /* HeaderView.swift */; };
-		C3FC56361F4CA5000090991B /* HeaderView.xib in Sources */ = {isa = PBXBuildFile; fileRef = C3FC56261F4CA2ED0090991B /* HeaderView.xib */; };
 		C3FC56381F4CA5000090991B /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FC56241F4CA2ED0090991B /* ImageInfo.swift */; };
 		C3FC563A1F4CB3790090991B /* BarChartViewControllerColumnWithDrilldown.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3FC55E11F4C8C0D0090991B /* BarChartViewControllerColumnWithDrilldown.xib */; };
 		C3FC563B1F4CB3790090991B /* BubbleChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3FC55DE1F4C8C0C0090991B /* BubbleChartViewController.xib */; };
@@ -113,19 +114,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0312D5BB2007ECD500865DDB /* PBXContainerItemProxy */ = {
+		03178AEA205EE16C004A3AD1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0312D5B62007ECD500865DDB /* Charts.xcodeproj */;
+			containerPortal = 03178AE5205EE16C004A3AD1 /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
 			remoteInfo = Charts;
 		};
-		0312D5BD2007ECD500865DDB /* PBXContainerItemProxy */ = {
+		03178AEC205EE16C004A3AD1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0312D5B62007ECD500865DDB /* Charts.xcodeproj */;
+			containerPortal = 03178AE5205EE16C004A3AD1 /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
 			remoteInfo = ChartsTests;
+		};
+		03178AF3205EE191004A3AD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03178AE5205EE16C004A3AD1 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A58A4ED274A941CA248EA921;
+			remoteInfo = Charts;
 		};
 		C3AE37AD1F4C7D0B003AD9C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -150,6 +158,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				03178AF2205EE191004A3AD1 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,7 +166,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0312D5B62007ECD500865DDB /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../../GitHub/ChartsNew/Charts.xcodeproj; sourceTree = "<group>"; };
+		03178AE5205EE16C004A3AD1 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../../GitHub/Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		035E853C2013A328005BBD21 /* CalendarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
 		C30A49A21F52E9EE0019F1C0 /* AAPLCircularLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAPLCircularLayout.swift; sourceTree = "<group>"; };
 		C30A49A51F52EBFB0019F1C0 /* AAPLSlideLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAPLSlideLayout.swift; sourceTree = "<group>"; };
@@ -275,6 +284,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03178AF1205EE191004A3AD1 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,11 +305,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0312D5B72007ECD500865DDB /* Products */ = {
+		03178AE6205EE16C004A3AD1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0312D5BC2007ECD500865DDB /* Charts.framework */,
-				0312D5BE2007ECD500865DDB /* ChartsTests.xctest */,
+				03178AEB205EE16C004A3AD1 /* Charts.framework */,
+				03178AED205EE16C004A3AD1 /* ChartsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -316,7 +326,7 @@
 		C3AE37931F4C7D0B003AD9C4 = {
 			isa = PBXGroup;
 			children = (
-				0312D5B62007ECD500865DDB /* Charts.xcodeproj */,
+				03178AE5205EE16C004A3AD1 /* Charts.xcodeproj */,
 				C3B791171F51BA5A0051C1D4 /* README.md */,
 				C3AE379E1F4C7D0B003AD9C4 /* DemoChartOSX */,
 				C3AE37AF1F4C7D0B003AD9C4 /* DemoChartOSXTests */,
@@ -512,10 +522,12 @@
 				C3AE37991F4C7D0B003AD9C4 /* Frameworks */,
 				C3AE379A1F4C7D0B003AD9C4 /* Resources */,
 				C3FC56061F4C90AB0090991B /* Embed Frameworks */,
+				03128DB1214A576900222E44 /* Unusued */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				03178AF4205EE191004A3AD1 /* PBXTargetDependency */,
 			);
 			name = "DemoChartOSX V4";
 			productName = graphMeteo;
@@ -565,20 +577,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = thierryH24100;
 				TargetAttributes = {
 					C3AE379B1F4C7D0B003AD9C4 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					C3AE37AB1F4C7D0B003AD9C4 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C3AE379B1F4C7D0B003AD9C4;
 					};
 					C3AE37B61F4C7D0B003AD9C4 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C3AE379B1F4C7D0B003AD9C4;
 					};
@@ -597,8 +612,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 0312D5B72007ECD500865DDB /* Products */;
-					ProjectRef = 0312D5B62007ECD500865DDB /* Charts.xcodeproj */;
+					ProductGroup = 03178AE6205EE16C004A3AD1 /* Products */;
+					ProjectRef = 03178AE5205EE16C004A3AD1 /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -611,18 +626,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		0312D5BC2007ECD500865DDB /* Charts.framework */ = {
+		03178AEB205EE16C004A3AD1 /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = 0312D5BB2007ECD500865DDB /* PBXContainerItemProxy */;
+			remoteRef = 03178AEA205EE16C004A3AD1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0312D5BE2007ECD500865DDB /* ChartsTests.xctest */ = {
+		03178AED205EE16C004A3AD1 /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
-			remoteRef = 0312D5BD2007ECD500865DDB /* PBXContainerItemProxy */;
+			remoteRef = 03178AEC205EE16C004A3AD1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -694,6 +709,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03128DB1214A576900222E44 /* Unusued */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Unusued;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nfile=\"unused.rb\"\nif [ -f \"$file\" ]\nthen\necho \"$file found.\"\n# ruby unused.rb xcode\nelse\necho \"unused.rb doesn't exist\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C3AE37981F4C7D0B003AD9C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -701,7 +737,6 @@
 			files = (
 				C3FC56341F4CA5000090991B /* CollectionViewItem.swift in Sources */,
 				C3FC56351F4CA5000090991B /* HeaderView.swift in Sources */,
-				C3FC56361F4CA5000090991B /* HeaderView.xib in Sources */,
 				C3FC56381F4CA5000090991B /* ImageInfo.swift in Sources */,
 				C3FC55AA1F4C8B800090991B /* RectMarker.swift in Sources */,
 				C3FC55B01F4C8B800090991B /* DoubleAxisValueFormatter.swift in Sources */,
@@ -779,6 +814,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		03178AF4205EE191004A3AD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 03178AF3205EE191004A3AD1 /* PBXContainerItemProxy */;
+		};
 		C3AE37AE1F4C7D0B003AD9C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C3AE379B1F4C7D0B003AD9C4 /* DemoChartOSX V4 */;
@@ -817,6 +857,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -824,6 +865,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -857,6 +899,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -874,6 +917,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -881,6 +925,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -906,6 +951,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -914,6 +960,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = DemoChartOSX/DemoChartOSX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -921,7 +968,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.DemoChartOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -930,6 +977,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = DemoChartOSX/DemoChartOSX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -937,7 +985,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.DemoChartOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -946,14 +994,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = DemoChartOSXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.DemoChartOSXTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/graphMeteo.app/Contents/MacOS/DemoChartOSX V4";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoChartOSX V4.app/Contents/MacOS/DemoChartOSX V4";
 			};
 			name = Debug;
 		};
@@ -962,14 +1011,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = DemoChartOSXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.DemoChartOSXTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/graphMeteo.app/Contents/MacOS/DemoChartOSX V4";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoChartOSX V4.app/Contents/MacOS/DemoChartOSX V4";
 			};
 			name = Release;
 		};
@@ -977,13 +1027,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = DemoChartOSXUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.DemoChartOSXUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = DemoChartOSX;
 			};
 			name = Debug;
@@ -992,13 +1043,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = DemoChartOSXUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.DemoChartOSXUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = DemoChartOSX;
 			};
 			name = Release;

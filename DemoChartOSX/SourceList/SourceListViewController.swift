@@ -156,9 +156,7 @@ extension SourceListViewController: NSOutlineViewDelegate
     //NSOutlineViewDelegate
     public func outlineViewSelectionDidChange(_ notification: Notification)
     {
-        guard let outlineView = notification.object as? NSOutlineView else {
-            return
-        }
+        guard let outlineView = notification.object as? NSOutlineView else { return }
         
         let selectedIndex = outlineView.selectedRow
         

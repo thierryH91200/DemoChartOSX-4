@@ -53,21 +53,6 @@ class SourceCollectionController: NSViewController {
     }
     
     fileprivate func configureCollectionView() {
-//        var layout: NSCollectionViewLayout? = nil
-//        layout = AAPLCircularLayout()
-//        if let layout = layout {
-//            if NSAnimationContext.current().duration > 0.0 {
-//                NSAnimationContext.current().duration = 0.5
-//                collectionView.animator().collectionViewLayout = layout
-//            } else {
-//                collectionView.collectionViewLayout = layout
-//            }
-//        }
-//        collectionView.collectionViewLayout = layout
-//        
-//        view.wantsLayer = true
-//        collectionView.layer?.backgroundColor = NSColor.black.cgColor
-//        return
         
         let flowLayout = NSCollectionViewFlowLayout()
         flowLayout.itemSize = NSSize(width: 100.0, height: 100.0)
@@ -222,7 +207,7 @@ extension SourceCollectionController : NSCollectionViewDataSource {
     
 func collectionView(_ collectionView: NSCollectionView, viewForSupplementaryElementOfKind kind: NSCollectionView.SupplementaryElementKind, at indexPath: IndexPath) -> NSView {
 
-    let view = collectionView.makeSupplementaryView(ofKind: NSCollectionView.SupplementaryElementKind.sectionHeader, withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "HeaderView"), for: indexPath) as! HeaderView
+    let view = collectionView.makeSupplementaryView(ofKind: NSCollectionView.elementKindSectionHeader, withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "HeaderView"), for: indexPath) as! HeaderView
         view.sectionTitle.stringValue = "\(sectionsAttributesArray[indexPath.section].sectionName)"
         let nbOfItemsInSection = self.numberOfItemsInSection(indexPath.section)
         view.imageCount.stringValue = "\(nbOfItemsInSection) chart(s)"

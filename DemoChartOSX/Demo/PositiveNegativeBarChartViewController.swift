@@ -70,7 +70,7 @@ open class PositiveNegativeBarChartViewController: DemoBaseViewController
         chartView.legend.enabled = false
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         updateChartData()
     }

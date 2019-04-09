@@ -15,15 +15,14 @@ import Charts
 
 open class DemoBaseViewController: NSViewController
 {
-    var parties = [String]()
+    var parties = ["Party A", "Party B", "Party C", "Party D", "Party E", "Party F", "Party G", "Party H", "Party I", "Party J", "Party K", "Party L", "Party M", "Party N", "Party O", "Party P", "Party Q", "Party R", "Party S", "Party T", "Party U", "Party V", "Party W", "Party X", "Party Y", "Party Z"]
     
     var shouldHideData: Bool = false
     
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-        parties = ["Party A", "Party B", "Party C", "Party D", "Party E", "Party F", "Party G", "Party H", "Party I", "Party J", "Party K", "Party L", "Party M", "Party N", "Party O", "Party P", "Party Q", "Party R", "Party S", "Party T", "Party U", "Party V", "Party W", "Party X", "Party Y", "Party Z"]
-     }
+//    override open func viewDidLoad() {
+//        super.viewDidLoad()
+//        // Do view setup here.
+//     }
     
     func handleOption(_ option: String, forChartView chartView: ChartViewBase) {
         switch option {
@@ -93,7 +92,9 @@ open class DemoBaseViewController: NSViewController
         chartView.drawSlicesUnderHoleEnabled = false
         chartView.holeRadiusPercent = 0.58
         chartView.transparentCircleRadiusPercent = 0.61
-        chartView.chartDescription?.enabled = false
+        
+        chartView.chartDescription.enabled = false
+        
         //        chartView.setExtraOffsetsWithLeft(5.0, top: 10.0, right: 5.0, bottom: 5.0)
         chartView.drawCenterTextEnabled = true
         
@@ -129,7 +130,7 @@ open class DemoBaseViewController: NSViewController
     }
     
     func setup(barLineChartView chartView: BarLineChartViewBase) {
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         chartView.dragEnabled = true
         chartView.setScaleEnabled(true)
@@ -144,7 +145,7 @@ open class DemoBaseViewController: NSViewController
     }
 
     func setup(radarChartView chartView: RadarChartView) {
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
     }
 }
 

@@ -76,7 +76,7 @@ open class CombinedChartViewController: NSViewController
         legend.drawInside                   = false
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         let marker = RectMarker(color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), font: .systemFont(ofSize: CGFloat(12.0)), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
         marker.chartView = chartView
@@ -185,8 +185,7 @@ open class CombinedChartViewController: NSViewController
         set.valueFont = .systemFont(ofSize: CGFloat(10.0))
         
         // MARK: ScatterChartData
-        let data = ScatterChartData()
-        data.addDataSet(set)
+        let data = ScatterChartData(dataSet: set)
         return data
     }
     
@@ -210,8 +209,7 @@ open class CombinedChartViewController: NSViewController
         set.drawValuesEnabled = false
         
         // MARK: CandleChartData
-        let data = CandleChartData()
-        data.addDataSet(set)
+        let data = CandleChartData(dataSet: set)
         return data
     }
     
@@ -235,8 +233,7 @@ open class CombinedChartViewController: NSViewController
         set.normalizeSizeEnabled  = true
         
         // MARK: BubbleChartData
-        let data = BubbleChartData()
-        data.addDataSet(set)
+        let data = BubbleChartData(dataSet: set)
         return data
     }
 }
@@ -263,7 +260,7 @@ extension CombinedChartViewController: ChartViewDelegate
         print("chartValueNothingSelected")
     }
     
-    public class BarChartFormatter: NSObject, IAxisValueFormatter
+    public class BarChartFormatter: NSObject, AxisValueFormatter
     {
         var months: [String]! = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         

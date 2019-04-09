@@ -96,8 +96,7 @@ open class PiePolylineChartViewController: DemoBaseViewController
         dataSet.yValuePosition = .outsideSlice
         
         // MARK: PieChartData
-        let data = PieChartData()
-        data.addDataSet(dataSet)
+        let data = PieChartData(dataSet: dataSet)
         
         let pFormatter = NumberFormatter()
         pFormatter.numberStyle = .percent

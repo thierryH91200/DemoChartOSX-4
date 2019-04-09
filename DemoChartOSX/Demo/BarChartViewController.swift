@@ -30,7 +30,9 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
     
     override open func viewWillAppear()
     {
-        chartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
+//        DispatchQueue.main.async(execute: {() -> Void in
+            self.chartView.animate(xAxisDuration: 0.0, yAxisDuration: 2.0, easingOptionX: ChartEasingOption.easeInBounce, easingOptionY: ChartEasingOption.linear)
+//                    })
     }
 
     
@@ -55,7 +57,7 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         let xAxis                  = chartView.xAxis
         xAxis.labelPosition        = .bottom
         xAxis.drawGridLinesEnabled = true
-        //xAxis.valueFormatter       = IndexAxisValueFormatter(values:months)
+//        xAxis.valueFormatter       = IndexAxisValueFormatter(values:months)
         xAxis.granularity          = 1
         xAxis.labelPosition  = .bottom
         
@@ -66,7 +68,9 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         let leftAxis                  = chartView.leftAxis
         leftAxis.drawGridLinesEnabled = true
         leftAxis.drawZeroLineEnabled  = false
-        leftAxis.valueFormatter       = HourValueFormatter()
+//        leftAxis.valueFormatter       = HourValueFormatter()
+        leftAxis.axisMinimum = 1000
+
         
         leftAxis.nameAxis = "Hour (s)"
         leftAxis.nameAxisEnabled = true
@@ -77,7 +81,7 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         // MARK: rightAxis
         let rightAxis                  = chartView.rightAxis
         rightAxis.drawGridLinesEnabled = true
-        rightAxis.valueFormatter       = HourValueFormatter()
+//        rightAxis.valueFormatter       = HourValueFormatter()
         
         rightAxis.nameAxis = "Hour (s)"
         rightAxis.nameAxisEnabled = true
@@ -91,7 +95,7 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         legend.drawInside = false
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         // MARK: marker
         let  marker = YMarkerView( color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), font: NSFont.systemFont(ofSize: 12.0),
@@ -108,13 +112,17 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
     
     override func updateChartData()
     {
-        setDataCount(7, range: 100.0)
+        setDataCount(3, range: 100.0)
     }
     
     func setDataCount(_ count: Int, range: Double)
     {
         // MARK: BarChartDataEntry
+        chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: parties)
+
         var yVals = [BarChartDataEntry]()
+        
+//        let yVals = [BarChartDataEntry(x: 1, y: 1000 ), BarChartDataEntry(x: 2, y: 1010 )]
         for i in 0..<count
         {
             yVals.append(BarChartDataEntry(x: Double(i), y: Double(values[i])))
@@ -125,8 +133,8 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         if chartView.data == nil
         {
             set1 = BarChartDataSet(values: yVals, label: "DataSet")
-            //set1.colors = ChartColorTemplates.vordiplom
-            set1.colors = [.orange, .orange, .orange, .orange, .orange, .orange, .orange]
+            set1.colors = ChartColorTemplates.vordiplom()
+//            set1.colors = [.orange, .orange, .orange, .orange, .orange, .orange, .orange]
             set1.drawValuesEnabled = false
             set1.stackLabels = ["Births"]
             

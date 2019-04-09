@@ -19,7 +19,7 @@ open class RectMarker: MarkerImage
     open var insets = NSEdgeInsets()
     
     open var miniTime : Double = 0.0
-    var interval = 3600.0 * 24.0
+    var interval = 3600.0 * 24.0 // one day
     
     open var minimumSize = CGSize()
     var dateFormatter = DateFormatter()
@@ -38,7 +38,7 @@ open class RectMarker: MarkerImage
         self.interval = interval
         self.dateFormatter = DateFormatter()
         self.dateFormatter.dateFormat = "dd/MM/yy HH:mm"
-        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00") as TimeZone!
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00")! as TimeZone
     }
     
     open override func offsetForDrawing(atPoint point: CGPoint) -> CGPoint
@@ -95,14 +95,43 @@ open class RectMarker: MarkerImage
         context.saveGState()
         if let color = color
         {
-            context.setFillColor(color.cgColor)
+//            context.setFillColor(color.cgColor)
             context.beginPath()
-            context.addRect(rect)
+            drawRoundedRect(rect: rect, inContext: context, radius: 10.0, borderColor: .black, fillColor: color.cgColor)
+//            context.addRect(rect)
             context.fillPath()
         }
         label.draw(in: rect)
         context.restoreGState()
     }
+    
+    func drawRoundedRect(rect: CGRect, inContext context: CGContext?,
+                         radius: CGFloat, borderColor: CGColor, fillColor: CGColor) {
+        // 1
+        let path = CGMutablePath()
+        
+        // 2
+        path.move( to: CGPoint(x:  rect.midX, y:rect.minY ))
+        path.addArc( tangent1End: CGPoint(x: rect.maxX, y: rect.minY ),
+                     tangent2End: CGPoint(x: rect.maxX, y: rect.maxY), radius: radius)
+        path.addArc( tangent1End: CGPoint(x: rect.maxX, y: rect.maxY ),
+                     tangent2End: CGPoint(x: rect.minX, y: rect.maxY), radius: radius)
+        path.addArc( tangent1End: CGPoint(x: rect.minX, y: rect.maxY ),
+                     tangent2End: CGPoint(x: rect.minX, y: rect.minY), radius: radius)
+        path.addArc( tangent1End: CGPoint(x: rect.minX, y: rect.minY ),
+                     tangent2End: CGPoint(x: rect.maxX, y: rect.minY), radius: radius)
+        path.closeSubpath()
+        
+        // 3
+        context?.setLineWidth(1.0)
+        context?.setFillColor(fillColor)
+        context?.setStrokeColor(borderColor)
+        
+        // 4
+        context?.addPath(path)
+        context?.drawPath(using: .fillStroke)
+    }
+
     
     open override func refreshContent(entry: ChartDataEntry, highlight: Highlight)
     {
@@ -119,8 +148,8 @@ open class RectMarker: MarkerImage
             
             if !dataEntry.isEmpty
             {
-                let data = dataSets.valueFormatter?.stringForValue(dataEntry[0].y, entry: dataEntry[0], dataSetIndex: 0, viewPortHandler: nil)
-                str = label! + " : " + data! + "\n"
+                let data = dataSets.valueFormatter.stringForValue(dataEntry[0].y, entry: dataEntry[0], dataSetIndex: 0, viewPortHandler: nil)
+                str = label! + " : " + data + "\n"
                 dataEntryX = dataEntry[0].x
             }
             else
@@ -128,17 +157,17 @@ open class RectMarker: MarkerImage
                 str = label! + " :\n"
             }
             
-            let labelAttributes:[NSAttributedStringKey: Any]? = [
-                .font : NSFont( name: "Georgia",  size: 12.0)!,
+            let labelAttributes:[NSAttributedString.Key: Any]? = [
+                .font : NSFont.boldSystemFont(ofSize: 12.0),
                 .foregroundColor : dataSets.colors[0]]
             let addedString = NSAttributedString(string: str, attributes: labelAttributes)
             mutableString.append(addedString)
         }
         
         str = "\nDate : " + stringForValue( dataEntryX )
-        let labelAttributes:[NSAttributedStringKey : Any]? = [
-            .font : NSFont( name: "Georgia",  size: 12.0)!,
-            .foregroundColor : NSUIColor.black ]
+        let labelAttributes:[NSAttributedString.Key : Any]? = [
+            .font : NSFont.boldSystemFont(ofSize: 14.0),
+            .foregroundColor : NSUIColor.white ]
         
         let addedString = NSAttributedString(string: str, attributes: labelAttributes)
         mutableString.append(addedString)

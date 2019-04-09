@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import DemoChartOSX
+@testable import DemoChartOSX_V4
 
-class DemoChartOSXTests: XCTestCase {
+class DemoChartOSX_V4Tests: XCTestCase {
     
     override func setUp() {
         super.setUp()

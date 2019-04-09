@@ -84,7 +84,7 @@ open class SinusBarChartViewController: DemoBaseViewController
         legend.xEntrySpace = 4.0
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         sliderX.doubleValue  = 150.0
         slidersValueChanged(sliderX)

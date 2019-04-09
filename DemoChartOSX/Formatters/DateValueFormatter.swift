@@ -11,7 +11,7 @@
 import Foundation
 import Charts
 
-open class DateValueFormatter : NSObject, IAxisValueFormatter
+open class DateValueFormatter : NSObject, AxisValueFormatter
 {
     
     var dateFormatter : DateFormatter
@@ -25,7 +25,7 @@ open class DateValueFormatter : NSObject, IAxisValueFormatter
         self.dateFormatter = DateFormatter()
         self.dateFormatter.dateFormat = "dd/MM HH:mm"
         self.dateFormatter.dateFormat = "dd/MM"
-        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00") as TimeZone!
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00") as TimeZone?
     }
     
     public func stringForValue(_ value: Double, axis: AxisBase?) -> String

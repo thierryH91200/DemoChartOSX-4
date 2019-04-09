@@ -58,7 +58,7 @@ open class RadarChartViewController: DemoBaseViewController
         yAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(9.0))!
         yAxis.labelCount = 5
         yAxis.axisMinimum = 0.0
-        yAxis.axisMaximum = 80.0
+//        yAxis.axisMaximum = 80.0
         yAxis.drawLabelsEnabled = true
         yAxis.labelTextColor = .white
         
@@ -74,9 +74,9 @@ open class RadarChartViewController: DemoBaseViewController
         legend.textColor = .white
         
         // MARK: description
-        chartView.chartDescription?.enabled = true
-        chartView.chartDescription?.text = "Radar demo"
-        chartView.chartDescription?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        chartView.chartDescription.enabled = true
+        chartView.chartDescription.text = "Radar demo"
+        chartView.chartDescription.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         updateChartData()
     }
@@ -123,13 +123,13 @@ open class RadarChartViewController: DemoBaseViewController
         chartView.data = data
     }
     
-    // MARK: - IAxisValueFormatter
+    // MARK: - AxisValueFormatter
     func string(forValue value: Double, axis: AxisBase) -> String {
         return activities[Int(value) % activities.count]
     }
 }
 
-class RadarChartXValueFormatter: NSObject, IAxisValueFormatter {
+class RadarChartXValueFormatter: NSObject, AxisValueFormatter {
     
     
     init(withLabels labels: String...) {

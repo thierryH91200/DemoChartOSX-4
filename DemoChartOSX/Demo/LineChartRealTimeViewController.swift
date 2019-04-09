@@ -19,6 +19,8 @@ class LineChartRealTimeViewController: NSViewController {
     var yEntries = [ChartDataEntry]()
     var currentCount = 0.0
     
+    let deltaMaximum = 20.0
+    
     var timer  : Timer?
     var step = 0.0
     
@@ -42,19 +44,28 @@ class LineChartRealTimeViewController: NSViewController {
         
         chartView.drawBordersEnabled = true
         chartView.drawGridBackgroundEnabled = true
-        chartView.gridBackgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        chartView.gridBackgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         step = 0.2
         
         let leftAxis = chartView.leftAxis
-        leftAxis.axisMaximum = 15
-        leftAxis.axisMinimum = 0
+        leftAxis.axisMaximum = 8
+        leftAxis.axisMinimum = -8
+        leftAxis.nameAxisFont = NSUIFont.boldSystemFont(ofSize: 16.0)
+        leftAxis.nameAxis = "Amount"
+        leftAxis.nameAxisEnabled = true
+        leftAxis.drawLimitLinesBehindDataEnabled = false
         
+        let xAxis = chartView.xAxis
+        xAxis.nameAxisFont = NSUIFont.boldSystemFont(ofSize: 16.0)
+        xAxis.nameAxis = "Time"
+        xAxis.nameAxisEnabled = true
+
         let rightAxis = chartView.rightAxis
         rightAxis.enabled = false
-        
+
         let marker = RectMarker(color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), font: NSFont.systemFont(ofSize: CGFloat(12.0)), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
         marker.chartView = chartView
         marker.minimumSize = CGSize(width: CGFloat(60.0), height: CGFloat(30.0))
@@ -65,10 +76,18 @@ class LineChartRealTimeViewController: NSViewController {
     
     func initData()
     {
+        addLimit(index: 6.0, label: "Severe", color: .red)
+        addLimit(index: 4.0, label: "Moderate", color: .orange)
+        addLimit(index: 2.0, label: "Light", color: .green)
+        
+        addLimit(index: -2.0, label: "Light", color: .green)
+        addLimit(index: -4.0, label: "Moderate", color: .orange)
+        addLimit(index: -6.0, label: "Severe", color: .red)
+        
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
         xAxis.axisMinimum = 0.0
-        xAxis.axisMaximum = 50.0
+        xAxis.axisMaximum = deltaMaximum
         
         currentCount = 10
         time.intValue = Int32(currentCount)
@@ -76,22 +95,23 @@ class LineChartRealTimeViewController: NSViewController {
         yEntries.removeAll()
         
         for i in stride(from: 0, to: 10, by: step) {
-            let val = Double(arc4random_uniform(UInt32(10))) + 2
+            let val = Double(arc4random_uniform(UInt32(10))) - 5
             yEntries.append(ChartDataEntry(x: i, y: val))
         }
         
         var set1 = LineChartDataSet()
         set1 = LineChartDataSet(values: yEntries, label: "DataSet 1")
         set1.axisDependency = .left
-        set1.setColor(NSColor.blue)
+        set1.setColor(NSColor.black)
         set1.highlightColor = .black
         set1.highlightLineDashPhase = 1.0
+        set1.fillColor = .black
         
         set1.drawCirclesEnabled = false
-        set1.drawFilledEnabled = false
+        set1.drawFilledEnabled = true
         set1.drawValuesEnabled = false
-        set1.mode = .cubicBezier
-        
+        set1.mode = .stepped
+
         var dataSets = [LineChartDataSet]()
         dataSets.append(set1)
         
@@ -103,19 +123,19 @@ class LineChartRealTimeViewController: NSViewController {
     
     @objc func addValuesToChart()
     {
-        let yValue = Double(arc4random_uniform(UInt32(10))) + 2
+        let yValue = Double(arc4random_uniform(UInt32(10))) - 5
         let chartEntry = ChartDataEntry(x: currentCount, y: yValue)
         yEntries.append(chartEntry)
         
 //        print(currentCount,"   ", yEntries.count,"   ", (50 / step))
         
-        if yEntries.count == Int(50 / step)
+        if yEntries.count == Int(deltaMaximum / step)
         {
             chartView.xAxis.resetCustomAxisMax()
             chartView.xAxis.resetCustomAxisMin()
         }
         
-        if yEntries.count >= Int(50 / step)
+        if yEntries.count >= Int(deltaMaximum / step)
         {
             yEntries.removeFirst()
         }
@@ -131,6 +151,20 @@ class LineChartRealTimeViewController: NSViewController {
         chartView.data?.notifyDataChanged()
         chartView.notifyDataSetChanged()
     }
+    
+    func addLimit( index: Double, label : String, color: NSUIColor) {
+        
+        let llYAxis = ChartLimitLine(limit: index , label: label)
+        llYAxis.lineColor = color
+        llYAxis.valueTextColor = color
+        llYAxis.valueFont = NSUIFont.boldSystemFont(ofSize: 16.0)
+        llYAxis.labelPosition = .rightBottom
+        llYAxis.lineWidth = 5.0
+        
+        let leftAxis = chartView.leftAxis
+        leftAxis.addLimitLine(llYAxis)
+    }
+
     
     @IBAction func pauseButton(_ sender: Any) {
         

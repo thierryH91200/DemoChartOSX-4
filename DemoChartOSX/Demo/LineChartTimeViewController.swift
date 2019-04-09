@@ -73,6 +73,8 @@ open class LineChartTimeViewController: DemoBaseViewController
         leftAxis.drawGridLinesEnabled = true
         leftAxis.granularityEnabled = true
         leftAxis.yOffset = -9.0
+        leftAxis.drawLimitLinesBehindDataEnabled = false
+
         
         leftAxis.nameAxis = "Event"
         leftAxis.nameAxisEnabled = true
@@ -90,8 +92,8 @@ open class LineChartTimeViewController: DemoBaseViewController
         legend.horizontalAlignment = .left
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
-        chartView.chartDescription?.text = "Time Line Chart"
+        chartView.chartDescription.enabled = false
+        chartView.chartDescription.text = "Time Line Chart"
         
         sliderX.doubleValue = 90.0
         slidersValueChanged(sliderX)
@@ -134,7 +136,7 @@ open class LineChartTimeViewController: DemoBaseViewController
             let x1 = (x - from) / hourSeconds
             values2.append(ChartDataEntry(x: x1 , y: y1))
             y1 = Double(arc4random_uniform(UInt32(range)) + 50)
-            
+
             addLimit(index: x1, x : x)
 
             x += hourSeconds
@@ -172,13 +174,14 @@ open class LineChartTimeViewController: DemoBaseViewController
         {
             set1 = LineChartDataSet(values: values1, label: "Actual")
             set1.axisDependency = .left
+            set1.mode = .cubicBezier
             set1.valueTextColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
             set1.lineWidth = 1.5
             
             set1.drawCirclesEnabled = false
             set1.drawValuesEnabled = true
             
-            set1.drawFilledEnabled = false
+            set1.drawFilledEnabled = true
             set1.fillAlpha = 0.26
             set1.fillColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
             set1.highlightColor = #colorLiteral(red: 0.4513868093, green: 0.9930960536, blue: 1, alpha: 1)
@@ -189,12 +192,13 @@ open class LineChartTimeViewController: DemoBaseViewController
             
             set2 = LineChartDataSet(values: values2, label: "Future")
             set2.axisDependency = .left
+            set2.mode = .cubicBezier
             set2.valueTextColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
             set2.lineWidth = 1.5
             
             set2.drawCirclesEnabled = false
             set2.drawValuesEnabled = true
-            set2.drawFilledEnabled = false
+            set2.drawFilledEnabled = true
             
             set2.highlightColor = #colorLiteral(red: 0.4513868093, green: 0.9930960536, blue: 1, alpha: 1)
             set2.highlightLineWidth = 5.0
@@ -219,8 +223,7 @@ open class LineChartTimeViewController: DemoBaseViewController
 
         }
     }
-    
-    
+
     func addLimit( index: Double, x : Double) {
         
         let calendar = Calendar.current

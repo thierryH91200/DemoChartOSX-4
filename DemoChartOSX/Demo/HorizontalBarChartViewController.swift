@@ -94,8 +94,8 @@ open class HorizontalBarChartViewController: DemoBaseViewController
         legend.verticalAlignment = .bottom
         
         // MARK: description
-        chartView.chartDescription?.enabled = true
-        chartView.chartDescription?.text = "Horizontal Bar Chart"
+        chartView.chartDescription.enabled = true
+        chartView.chartDescription.text = "Horizontal Bar Chart"
 
         sliderX.doubleValue = 12.0
         sliderY.doubleValue = 50.0

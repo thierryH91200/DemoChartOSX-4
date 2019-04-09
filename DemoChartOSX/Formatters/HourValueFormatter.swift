@@ -13,14 +13,14 @@
 import Foundation
 import Charts
 
-open class HourValueFormatter : NSObject, IAxisValueFormatter
+open class HourValueFormatter : NSObject, AxisValueFormatter
 {
     var dateFormatter : DateFormatter
     
     public override init() {
         self.dateFormatter = DateFormatter()
         self.dateFormatter.dateFormat = "HH:mm"
-        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00") as TimeZone!
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT+0:00") as TimeZone?
     }
     
     public func stringForValue(_ value: Double, axis: AxisBase?) -> String

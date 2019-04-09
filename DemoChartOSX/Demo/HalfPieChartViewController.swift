@@ -91,8 +91,7 @@ open class HalfPieChartViewController: DemoBaseViewController
         dataSet.colors = ChartColorTemplates.material()
         
         // MARK: PieChartData
-        let data = PieChartData()
-        data.addDataSet(dataSet)
+        let data = PieChartData(dataSet: dataSet)
         
         let pFormatter = NumberFormatter()
         pFormatter.numberStyle = .percent

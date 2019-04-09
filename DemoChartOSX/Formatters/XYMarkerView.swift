@@ -13,11 +13,11 @@ import Charts
 
 open class XYMarkerView: BalloonMarker
 {
-    open var xAxisValueFormatter: IAxisValueFormatter?
-    open var yAxisValueFormatter: IAxisValueFormatter?
+    open var xAxisValueFormatter: AxisValueFormatter?
+    open var yAxisValueFormatter: AxisValueFormatter?
     fileprivate var yFormatter = NumberFormatter()
     
-    public init(color: NSColor, font: NSFont, textColor: NSColor, insets: NSEdgeInsets, xAxisValueFormatter: IAxisValueFormatter, yAxisValueFormatter : IAxisValueFormatter)
+    public init(color: NSColor, font: NSFont, textColor: NSColor, insets: NSEdgeInsets, xAxisValueFormatter: AxisValueFormatter, yAxisValueFormatter : AxisValueFormatter)
     {
         super.init(color: color, font: font, textColor: textColor, insets: insets)
         self.xAxisValueFormatter = xAxisValueFormatter

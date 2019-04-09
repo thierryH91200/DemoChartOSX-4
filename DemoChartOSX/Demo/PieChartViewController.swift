@@ -47,7 +47,7 @@ open class PieChartViewController: NSViewController
                                   .foregroundColor: NSColor(red: 51 / 255.0, green: 181 / 255.0, blue: 229 / 255.0, alpha: 1.0)], range: NSMakeRange(centerText.length - 19, 19))
         
         chartView.centerAttributedText = centerText
-        chartView.chartDescription?.text = "Pie Chart"
+        chartView.chartDescription.text = "Pie Chart"
         
         // MARK: PieChartDataEntry
         let ys1 = Array(1..<10).map { x in return sin(Double(x) / 2.0 / 3.141 * 1.5) * 100.0 }
@@ -58,8 +58,7 @@ open class PieChartViewController: NSViewController
         ds1.colors = ChartColorTemplates.vordiplom()
         
         // MARK: PieChartData
-        let data = PieChartData()
-        data.addDataSet(ds1)
+        let data = PieChartData(dataSet: ds1)
         chartView.data = data
 
     }

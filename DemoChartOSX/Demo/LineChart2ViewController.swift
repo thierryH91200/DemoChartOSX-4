@@ -143,9 +143,11 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         legend.verticalAlignment = .bottom
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
-        let marker = RectMarker(color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), font: NSFont.systemFont(ofSize: CGFloat(12.0)), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
+        let marker = RectMarker(color: #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1),
+                                font: NSFont.systemFont(ofSize: CGFloat(12.0)),
+                                insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
         marker.chartView = chartView
         marker.minimumSize = CGSize(width: CGFloat(60.0), height: CGFloat(30.0))
         chartView.marker = marker
@@ -250,14 +252,15 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
             set4 = LineChartDataSet(values: yVals4, label: "DataSet 4")
             set4.axisDependency = .right
             set4.colors = [#colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)]
-            set4.circleColors = [NSColor.white]
+            set4.circleColors = [NSColor.red]
             set4.lineWidth = 2.0
             set4.circleRadius = 3.0
             set4.fillAlpha = 65 / 255.0
             set4.fillColor = NSColor.yellow.withAlphaComponent(200 / 255.0)
             set4.drawCircleHoleEnabled = false
-            set4.drawCirclesEnabled = false
+            set4.drawCirclesEnabled = true
             set4.mode = .cubicBezier
+            set4.cubicIntensity = 0.05
             set4.highlightColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             set4.highlightEnabled = true
             set4.highlightLineWidth = 2.0

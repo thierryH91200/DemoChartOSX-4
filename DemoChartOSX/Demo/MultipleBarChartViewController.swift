@@ -49,11 +49,6 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         chartView.drawValueAboveBarEnabled = true
         chartView.drawBordersEnabled = true
         
-//        chartView.isPinchZoomEnabled = false
-//        chartView.isDrawBarShadowEnabled = false
-//        chartView.isDrawGridBackgroundEnabled = true
-//        chartView.isDrawBordersEnabled = true
-        
         // MARK: xAxis
         let xAxis = chartView.xAxis
         xAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!
@@ -124,9 +119,9 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         legend.yEntrySpace = 0.0
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
-        let marker = BalloonMarker(color: NSColor(white: CGFloat(180 / 255.0), alpha: 1.0), font: NSFont.systemFont(ofSize: CGFloat(12.0)), textColor: .white, insets: NSEdgeInsetsMake(8.0, 8.0, 20.0, 8.0))
+        let marker = BalloonMarker(color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), font: NSFont.systemFont(ofSize: CGFloat(12.0)), textColor: .white, insets: NSEdgeInsetsMake(8.0, 8.0, 20.0, 8.0))
         marker.chartView = chartView
         marker.minimumSize = CGSize(width: CGFloat(80.0), height: CGFloat(40.0))
         chartView.marker = marker

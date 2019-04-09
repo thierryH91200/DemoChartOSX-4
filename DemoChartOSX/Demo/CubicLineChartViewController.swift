@@ -79,7 +79,7 @@ open class CubicLineChartViewController: DemoBaseViewController
         chartView.legend.enabled = false
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         sliderX.doubleValue = 132.0
         sliderY.doubleValue = 42.0
@@ -147,9 +147,7 @@ open class CubicLineChartViewController: DemoBaseViewController
             set1.fill = Fill(linearGradient: gradient, angle: -90.0)
 
 
-            set1.fillFormatter = DefaultFillFormatter(block: {(_ dataSet: ILineChartDataSet, _ dataProvider: LineChartDataProvider) -> CGFloat in
-                return CGFloat(self.chartView.leftAxis.axisMinimum)
-            })
+            set1.fillFormatter = CubicLineSampleFillFormatter()
             
             
              // MARK: LineChartData
@@ -167,6 +165,13 @@ open class CubicLineChartViewController: DemoBaseViewController
         updateChartData()
     }
 }
+
+private class CubicLineSampleFillFormatter: FillFormatter {
+    func getFillLinePosition(dataSet: LineChartDataSetProtocol, dataProvider: LineChartDataProvider) -> CGFloat {
+        return -10
+    }
+}
+
 
 // MARK: - ChartViewDelegate
 extension CubicLineChartViewController: ChartViewDelegate

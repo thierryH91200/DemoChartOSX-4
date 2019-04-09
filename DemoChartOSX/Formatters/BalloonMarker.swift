@@ -25,7 +25,7 @@ open class BalloonMarker: MarkerImage
     fileprivate var label: String?
     fileprivate var _labelSize: CGSize = CGSize()
     fileprivate var _paragraphStyle: NSMutableParagraphStyle?
-    fileprivate var _drawAttributes = [NSAttributedStringKey : Any]()
+    fileprivate var _drawAttributes = [NSAttributedString.Key : Any]()
     
      
     public init(color: NSColor, font: NSFont, textColor: NSColor, insets: NSEdgeInsets)

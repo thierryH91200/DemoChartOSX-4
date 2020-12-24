@@ -176,9 +176,9 @@ open class LineChart1ViewController: DemoBaseViewController
             set1.formSize = 15.0
             set1.axisDependency = .left
             
-            let beginColor = ChartColorTemplates.colorFromString(  "#00ff0000").cgColor
-            let endColor = ChartColorTemplates.colorFromString( "#ffff0000").cgColor
-            let gradientColors = [(beginColor ), (endColor )] as CFArray
+//            let beginColor = ChartColorTemplates.colorFromString(  "#00ff0000").cgColor
+//            let endColor = ChartColorTemplates.colorFromString( "#ffff0000").cgColor
+//            let gradientColors = [(beginColor ), (endColor )] as CFArray
             
 //            let gradient = CGGradient(colorsSpace: nil, colors: gradientColors, locations: nil)!
             

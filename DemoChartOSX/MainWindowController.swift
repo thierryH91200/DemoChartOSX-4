@@ -414,7 +414,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         imageInfo.append(ImageInfo(thumbnail: halfPieChartViewController.view.image(), nameController: "HalfPieChartViewController", name: "Half Pie Chart", type: .pie))
         imageInfo.append(ImageInfo(thumbnail: pieChartViewController.view.image(), nameController: "PieChartViewController", name: "Pie Chart", type: .pie))
         imageInfo.append(ImageInfo(thumbnail: piePolylineChartViewController.view.image(), nameController: "PiePolylineChartViewController", name: "Pie Polyline Chart", type: .pie))
-        imageInfo.append(ImageInfo(thumbnail: scatterChartViewController.view.image(), nameController: "ScatterChartViewController", name: "Scatter Chart", type: .scatter))
+//        imageInfo.append(ImageInfo(thumbnail: scatterChartViewController.view.image(), nameController: "ScatterChartViewController", name: "Scatter Chart", type: .scatter))
         imageInfo.append(ImageInfo(thumbnail: lineChartRealTimeViewController.view.image(), nameController: "LineChartRealTimeViewController", name: "Line Real Time Chart", type: .line))
         
         //  good the sort multiple-criteria

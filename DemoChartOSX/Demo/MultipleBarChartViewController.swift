@@ -58,8 +58,8 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         xAxis.gridLineWidth = 2.0
         xAxis.labelPosition = .bottom
         
-        xAxis.nameAxis = "Name xAxis"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Name xAxis"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
@@ -71,8 +71,8 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         leftAxis.spaceTop = 0.35
         leftAxis.axisMinimum = 0
         
-        leftAxis.nameAxis = "Company A"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Company A"
+//        leftAxis.nameAxisEnabled = true
         
         // MARK: leftAxis1
         let leftAxis1 = chartView.leftAxis
@@ -83,8 +83,8 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
 //        leftAxis1.axisSecondaryEnabled = true
         leftAxis1.labelTextColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
-        leftAxis1.nameAxis = "Company B"
-        leftAxis1.nameAxisEnabled = true
+//        leftAxis1.nameAxis = "Company B"
+//        leftAxis1.nameAxisEnabled = true
         
         let rightAxis1 = chartView.rightAxis
         rightAxis1.valueFormatter = LargeValueFormatter()
@@ -105,8 +105,8 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         //rightAxis.isEnabled = true
         rightAxis.labelTextColor = #colorLiteral(red: 1, green: 0.1474981606, blue: 0, alpha: 1)
         
-        rightAxis.nameAxis = "Company C😐"
-        rightAxis.nameAxisEnabled = true
+//        rightAxis.nameAxis = "Company C😐"
+//        rightAxis.nameAxisEnabled = true
         
         // MARK: legend
         let legend = chartView.legend
@@ -128,7 +128,7 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         
         sliderX.doubleValue = 10.0
         sliderY.doubleValue = 100.0
-        self.slidersValueChanged(sliderX)
+        self.slidersValueChanged(sliderX!)
     }
     
     override func updateChartData()
@@ -175,11 +175,11 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
             set3 = chartView.data?.dataSets[2] as! BarChartDataSet
             set4 = chartView.data?.dataSets[3] as! BarChartDataSet
             
-            set1.values = yVals1
-            set2.values = yVals2
-            set3.values = yVals3
-            set4.values = yVals4
-            
+            set1.replaceEntries(yVals1)
+            set2.replaceEntries(yVals2)
+            set3.replaceEntries(yVals3)
+            set4.replaceEntries(yVals4)
+
             // MARK: BarChartData
             let data = BarChartData(dataSets: [set1, set2, set3, set4])
             
@@ -193,19 +193,19 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         }
         else
         {
-            set1 = BarChartDataSet(values: yVals1, label: "Company A")
+            set1 = BarChartDataSet(entries: yVals1, label: "Company A")
             set1.colors = [#colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)]
 //            set1.axisDependency = .left
             
-            set2 = BarChartDataSet(values: yVals2, label: "Company B")
+            set2 = BarChartDataSet(entries: yVals2, label: "Company B")
             set2.colors = [#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)]
 //            set2.axisDependency = .left
             
-            set3 = BarChartDataSet(values: yVals3, label: "Company C")
+            set3 = BarChartDataSet(entries: yVals3, label: "Company C")
             set3.colors = [#colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)]
 //            set3.axisDependency = .right
             
-            set4 = BarChartDataSet(values: yVals4, label: "Company D")
+            set4 = BarChartDataSet(entries: yVals4, label: "Company D")
             set4.colors = [#colorLiteral(red: 1, green: 0.1474981606, blue: 0, alpha: 1)]
 //            set4.axisDependency = .right
             

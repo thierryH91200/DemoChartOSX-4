@@ -111,7 +111,7 @@ open class PositiveNegativeBarChartViewController: DemoBaseViewController
         }
         
         // MARK: BarChartDataSet
-        let set = BarChartDataSet(values: values, label: "Values")
+        let set = BarChartDataSet(entries: values, label: "Values")
         set.colors = colors
         set.valueColors = colors
         set.axisDependency = .left

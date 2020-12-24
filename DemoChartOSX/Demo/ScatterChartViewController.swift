@@ -44,16 +44,16 @@ open class ScatterChartViewController: NSViewController
         xAxis.drawGridLinesEnabled = true
         xAxis.labelPosition = .bottom
         
-        xAxis.nameAxis = "Normal Name"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Normal Name"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
         leftAxis.labelFont = NSFont(name: "HelveticaNeue-Light", size: 10.0)!
         leftAxis.axisMinimum = 0.0
         
-        leftAxis.nameAxis = "Left name"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Left name"
+//        leftAxis.nameAxisEnabled = true
         
         // MARK: rightAxis
         chartView.rightAxis.enabled = false
@@ -96,19 +96,19 @@ open class ScatterChartViewController: NSViewController
         }
         
         // MARK: ScatterChartDataSet
-        let set1 = ScatterChartDataSet(values: yVals1, label: "DS 1")
+        let set1 = ScatterChartDataSet(entries: yVals1, label: "DS 1")
         set1.setScatterShape(.square )
         set1.colors =  ChartColorTemplates.liberty()
         set1.scatterShapeSize = 10.0
         
-        let set2 = ScatterChartDataSet(values: yVals2, label: "DS 2")
+        let set2 = ScatterChartDataSet(entries: yVals2, label: "DS 2")
         set2.setScatterShape( .circle)
         set2.scatterShapeHoleColor = NSColor.blue
         set2.scatterShapeHoleRadius = 3.5
         set2.colors = ChartColorTemplates.material()
         set2.scatterShapeSize = 10.0
         
-        let set3 = ScatterChartDataSet(values: yVals3, label: "DS 3")
+        let set3 = ScatterChartDataSet(entries: yVals3, label: "DS 3")
         set3.setScatterShape(.triangle)
         set3.colors = [NSColor.orange] //ChartColorTemplates.pastel()
         set3.scatterShapeSize = 10.0

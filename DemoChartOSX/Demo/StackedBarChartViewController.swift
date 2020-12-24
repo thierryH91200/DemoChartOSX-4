@@ -102,13 +102,13 @@ open class StackedBarChartViewController: NSViewController
         if chartView.data != nil
         {
             set1 = chartView.data!.dataSets[0] as! BarChartDataSet
-            set1.values = yVals
+            set1.replaceEntries( yVals)
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
         }
         else
         {
-            set1 = BarChartDataSet(values: yVals, label: "Statistics Vienna 2014")
+            set1 = BarChartDataSet(entries: yVals, label: "Statistics Vienna 2014")
             set1.colors = [#colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1), #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)]
             set1.stackLabels = ["data1", "data2"]
             set1.valueFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!

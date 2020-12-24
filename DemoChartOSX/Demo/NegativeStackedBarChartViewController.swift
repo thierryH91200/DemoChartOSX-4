@@ -49,8 +49,8 @@ open class NegativeStackedBarChartViewController: DemoBaseViewController
         xAxis.granularity = 1
         xAxis.valueFormatter = IndexAxisValueFormatter(values: categories)
         
-        xAxis.nameAxis = "Name xAxis"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Name xAxis"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         chartView.leftAxis.enabled = false
@@ -72,8 +72,8 @@ open class NegativeStackedBarChartViewController: DemoBaseViewController
         rightAxis.valueFormatter = DefaultAxisValueFormatter(formatter : customFormatter)
         rightAxis.labelFont = NSFont.systemFont(ofSize: CGFloat(9.0))
         
-        rightAxis.nameAxis = "Name rightAxis"
-        rightAxis.nameAxisEnabled = true
+//        rightAxis.nameAxis = "Name rightAxis"
+//        rightAxis.nameAxisEnabled = true
 
         // MARK: legend
         let legend = chartView.legend
@@ -116,8 +116,7 @@ open class NegativeStackedBarChartViewController: DemoBaseViewController
         if chartView.data != nil
         {
             set = (chartView.data?.dataSets[0] as? BarChartDataSet)!
-            set.values = yValues
-            
+            set.replaceEntries(yValues)
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
         }
@@ -130,7 +129,7 @@ open class NegativeStackedBarChartViewController: DemoBaseViewController
             customFormatter.minimumSignificantDigits = 1
             customFormatter.minimumFractionDigits = 1
             
-            set = BarChartDataSet(values: yValues, label: "Age Distribution")
+            set = BarChartDataSet(entries: yValues, label: "Age Distribution")
             set.valueFormatter = DefaultValueFormatter(formatter : customFormatter)
             set.valueFont = NSFont.systemFont(ofSize: CGFloat(7.0))
             set.axisDependency = .right

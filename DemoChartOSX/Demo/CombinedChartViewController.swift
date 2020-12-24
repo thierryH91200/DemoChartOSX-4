@@ -40,7 +40,7 @@ open class CombinedChartViewController: NSViewController
         chartView.drawGridBackgroundEnabled = false
         chartView.drawBarShadowEnabled      = false
         chartView.highlightFullBarEnabled   = false
-        chartView.drawOrder                 = [  DrawOrder.bar.rawValue, DrawOrder.bubble.rawValue, DrawOrder.candle.rawValue, DrawOrder.line.rawValue, DrawOrder.scatter.rawValue]
+//        chartView.drawOrder                 = [  DrawOrder.bar.rawValue, DrawOrder.bubble.rawValue, DrawOrder.candle.rawValue, DrawOrder.line.rawValue, DrawOrder.scatter.rawValue]
         
         // MARK: xAxis
         let xAxis                           = chartView.xAxis
@@ -56,16 +56,16 @@ open class CombinedChartViewController: NSViewController
         leftAxis.drawGridLinesEnabled       = false
         leftAxis.axisMinimum                = 0.0
         
-        leftAxis.nameAxis = "left Axis"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "left Axis"
+//        leftAxis.nameAxisEnabled = true
 
         // MARK: rightAxis
         let rightAxis                       = chartView.rightAxis
         rightAxis.drawGridLinesEnabled      = false
         rightAxis.axisMinimum               = 0.0
         
-        rightAxis.nameAxis = "right Axis"
-        rightAxis.nameAxisEnabled = true
+//        rightAxis.nameAxis = "right Axis"
+//        rightAxis.nameAxisEnabled = true
     
         // MARK: legend
         let legend                          = chartView.legend
@@ -108,7 +108,7 @@ open class CombinedChartViewController: NSViewController
         }
         
         // MARK: LineChartDataSet
-        let set = LineChartDataSet(values: entries, label: "Line DataSet")
+        let set = LineChartDataSet(entries: entries, label: "Line DataSet")
         set.colors = [#colorLiteral(red: 0.941176470588235, green: 0.933333333333333, blue: 0.274509803921569, alpha: 1.0)]
         set.lineWidth = 2.5
         set.circleColors = [#colorLiteral(red: 0.941176470588235, green: 0.933333333333333, blue: 0.274509803921569, alpha: 1.0)]
@@ -139,13 +139,13 @@ open class CombinedChartViewController: NSViewController
         }
         
         // MARK: BarChartDataSet
-        let set1            = BarChartDataSet(values: entries1, label: "Bar 1")
+        let set1            = BarChartDataSet(entries: entries1, label: "Bar 1")
         set1.colors         = [#colorLiteral(red: 0.235294117647059, green: 0.862745098039216, blue: 0.305882352941176, alpha: 1.0)]
         set1.valueTextColor = #colorLiteral(red: 0.235294117647059, green: 0.862745098039216, blue: 0.305882352941176, alpha: 1.0)
         set1.valueFont      = .systemFont(ofSize: CGFloat(10.0))
         set1.axisDependency = .left
         
-        let set2            = BarChartDataSet(values: entries2, label: "Bar 2")
+        let set2            = BarChartDataSet(entries: entries2, label: "Bar 2")
         set2.stackLabels    = ["Stack 1", "Stack 2"]
         set2.colors         = [#colorLiteral(red: 0.23921568627451, green: 0.647058823529412, blue: 1.0, alpha: 1.0),  #colorLiteral(red: 0.090196078431373, green: 0.772549019607843, blue: 1.0, alpha: 1.0)]
         set2.valueTextColor = #colorLiteral(red: 0.23921568627451, green: 0.647058823529412, blue: 1.0, alpha: 1.0)
@@ -178,7 +178,7 @@ open class CombinedChartViewController: NSViewController
         }
         
         // MARK: ScatterChartDataSet
-        let set = ScatterChartDataSet(values: entries, label: "Scatter DataSet")
+        let set = ScatterChartDataSet(entries: entries, label: "Scatter DataSet")
         set.colors = ChartColorTemplates.material()
         set.scatterShapeSize = 4.5
         set.drawValuesEnabled = false
@@ -200,7 +200,7 @@ open class CombinedChartViewController: NSViewController
         }
         
         // MARK: CandleChartDataSet
-        let set = CandleChartDataSet(values: entries, label: "Candle DataSet")
+        let set = CandleChartDataSet(entries: entries, label: "Candle DataSet")
         set.colors = [#colorLiteral(red: 0.313725490196078, green: 0.313725490196078, blue: 0.313725490196078, alpha: 1.0)]
         
         set.decreasingColor = #colorLiteral(red: 0.556862745098039, green: 0.588235294117647, blue: 0.686274509803922, alpha: 1.0)
@@ -225,7 +225,7 @@ open class CombinedChartViewController: NSViewController
         }
         
         // MARK: BubbleChartDataSet
-        let set = BubbleChartDataSet(values: entries, label: "Bubble DataSet")
+        let set = BubbleChartDataSet(entries: entries, label: "Bubble DataSet")
         set.colors = ChartColorTemplates.vordiplom()
         set.valueTextColor = .white
         set.valueFont = NSFont.systemFont(ofSize: CGFloat(10.0))

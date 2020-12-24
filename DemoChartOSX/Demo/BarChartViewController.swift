@@ -61,8 +61,8 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         xAxis.granularity          = 1
         xAxis.labelPosition  = .bottom
         
-        xAxis.nameAxis = "Day"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Day"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis                  = chartView.leftAxis
@@ -72,8 +72,8 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         leftAxis.axisMinimum = 1000
 
         
-        leftAxis.nameAxis = "Hour (s)"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Hour (s)"
+//        leftAxis.nameAxisEnabled = true
         
 //        chartView.leftAxis1.isEnabled = false
 //        chartView.rightAxis1.isEnabled = false
@@ -83,8 +83,8 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         rightAxis.drawGridLinesEnabled = true
 //        rightAxis.valueFormatter       = HourValueFormatter()
         
-        rightAxis.nameAxis = "Hour (s)"
-        rightAxis.nameAxisEnabled = true
+//        rightAxis.nameAxis = "Hour (s)"
+//        rightAxis.nameAxisEnabled = true
         
         // MARK: legend
         let legend = chartView.legend
@@ -132,7 +132,7 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         var set1 = BarChartDataSet()
         if chartView.data == nil
         {
-            set1 = BarChartDataSet(values: yVals, label: "DataSet")
+            set1 = BarChartDataSet(entries: yVals, label: "DataSet")
             set1.colors = ChartColorTemplates.vordiplom()
 //            set1.colors = [.orange, .orange, .orange, .orange, .orange, .orange, .orange]
             set1.drawValuesEnabled = false
@@ -151,8 +151,8 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         else
         {
             set1 = (chartView.data!.dataSets[0] as! BarChartDataSet )
-            set1.values = yVals
-            
+            set1.replaceEntries(yVals)
+
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
         }

@@ -9,16 +9,16 @@
 //  https://github.com/danielgindi/Charts
 //
 
-import Foundation
+import AppKit
 import Charts
 
 
 open class BalloonMarker: MarkerImage
 {
-    open var color: NSColor?
+    open var color: NSUIColor?
     open var arrowSize = CGSize(width: 15, height: 11)
-    open var font: NSFont?
-    open var textColor: NSColor?
+    open var font: NSUIFont?
+    open var textColor: NSUIColor?
     open var insets = NSEdgeInsets()
     open var minimumSize = CGSize()
     
@@ -28,7 +28,7 @@ open class BalloonMarker: MarkerImage
     fileprivate var _drawAttributes = [NSAttributedString.Key : Any]()
     
      
-    public init(color: NSColor, font: NSFont, textColor: NSColor, insets: NSEdgeInsets)
+    public init(color: NSUIColor, font: NSUIFont, textColor: NSUIColor, insets: NSEdgeInsets)
     {
         super.init()
         

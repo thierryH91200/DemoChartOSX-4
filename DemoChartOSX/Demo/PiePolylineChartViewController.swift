@@ -76,7 +76,7 @@ open class PiePolylineChartViewController: DemoBaseViewController
         }
         
         // MARK: PieChartDataSet
-        let dataSet = PieChartDataSet(values: entries, label: "Election Results")
+        let dataSet = PieChartDataSet(entries: entries, label: "Election Results")
         dataSet.sliceSpace = 2.0
         
         // add a lot of colors

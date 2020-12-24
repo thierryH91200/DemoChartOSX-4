@@ -54,8 +54,8 @@ open class HorizontalBarChartViewController: DemoBaseViewController
         xAxis.drawGridLinesEnabled = true
         xAxis.granularity = 0.0
         
-        xAxis.nameAxis = "Name Axis X"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Name Axis X"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
@@ -65,8 +65,8 @@ open class HorizontalBarChartViewController: DemoBaseViewController
         leftAxis.drawGridLinesEnabled = true
         leftAxis.axisMinimum = 0.0
         
-        leftAxis.nameAxis = "Left name"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Left name"
+//        leftAxis.nameAxisEnabled = true
 
         // MARK: rightAxis
         let rightAxis                  = chartView.rightAxis
@@ -77,9 +77,9 @@ open class HorizontalBarChartViewController: DemoBaseViewController
         rightAxis.drawGridLinesEnabled = true
         rightAxis.axisMinimum          = 0.0
         
-        rightAxis.nameAxis = "Right Name"
-        rightAxis.nameAxisEnabled = true
-        
+//        rightAxis.nameAxis = "Right Name"
+//        rightAxis.nameAxisEnabled = true
+//        
 //        chartView.leftAxis1.axisSecondaryEnabled = false
 //        chartView.rightAxis1.axisSecondaryEnabled = false
         
@@ -94,8 +94,8 @@ open class HorizontalBarChartViewController: DemoBaseViewController
         legend.verticalAlignment = .bottom
         
         // MARK: description
-        chartView.chartDescription.enabled = true
-        chartView.chartDescription.text = "Horizontal Bar Chart"
+//        chartView.chartDescription.enabled = true
+//        chartView.chartDescription.text = "Horizontal Bar Chart"
 
         sliderX.doubleValue = 12.0
         sliderY.doubleValue = 50.0
@@ -126,13 +126,13 @@ open class HorizontalBarChartViewController: DemoBaseViewController
         if chartView.data != nil
         {
             set1 = ( chartView.data?.dataSets[0] as? BarChartDataSet)!
-            set1.values = yVals
+            set1.replaceEntries(yVals)
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
         }
         else
         {
-            set1 = BarChartDataSet(values: yVals, label: "DataSet")
+            set1 = BarChartDataSet(entries: yVals, label: "DataSet")
             
             // MARK: BarChartData
             let data            = BarChartData(dataSets: [set1])

@@ -53,15 +53,15 @@ class LineChartRealTimeViewController: NSViewController {
         let leftAxis = chartView.leftAxis
         leftAxis.axisMaximum = 8
         leftAxis.axisMinimum = -8
-        leftAxis.nameAxisFont = NSUIFont.boldSystemFont(ofSize: 16.0)
-        leftAxis.nameAxis = "Amount"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxisFont = NSUIFont.boldSystemFont(ofSize: 16.0)
+//        leftAxis.nameAxis = "Amount"
+//        leftAxis.nameAxisEnabled = true
         leftAxis.drawLimitLinesBehindDataEnabled = false
         
-        let xAxis = chartView.xAxis
-        xAxis.nameAxisFont = NSUIFont.boldSystemFont(ofSize: 16.0)
-        xAxis.nameAxis = "Time"
-        xAxis.nameAxisEnabled = true
+//        let xAxis = chartView.xAxis
+//        xAxis.nameAxisFont = NSUIFont.boldSystemFont(ofSize: 16.0)
+//        xAxis.nameAxis = "Time"
+//        xAxis.nameAxisEnabled = true
 
         let rightAxis = chartView.rightAxis
         rightAxis.enabled = false
@@ -100,7 +100,7 @@ class LineChartRealTimeViewController: NSViewController {
         }
         
         var set1 = LineChartDataSet()
-        set1 = LineChartDataSet(values: yEntries, label: "DataSet 1")
+        set1 = LineChartDataSet(entries: yEntries, label: "DataSet 1")
         set1.axisDependency = .left
         set1.setColor(NSColor.black)
         set1.highlightColor = .black
@@ -147,7 +147,7 @@ class LineChartRealTimeViewController: NSViewController {
         var set1 = LineChartDataSet()
         set1 = (chartView.data?.dataSets[0] as? LineChartDataSet)!
         
-        set1.values = yEntries
+        set1.replaceEntries(yEntries)
         chartView.data?.notifyDataChanged()
         chartView.notifyDataSetChanged()
     }
@@ -158,14 +158,13 @@ class LineChartRealTimeViewController: NSViewController {
         llYAxis.lineColor = color
         llYAxis.valueTextColor = color
         llYAxis.valueFont = NSUIFont.boldSystemFont(ofSize: 16.0)
-        llYAxis.labelPosition = .rightBottom
+        llYAxis.labelPosition = ChartLimitLine.LabelPosition.rightBottom
         llYAxis.lineWidth = 5.0
         
         let leftAxis = chartView.leftAxis
         leftAxis.addLimitLine(llYAxis)
     }
 
-    
     @IBAction func pauseButton(_ sender: Any) {
         
         if timer != nil {

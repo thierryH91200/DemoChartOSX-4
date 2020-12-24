@@ -52,8 +52,8 @@ open class LineChartFilledViewController: DemoBaseViewController
         xAxis.labelCount = 7
         xAxis.granularity = 1
         
-        xAxis.nameAxis = "Name xAxis"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Name xAxis"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
@@ -64,8 +64,8 @@ open class LineChartFilledViewController: DemoBaseViewController
         leftAxis.drawGridLinesEnabled = true
         leftAxis.axisLineColor = NSColor.black
         
-        leftAxis.nameAxis = "left Axis"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "left Axis"
+//        leftAxis.nameAxisEnabled = true
         
         // MARK: rightAxis
         chartView.rightAxis.enabled = false
@@ -110,14 +110,14 @@ open class LineChartFilledViewController: DemoBaseViewController
         {
             set1 = (chartView.data!.dataSets[0] as! LineChartDataSet )
             set2 = (chartView.data!.dataSets[1] as! LineChartDataSet )
-            set1.values = yVals1
-            set2.values = yVals2
+            set1.replaceEntries(yVals1)
+            set2.replaceEntries(yVals2)
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
         }
         else
         {
-            set1 = LineChartDataSet(values: yVals1, label: "DataSet 1")
+            set1 = LineChartDataSet(entries: yVals1, label: "DataSet 1")
             set1.axisDependency = .left
             set1.colors = [NSColor(red: CGFloat(255 / 255.0), green: CGFloat(241 / 255.0), blue: CGFloat(46 / 255.0), alpha: 1.0)]
             set1.drawCirclesEnabled = false
@@ -132,7 +132,7 @@ open class LineChartFilledViewController: DemoBaseViewController
                 return CGFloat(self.chartView.leftAxis.axisMinimum)
             }
             
-            set2 = LineChartDataSet(values: yVals2, label: "DataSet 2")
+            set2 = LineChartDataSet(entries: yVals2, label: "DataSet 2")
             set2.axisDependency = .left
             set2.colors = [NSColor(red: CGFloat(255 / 255.0), green: CGFloat(241 / 255.0), blue: CGFloat(46 / 255.0), alpha: 1.0)]
             set2.drawCirclesEnabled = false

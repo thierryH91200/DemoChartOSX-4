@@ -52,8 +52,8 @@ open class SinusBarChartViewController: DemoBaseViewController
         xAxis.drawGridLinesEnabled = false
         xAxis.enabled = true
         
-        xAxis.nameAxis = "Date"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Date"
+//        xAxis.nameAxisEnabled = true
 
          // MARK: leftAxis
         let leftAxis = chartView.leftAxis
@@ -64,13 +64,13 @@ open class SinusBarChartViewController: DemoBaseViewController
         leftAxis.granularityEnabled = true
         leftAxis.granularity = 0.1
         
-        leftAxis.nameAxis = "Amplitude"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Amplitude"
+//        leftAxis.nameAxisEnabled = true
 
         // MARK: rightAxis
-        let rightAxis = chartView.rightAxis
-        rightAxis.enabled = false
-        rightAxis.nameAxisEnabled = false
+//        let rightAxis = chartView.rightAxis
+//        rightAxis.enabled = false
+//        rightAxis.nameAxisEnabled = false
         
         // MARK: legend
         let legend = chartView.legend
@@ -109,14 +109,16 @@ open class SinusBarChartViewController: DemoBaseViewController
         if chartView.data != nil
         {
             set = (chartView.data?.dataSets[0] as? BarChartDataSet)!
-            set.values = entries
+//            set.values = entries
+            set.replaceEntries(entries)
+
             
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
         }
         else
         {
-            set = BarChartDataSet(values: entries, label: "Sinus Function")
+            set = BarChartDataSet(entries: entries, label: "Sinus Function")
             set.colors = [NSColor(red: CGFloat(240 / 255.0), green: CGFloat(120 / 255.0), blue: CGFloat(124 / 255.0), alpha: 1.0)]
         }
         set.valueFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(10.0))!

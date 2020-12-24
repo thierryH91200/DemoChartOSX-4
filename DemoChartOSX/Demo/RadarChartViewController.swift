@@ -97,7 +97,7 @@ open class RadarChartViewController: DemoBaseViewController
         let entries2 = (0..<cnt).map(block)
         
         // MARK: RadarChartDataSet
-        let set1 = RadarChartDataSet(values: entries1, label: "Last Week")
+        let set1 = RadarChartDataSet(entries: entries1, label: "Last Week")
         set1.colors = [NSColor(red: CGFloat(103 / 255.0), green: CGFloat(110 / 255.0), blue: CGFloat(129 / 255.0), alpha: 1.0)]
         set1.fillColor = NSColor(red: CGFloat(103 / 255.0), green: CGFloat(110 / 255.0), blue: CGFloat(129 / 255.0), alpha: 1.0)
         set1.drawFilledEnabled = true
@@ -106,7 +106,7 @@ open class RadarChartViewController: DemoBaseViewController
         set1.drawHighlightCircleEnabled = true
         set1.setDrawHighlightIndicators(false)
         
-        let set2 = RadarChartDataSet(values: entries2, label: "This Week")
+        let set2 = RadarChartDataSet(entries: entries2, label: "This Week")
         set2.colors = [NSColor(red: CGFloat(121 / 255.0), green: CGFloat(162 / 255.0), blue: CGFloat(175 / 255.0), alpha: 1.0)]
         set2.fillColor = NSColor(red: CGFloat(121 / 255.0), green: CGFloat(162 / 255.0), blue: CGFloat(175 / 255.0), alpha: 1.0)
         set2.drawFilledEnabled = true
@@ -130,7 +130,6 @@ open class RadarChartViewController: DemoBaseViewController
 }
 
 class RadarChartXValueFormatter: NSObject, AxisValueFormatter {
-    
     
     init(withLabels labels: String...) {
         self.labels = labels

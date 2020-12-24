@@ -107,8 +107,8 @@ open class CubicLineChartViewController: DemoBaseViewController
         if chartView.data != nil
         {
             set1 = chartView.data!.dataSets[0] as! LineChartDataSet
-            set1.values = yVals1
-            
+            set1.replaceEntries(yVals1)
+
             chartView.fitScreen()
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
@@ -120,7 +120,7 @@ open class CubicLineChartViewController: DemoBaseViewController
         }
         else
         {
-            set1 = LineChartDataSet(values: yVals1, label: "DataSet 1")
+            set1 = LineChartDataSet(entries: yVals1, label: "DataSet 1")
             set1.valueFont = NSFont(name: "HelveticaNeue-Light", size: CGFloat(9.0))!
             set1.drawValuesEnabled = false
             
@@ -144,10 +144,10 @@ open class CubicLineChartViewController: DemoBaseViewController
             let gradient = CGGradient(colorsSpace: nil, colors: gradientColors, locations: nil)!
             
             set1.fillAlpha = 0.50
-            set1.fill = Fill(linearGradient: gradient, angle: -90.0)
+//            set1.fill = Fill(linearGradient: gradient, angle: -90.0)
 
 
-            set1.fillFormatter = CubicLineSampleFillFormatter()
+//            set1.fillFormatter = CubicLineSampleFillFormatter()
             
             
              // MARK: LineChartData
@@ -166,11 +166,11 @@ open class CubicLineChartViewController: DemoBaseViewController
     }
 }
 
-private class CubicLineSampleFillFormatter: FillFormatter {
-    func getFillLinePosition(dataSet: LineChartDataSetProtocol, dataProvider: LineChartDataProvider) -> CGFloat {
-        return -10
-    }
-}
+//private class CubicLineSampleFillFormatter: IFillFormatter {
+//    func getFillLinePosition(dataSet: ILineChartDataSetProtocol, dataProvider: LineChartDataProvider) -> CGFloat {
+//        return -10
+//    }
+//}
 
 
 // MARK: - ChartViewDelegate

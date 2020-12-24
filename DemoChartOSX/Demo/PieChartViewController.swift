@@ -54,7 +54,7 @@ open class PieChartViewController: NSViewController
         let yse1 = ys1.enumerated().map { x, y in return PieChartDataEntry(value: y, label: "val" + String(x)) }
         
         // MARK: PieChartDataSet
-        let ds1 = PieChartDataSet(values: yse1, label: "Hello")
+        let ds1 = PieChartDataSet(entries: yse1, label: "Hello")
         ds1.colors = ChartColorTemplates.vordiplom()
         
         // MARK: PieChartData

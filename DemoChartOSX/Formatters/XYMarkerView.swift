@@ -17,7 +17,7 @@ open class XYMarkerView: BalloonMarker
     open var yAxisValueFormatter: AxisValueFormatter?
     fileprivate var yFormatter = NumberFormatter()
     
-    public init(color: NSColor, font: NSFont, textColor: NSColor, insets: NSEdgeInsets, xAxisValueFormatter: AxisValueFormatter, yAxisValueFormatter : AxisValueFormatter)
+    public init(color: NSUIColor, font: NSUIFont, textColor: NSUIColor, insets: NSEdgeInsets, xAxisValueFormatter: AxisValueFormatter, yAxisValueFormatter : AxisValueFormatter)
     {
         super.init(color: color, font: font, textColor: textColor, insets: insets)
         self.xAxisValueFormatter = xAxisValueFormatter

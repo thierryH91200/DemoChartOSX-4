@@ -39,7 +39,7 @@ open class DemoBaseViewController: NSViewController
             chartView.needsDisplay = true
             
         case "Highlight":
-            chartView.data!.highlightEnabled = !chartView.data!.isHighlightEnabled
+            chartView.data!.isHighlightEnabled = !chartView.data!.isHighlightEnabled
             chartView.needsDisplay = true
             
         case "Animate X":

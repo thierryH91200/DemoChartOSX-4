@@ -77,15 +77,15 @@ open class LineChart1ViewController: DemoBaseViewController
         xAxis.gridLineDashPhase = 0.0
         xAxis.labelPosition = .bottom
         
-        xAxis.nameAxis = "Date (s)"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Date (s)"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         // leftAxis limit line
         let ll1 = ChartLimitLine(limit: 150.0, label: "Upper Limit")
         ll1.lineWidth = 4.0
         ll1.lineDashLengths = [5.0, 5.0]
-        ll1.labelPosition = .rightTop
+        ll1.labelPosition = .leftTop
         ll1.valueFont = NSFont.systemFont(ofSize: CGFloat(10.0))
         
         let ll2 = ChartLimitLine(limit: -30.0, label: "Lower Limit")
@@ -109,8 +109,8 @@ open class LineChart1ViewController: DemoBaseViewController
         leftAxis.drawZeroLineEnabled = false
         leftAxis.drawLimitLinesBehindDataEnabled = true
         
-        leftAxis.nameAxis = "Temperature (°C)"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Temperature (°C)"
+//        leftAxis.nameAxisEnabled = true
         
         // MARK: rightAxis
         chartView.rightAxis.enabled = false
@@ -153,8 +153,8 @@ open class LineChart1ViewController: DemoBaseViewController
         if chartView.data != nil
         {
             set1 = (chartView.data?.dataSets[0] as? LineChartDataSet)!
-            set1.values = values
-            
+            set1.replaceEntries(values)
+
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
             
@@ -162,7 +162,7 @@ open class LineChart1ViewController: DemoBaseViewController
         }
         else
         {
-            set1 = LineChartDataSet(values: values, label: "DataSet 1")
+            set1 = LineChartDataSet(entries: values, label: "DataSet 1")
             set1.lineDashLengths = [5.0, 2.5]
             set1.highlightLineDashLengths = [5.0, 2.5]
             set1.colors = [#colorLiteral(red: 0.476841867, green: 0.5048075914, blue: 1, alpha: 1)]
@@ -180,11 +180,11 @@ open class LineChart1ViewController: DemoBaseViewController
             let endColor = ChartColorTemplates.colorFromString( "#ffff0000").cgColor
             let gradientColors = [(beginColor ), (endColor )] as CFArray
             
-            let gradient = CGGradient(colorsSpace: nil, colors: gradientColors, locations: nil)!
+//            let gradient = CGGradient(colorsSpace: nil, colors: gradientColors, locations: nil)!
             
             set1.fillAlpha = 1.0
 //            set1.fill = .linearGradient(gradient, angle: 90)
-            set1.fill = Fill(linearGradient: gradient, angle: 90.0)
+//            set1.fill = Fill(linearGradient: gradient, angle: 90.0)
             
             var dataSets = [LineChartDataSet]()
             dataSets.append(set1)

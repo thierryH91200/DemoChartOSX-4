@@ -47,8 +47,8 @@ open class BubbleChartViewController: NSViewController, ChartViewDelegate
 //        xAxis.axisMaximum          = 120.0
         xAxis.axisMinimum          = 0.0
         
-        xAxis.nameAxis = "Impact"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Impact"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis                  = chartView.leftAxis
@@ -56,8 +56,8 @@ open class BubbleChartViewController: NSViewController, ChartViewDelegate
         leftAxis.drawZeroLineEnabled  = true
 //        leftAxis.axisMaximum          = 10.0
         
-        leftAxis.nameAxis = "Probability"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Probability"
+//        leftAxis.nameAxisEnabled = true
         
         // MARK: rightAxis
         let rightAxis                  = chartView.rightAxis
@@ -103,18 +103,18 @@ open class BubbleChartViewController: NSViewController, ChartViewDelegate
             return BubbleChartDataEntry(x: Double(i), y: val, size: size)
         }
         
-        let set1 = BubbleChartDataSet(values: yVals1, label: "DS 1")
+        let set1 = BubbleChartDataSet(entries: yVals1, label: "DS 1")
         set1.drawIconsEnabled = false
         set1.setColor(ChartColorTemplates.colorful()[0], alpha: 0.5)
         set1.drawValuesEnabled = true
         
-        let set2 = BubbleChartDataSet(values: yVals2, label: "DS 2")
+        let set2 = BubbleChartDataSet(entries: yVals2, label: "DS 2")
         set2.drawIconsEnabled = false
         set2.iconsOffset = CGPoint(x: 0, y: 15)
         set2.setColor(ChartColorTemplates.colorful()[1], alpha: 0.5)
         set2.drawValuesEnabled = true
         
-        let set3 = BubbleChartDataSet(values: yVals3, label: "DS 3")
+        let set3 = BubbleChartDataSet(entries: yVals3, label: "DS 3")
         set3.setColor(ChartColorTemplates.colorful()[2], alpha: 0.5)
         set3.drawValuesEnabled = true
         

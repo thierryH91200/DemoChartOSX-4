@@ -135,7 +135,9 @@ open class BarChartViewControllerColumnWithDrilldown: DemoBaseViewController
         if chartView.data != nil
         {
             set = (chartView.data?.dataSets[0] as? BarChartDataSet)!
-            set.values = entries
+            set.replaceEntries(entries)
+
+//            set.values = entries
             set.colors = colors
             
             chartView.data?.notifyDataChanged()
@@ -143,7 +145,7 @@ open class BarChartViewControllerColumnWithDrilldown: DemoBaseViewController
         }
         else
         {
-            set = BarChartDataSet(values: entries, label: "Browser market shares")
+            set = BarChartDataSet(entries: entries, label: "Browser market shares")
             set.colors = colors
         }
         

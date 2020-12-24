@@ -43,8 +43,8 @@ open class CandleStickChartViewController: NSViewController
         xAxis.labelPosition = .bottom
         xAxis.drawGridLinesEnabled = true
         
-        xAxis.nameAxis = "Name xAxis"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Name xAxis"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
@@ -52,8 +52,8 @@ open class CandleStickChartViewController: NSViewController
         leftAxis.drawGridLinesEnabled = true
         leftAxis.drawAxisLineEnabled = false
         
-        leftAxis.nameAxis = "Name xAxis"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Name xAxis"
+//        leftAxis.nameAxisEnabled = true
         
         // MARK: rightAxis
         let rightAxis = chartView.rightAxis
@@ -88,7 +88,7 @@ open class CandleStickChartViewController: NSViewController
         }
         
         // MARK: CandleChartDataSet
-        let set1 = CandleChartDataSet(values: yVals1 , label: "Data Set")
+        let set1 = CandleChartDataSet(entries: yVals1 , label: "Data Set")
         set1.axisDependency = .left
         set1.setColor(NSColor(white: CGFloat(80 / 255.0), alpha: 1.0))
         set1.shadowColor = NSColor.darkGray

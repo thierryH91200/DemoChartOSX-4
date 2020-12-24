@@ -65,8 +65,8 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         xAxis.labelPosition = .bottom
         xAxis.labelRotationAngle = 0
         
-        xAxis.nameAxis = "Name xAxis"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Name xAxis"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
@@ -79,8 +79,8 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         leftAxis.drawZeroLineEnabled = false
         leftAxis.granularityEnabled = false
         
-        leftAxis.nameAxis = "Name Principal"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Name Principal"
+//        leftAxis.nameAxisEnabled = true
         
         // MARK: leftAxis1
         let leftAxis1 = chartView.leftAxis
@@ -106,8 +106,8 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
         rightAxis.drawGridLinesEnabled = false
         rightAxis.granularityEnabled = false
         
-        rightAxis.nameAxis = "Name Principal"
-        rightAxis.nameAxisEnabled = true
+//        rightAxis.nameAxis = "Name Principal"
+//        rightAxis.nameAxisEnabled = true
         
         // MARK: rightAxis1
         let rightAxis1 = chartView.rightAxis
@@ -194,16 +194,17 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
             set3 = (chartView.data?.dataSets[2] as? LineChartDataSet)!
             set4 = (chartView.data?.dataSets[3] as? LineChartDataSet)!
             
-            set1.values = yVals1
-            set2.values = yVals2
-            set3.values = yVals3
-            set4.values = yVals4
+            set1.replaceEntries(yVals1)
+            set2.replaceEntries(yVals2)
+            set3.replaceEntries(yVals3)
+            set4.replaceEntries(yVals4)
+            
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
         }
         else
         {
-            set1 = LineChartDataSet(values: yVals1, label: "DataSet 1")
+            set1 = LineChartDataSet(entries: yVals1, label: "DataSet 1")
             set1.axisDependency = .left
             set1.colors = [#colorLiteral(red: 0.215686274509804, green: 0.709803921568627, blue: 0.898039215686275, alpha: 1.0)]
             set1.circleColors = [NSColor.white]
@@ -218,7 +219,7 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
             set1.highlightColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             set1.highlightEnabled = true
             
-            set2 = LineChartDataSet(values: yVals2, label: "DataSet 2")
+            set2 = LineChartDataSet(entries: yVals2, label: "DataSet 2")
             set2.axisDependency = .left
             set2.colors = [#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)]
             set2.circleColors = [NSColor.white]
@@ -233,7 +234,7 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
             set2.highlightEnabled = true
             set2.highlightLineWidth = 2.0
             
-            set3 = LineChartDataSet(values: yVals3, label: "DataSet 3")
+            set3 = LineChartDataSet(entries: yVals3, label: "DataSet 3")
             set3.axisDependency = .right
             set3.colors = [#colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)]
             set3.circleColors = [NSColor.white]
@@ -249,7 +250,7 @@ class LineChart2ViewController: NSViewController, ChartViewDelegate
             set3.highlightLineWidth = 2.0
             set3.drawHorizontalHighlightIndicatorEnabled = false
             
-            set4 = LineChartDataSet(values: yVals4, label: "DataSet 4")
+            set4 = LineChartDataSet(entries: yVals4, label: "DataSet 4")
             set4.axisDependency = .right
             set4.colors = [#colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)]
             set4.circleColors = [NSColor.red]

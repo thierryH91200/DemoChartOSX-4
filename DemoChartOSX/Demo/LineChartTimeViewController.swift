@@ -62,8 +62,8 @@ open class LineChartTimeViewController: DemoBaseViewController
         xAxis.spaceMax = xAxis.granularity / 5
         xAxis.labelRotationAngle = -90.0
         
-        xAxis.nameAxis = "Date (s)"
-        xAxis.nameAxisEnabled = true
+//        xAxis.nameAxis = "Date (s)"
+//        xAxis.nameAxisEnabled = true
         
         // MARK: leftAxis
         let leftAxis = chartView.leftAxis
@@ -76,8 +76,8 @@ open class LineChartTimeViewController: DemoBaseViewController
         leftAxis.drawLimitLinesBehindDataEnabled = false
 
         
-        leftAxis.nameAxis = "Event"
-        leftAxis.nameAxisEnabled = true
+//        leftAxis.nameAxis = "Event"
+//        leftAxis.nameAxisEnabled = true
         
         // MARK: rightAxis
         chartView.rightAxis.enabled = false
@@ -161,9 +161,12 @@ open class LineChartTimeViewController: DemoBaseViewController
         if chartView.data != nil
         {
             set1 = (chartView.data?.dataSets[0] as? LineChartDataSet)!
-            set1.values = values1
             set2 = (chartView.data?.dataSets[1] as? LineChartDataSet)!
-            set2.values = values2
+            set1.replaceEntries(values1)
+            set2.replaceEntries(values2)
+
+//            set1.values = values1
+//            set2.values = values2
             
             chartView.xAxis.resetCustomAxisMax()
             
@@ -172,7 +175,7 @@ open class LineChartTimeViewController: DemoBaseViewController
         }
         else
         {
-            set1 = LineChartDataSet(values: values1, label: "Actual")
+            set1 = LineChartDataSet(entries: values1, label: "Actual")
             set1.axisDependency = .left
             set1.mode = .cubicBezier
             set1.valueTextColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
@@ -190,7 +193,7 @@ open class LineChartTimeViewController: DemoBaseViewController
             set1.formSize = 15.0
             set1.colors = [#colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)]
             
-            set2 = LineChartDataSet(values: values2, label: "Future")
+            set2 = LineChartDataSet(entries: values2, label: "Future")
             set2.axisDependency = .left
             set2.mode = .cubicBezier
             set2.valueTextColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)

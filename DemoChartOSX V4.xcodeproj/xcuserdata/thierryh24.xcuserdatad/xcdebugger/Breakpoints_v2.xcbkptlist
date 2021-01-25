@@ -7,17 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B802616E-C926-42B3-A0CB-236EB40063A3"
-            shouldBeEnabled = "Yes"
+            uuid = "BF91915C-8025-4772-98C7-46948175A568"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DemoChartOSX/MainWindowController.swift"
+            filePath = "DemoChartOSX/Demo/LineChart1ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "542"
-            endingLineNumber = "542"
-            landmarkName = "description"
-            landmarkType = "24">
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "setDataCount(_:range:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BF91915C-8025-4772-98C7-46948175A568 - 7f939ae5e46ac72f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DemoChartOSX_V4.LineChart1ViewController.setDataCount(_: Swift.Int, range: Swift.UInt32) -&gt; ()"
+                  moduleName = "DemoChartOSX V4"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/DemoChartOSX%204/DemoChartOSX/Demo/LineChart1ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "150"
+                  endingLineNumber = "150"
+                  offsetFromSymbolStart = "343">
+               </Location>
+               <Location
+                  uuid = "BF91915C-8025-4772-98C7-46948175A568 - 1b621f8cfd5822a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; Charts.ChartDataEntry in DemoChartOSX_V4.LineChart1ViewController.setDataCount(_: Swift.Int, range: Swift.UInt32) -&gt; ()"
+                  moduleName = "DemoChartOSX V4"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thierryh24/Documents/Developpements/DemoChartOSX%204/DemoChartOSX/Demo/LineChart1ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
+                  offsetFromSymbolStart = "101">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

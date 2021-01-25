@@ -9,8 +9,7 @@
 //
 //  https://github.com/danielgindi/ios-charts
 
-import Foundation
-import Cocoa
+import AppKit
 import Charts
 
 private var defaultsContext = 0
@@ -168,6 +167,7 @@ open class LineChart1ViewController: DemoBaseViewController
         else
         {
             set1 = LineChartDataSet(entries: values, label: "DataSet 1")
+            set1.drawIconsEnabled = false
             set1.lineDashLengths = [5.0, 2.5]
             set1.highlightLineDashLengths = [5.0, 2.5]
             set1.colors = [#colorLiteral(red: 0.476841867, green: 0.5048075914, blue: 1, alpha: 1)]
@@ -189,7 +189,7 @@ open class LineChart1ViewController: DemoBaseViewController
             
             set1.fillAlpha = 1.0
 //            set1.fill = .linearGradient(gradient, angle: 90)
-//            set1.fill = Fill(linearGradient: gradient, angle: 90.0)
+//            set1.fill = Fill(linearGradient: turquoiseColor, angle: 90.0)
             
             var dataSets = [LineChartDataSet]()
             dataSets.append(set1)

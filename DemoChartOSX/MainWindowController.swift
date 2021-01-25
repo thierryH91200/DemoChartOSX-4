@@ -137,15 +137,16 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         super.windowDidLoad()
         
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-        
         self.sourceCollectionController = SourceCollectionController()
         self.sourceCollectionController?.mainWindowController = self
         
         self.sourceListViewController = SourceListViewController()
         self.sourceListViewController?.mainWindowController = self
         
-        setUpSourceList()
+//        setUpSourceList()
         setUpAlbumArt()
+        toggleArtwork(sourceCollectionController!)
+        toggleCollection(sourceCollectionController!)
     }
     
     func changeView(name: String)

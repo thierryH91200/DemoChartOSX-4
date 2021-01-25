@@ -106,11 +106,12 @@ class LineChartRealTimeViewController: NSViewController {
         set1.highlightColor = .black
         set1.highlightLineDashPhase = 1.0
         set1.fillColor = .black
+        set1.mode = .cubicBezier
         
         set1.drawCirclesEnabled = false
-        set1.drawFilledEnabled = true
+        set1.drawFilledEnabled = false
         set1.drawValuesEnabled = false
-        set1.mode = .stepped
+//        set1.mode = .stepped
 
         var dataSets = [LineChartDataSet]()
         dataSets.append(set1)
@@ -126,8 +127,6 @@ class LineChartRealTimeViewController: NSViewController {
         let yValue = Double(arc4random_uniform(UInt32(10))) - 5
         let chartEntry = ChartDataEntry(x: currentCount, y: yValue)
         yEntries.append(chartEntry)
-        
-//        print(currentCount,"   ", yEntries.count,"   ", (50 / step))
         
         if yEntries.count == Int(deltaMaximum / step)
         {

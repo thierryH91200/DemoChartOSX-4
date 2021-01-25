@@ -137,17 +137,17 @@ open class CubicLineChartViewController: DemoBaseViewController
             set1.drawFilledEnabled = true
             set1.fillColor = .darkGray
             
-//            let beginColor =  #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).cgColor
-//            let endColor =  #colorLiteral(red: 0.152921766, green: 0.1529546976, blue: 0.1529174447, alpha: 1).cgColor
-//            let gradientColors = [ beginColor , (endColor )] as CFArray
-//            
-//            let gradient = CGGradient(colorsSpace: nil, colors: gradientColors, locations: nil)!
-            
-            set1.fillAlpha = 0.50
-//            set1.fill = Fill(linearGradient: gradient, angle: -90.0)
+////            let beginColor =  #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).cgColor
+////            let endColor =  #colorLiteral(red: 0.152921766, green: 0.1529546976, blue: 0.1529174447, alpha: 1).cgColor
+////            let gradientColors = [ beginColor , (endColor )] as CFArray
+////
+////            let gradient = CGGradient(colorsSpace: nil, colors: gradientColors, locations: nil)!
+//
+//            set1.fillAlpha = 0.50
+////            set1.fill = Fill(linearGradient: gradient, angle: -90.0)
 
 
-//            set1.fillFormatter = CubicLineSampleFillFormatter()
+            set1.fillFormatter = CubicLineSampleFillFormatter()
             
             
              // MARK: LineChartData
@@ -166,11 +166,11 @@ open class CubicLineChartViewController: DemoBaseViewController
     }
 }
 
-//private class CubicLineSampleFillFormatter: IFillFormatter {
-//    func getFillLinePosition(dataSet: ILineChartDataSetProtocol, dataProvider: LineChartDataProvider) -> CGFloat {
-//        return -10
-//    }
-//}
+private class CubicLineSampleFillFormatter: FillFormatter {
+    func getFillLinePosition(dataSet: LineChartDataSetProtocol, dataProvider: LineChartDataProvider) -> CGFloat {
+        return -10
+    }
+}
 
 
 // MARK: - ChartViewDelegate

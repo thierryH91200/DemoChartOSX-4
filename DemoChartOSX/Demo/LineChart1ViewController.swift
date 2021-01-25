@@ -121,7 +121,12 @@ open class LineChart1ViewController: DemoBaseViewController
         // MARK: description
         chartView.chartDescription.enabled = false
         
-        let marker = BalloonMarker(color: #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1), font: NSFont.systemFont(ofSize: CGFloat(12.0)), textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 20.0, right: 8.0))
+        let marker = BalloonMarker(
+            color: #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1),
+            font: NSFont.systemFont(ofSize: CGFloat(12.0)),
+            textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
+            insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 20.0, right: 8.0))
+        
         marker.chartView = chartView
         marker.minimumSize = CGSize(width: CGFloat(80.0), height: CGFloat(40.0))
         chartView.marker = marker
@@ -176,11 +181,11 @@ open class LineChart1ViewController: DemoBaseViewController
             set1.formSize = 15.0
             set1.axisDependency = .left
             
-//            let beginColor = ChartColorTemplates.colorFromString(  "#00ff0000").cgColor
-//            let endColor = ChartColorTemplates.colorFromString( "#ffff0000").cgColor
-//            let gradientColors = [(beginColor ), (endColor )] as CFArray
+            let beginColor = ChartColorTemplates.colorFromString(  "#00ff0000").cgColor
+            let endColor = ChartColorTemplates.colorFromString( "#ffff0000").cgColor
+            let gradientColors = [(beginColor ), (endColor )] as CFArray
             
-//            let gradient = CGGradient(colorsSpace: nil, colors: gradientColors, locations: nil)!
+            let gradient = CGGradient(colorsSpace: nil, colors: gradientColors, locations: nil)!
             
             set1.fillAlpha = 1.0
 //            set1.fill = .linearGradient(gradient, angle: 90)

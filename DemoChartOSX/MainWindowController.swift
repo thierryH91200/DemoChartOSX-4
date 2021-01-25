@@ -19,6 +19,7 @@ enum TypeOfChart {
     case radar
     case scatter
     case none
+    
     var label: String
     {
         switch self {
@@ -472,12 +473,12 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         if myView.count > 0
         {
             parentView.replaceSubview(myView[0], with: subView)
-            print("replace View : ", subView)
+//            print("replace View : ", subView)
         }
         else
         {
             parentView.addSubview(subView)
-            print("add View : ", subView)
+//            print("add View : ", subView)
         }
     }
     

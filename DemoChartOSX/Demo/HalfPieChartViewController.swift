@@ -9,8 +9,7 @@
 //
 //  https://github.com/danielgindi/ios-charts
 
-import Foundation
-import Cocoa
+import AppKit
 import Charts
 
 open class HalfPieChartViewController: DemoBaseViewController

@@ -6,7 +6,7 @@
 //  Copyright © 2016 John Moody. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 import Charts
 
 class ToggleLineViewController: DemoBaseViewController

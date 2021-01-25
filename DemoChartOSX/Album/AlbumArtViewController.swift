@@ -6,7 +6,7 @@
 //  Copyright © 2016 John Moody. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 
 class AlbumArtViewController: NSViewController {
     
@@ -30,7 +30,7 @@ class AlbumArtViewController: NSViewController {
         imageView.image = image
     }
     
-    @IBAction func radioButtonChanged(_ sender: AnyObject) {
+    @IBAction func radioButtonChanged(_ sender: Any) {
         mainWindowController?.collection = collectionButton.state
         mainWindowController?.setUpSourceList()
     }

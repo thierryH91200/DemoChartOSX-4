@@ -6,9 +6,8 @@
 //  Copyright © 2016 John Moody. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 import Charts
-import Foundation
 
 
 class LineChart2ViewController: NSViewController, ChartViewDelegate

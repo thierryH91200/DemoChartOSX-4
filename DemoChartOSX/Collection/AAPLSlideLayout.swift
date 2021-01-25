@@ -1,6 +1,6 @@
 //
 //  AAPLSlideLayout.swift
-//  CocoaSlideCollection
+//  SlideCollection
 //
 //  Translated by OOPer in cooperation with shlab.jp, on 2015/12/26.
 //
@@ -13,7 +13,7 @@
     This is the "SlideLayout" class declaration.
 */
 
-import Cocoa
+import AppKit
 
 let X_PADDING: CGFloat = 10.0
 let Y_PADDING: CGFloat = 10.0

@@ -1,6 +1,6 @@
 //
 //  AAPLCircularLayout.swift
-//  CocoaSlideCollection
+//  SlideCollection
 //
 //  Translated by OOPer in cooperation with shlab.jp, on 2015/12/26.
 //
@@ -13,7 +13,7 @@
     This is the "CircularLayout" class declaration.
 */
 
-import Cocoa
+import AppKit
 
 // Positions items in a circle, within the available area.
 class AAPLCircularLayout: AAPLSlideLayout {

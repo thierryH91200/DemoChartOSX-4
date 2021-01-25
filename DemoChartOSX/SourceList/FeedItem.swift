@@ -9,7 +9,7 @@
 //
 //  https://github.com/danielgindi/ios-charts
 
-import Cocoa
+import AppKit
 
 class FeedItem: NSObject {
     let type: String

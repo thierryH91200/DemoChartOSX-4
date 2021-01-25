@@ -6,7 +6,7 @@
 //  Copyright © 2017 thierryH24100. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 import Charts
 
 enum TypeOfChart {
@@ -474,12 +474,10 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         if myView.count > 0
         {
             parentView.replaceSubview(myView[0], with: subView)
-//            print("replace View : ", subView)
         }
         else
         {
             parentView.addSubview(subView)
-//            print("add View : ", subView)
         }
     }
     
@@ -514,21 +512,21 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         setUpSourceList()
     }
     
-    @IBAction func zoomAll(_ sender: AnyObject)
+    @IBAction func zoomAll(_ sender: Any)
     {
         barLineChartViewBase?.fitScreen()
         barLineChartViewBase?.data?.notifyDataChanged()
         barLineChartViewBase?.notifyDataSetChanged()
     }
     
-    @IBAction func zoomIn(_ sender: AnyObject)
+    @IBAction func zoomIn(_ sender: Any)
     {
         barLineChartViewBase?.zoomToCenter(scaleX: 1.5, scaleY: 1.5) //, x: view.frame.width, y: 0)
         barLineChartViewBase?.data?.notifyDataChanged()
         barLineChartViewBase?.notifyDataSetChanged()
     }
     
-    @IBAction func zoomOut(_ sender: AnyObject)
+    @IBAction func zoomOut(_ sender: Any)
     {
         barLineChartViewBase?.zoomToCenter(scaleX: 2/3, scaleY: 2/3)
         barLineChartViewBase?.data?.notifyDataChanged()

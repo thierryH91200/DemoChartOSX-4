@@ -24,7 +24,7 @@
  * THE SOFTWARE.
  */
 
-import Cocoa
+import AppKit
 
 class CollectionViewItem: NSCollectionViewItem {
     

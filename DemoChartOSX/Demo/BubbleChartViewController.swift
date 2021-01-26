@@ -128,7 +128,7 @@ open class BubbleChartViewController: NSViewController, ChartViewDelegate
     
     
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print("Bubble selected")
+        print("Bubble selected : x = ", entry.x)
     }
     
     public func chartValueNothingSelected(_ chartView: ChartViewBase) {

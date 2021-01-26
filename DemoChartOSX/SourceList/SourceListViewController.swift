@@ -49,7 +49,6 @@ class SourceListViewController: NSViewController {
     func feedList(_ fileName: String) {
         
         let url2      = Bundle.main.url (forResource: fileName, withExtension: "plist")!
-        print(url2)
 
         let data = try! Data(contentsOf: url2)
         feeds = try! data.decoded()

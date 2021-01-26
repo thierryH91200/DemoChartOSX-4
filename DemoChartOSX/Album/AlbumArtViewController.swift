@@ -25,7 +25,6 @@ class AlbumArtViewController: NSViewController {
     }
     
     func loadAlbumArtWindow() {
-        print("loading album art window")
         let image = mainWindowController?.radarChartViewController.view.image()
         imageView.image = image
     }

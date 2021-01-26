@@ -7,7 +7,7 @@
 		<string>Line</string>
 		<key>isSourceGroup</key>
 		<true/>
-		<key>items</key>
+		<key>children</key>
 		<array>
 			<dict>
 				<key>description</key>
@@ -86,7 +86,7 @@
 		<string>Radar</string>
 		<key>isSourceGroup</key>
 		<true/>
-		<key>items</key>
+		<key>children</key>
 		<array>
 			<dict>
 				<key>description</key>
@@ -105,7 +105,7 @@
 		<string>Pie</string>
 		<key>isSourceGroup</key>
 		<true/>
-		<key>items</key>
+		<key>children</key>
 		<array>
 			<dict>
 				<key>description</key>
@@ -144,7 +144,7 @@
 		<string>Scatter</string>
 		<key>isSourceGroup</key>
 		<true/>
-		<key>items</key>
+		<key>children</key>
 		<array>
 			<dict>
 				<key>description</key>
@@ -163,7 +163,7 @@
 		<string>Combined Chart</string>
 		<key>isSourceGroup</key>
 		<true/>
-		<key>items</key>
+		<key>children</key>
 		<array>
 			<dict>
 				<key>description</key>
@@ -182,7 +182,7 @@
 		<string>Bar</string>
 		<key>isSourceGroup</key>
 		<true/>
-		<key>items</key>
+		<key>children</key>
 		<array>
 			<dict>
 				<key>description</key>
@@ -271,7 +271,7 @@
 		<string>Bubble Chart</string>
 		<key>isSourceGroup</key>
 		<true/>
-		<key>items</key>
+		<key>children</key>
 		<array>
 			<dict>
 				<key>description</key>
@@ -290,7 +290,7 @@
 		<string>CandleStick Chart</string>
 		<key>isSourceGroup</key>
 		<true/>
-		<key>items</key>
+		<key>children</key>
 		<array>
 			<dict>
 				<key>description</key>

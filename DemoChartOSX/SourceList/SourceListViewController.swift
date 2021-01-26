@@ -10,19 +10,17 @@ import AppKit
 
 class SourceListViewController: NSViewController {
         
-    var mainWindowController: MainWindowController?
 
     @IBOutlet weak var outlineView: NSOutlineView!
     
     var feeds = [Feed]()
-    
+    var mainWindowController: MainWindowController?
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let filePath = Bundle.main.path(forResource: "Feeds", ofType: "plist")
-        {
-            feeds = Feed.feedList(filePath)
-        }
+        feedList("Feeds")
     }
     
     override open func viewDidAppear()
@@ -47,6 +45,24 @@ class SourceListViewController: NSViewController {
             outlineView?.isHidden = true
         }
     }
+    
+    func feedList(_ fileName: String) {
+        
+        let url2      = Bundle.main.url (forResource: fileName, withExtension: "plist")!
+        print(url2)
+
+        let data = try! Data(contentsOf: url2)
+        feeds = try! data.decoded()
+        feeds = feeds.sorted{ $0.name < $1.name}
+        
+        // or
+        // datas = try! data.decoded() as [Donnees]
+
+        // or
+        // let plistDecoder = PropertyListDecoder()
+        // datas = try! plistDecoder.decode([Donnees].self, from: data)
+    }
+
 }
 
 extension SourceListViewController: NSOutlineViewDataSource
@@ -140,7 +156,7 @@ extension SourceListViewController: NSOutlineViewDelegate
         }
         else
         {
-            if let feedItem = item as? FeedItem
+            if let feedItem = item as? Children
             {
                 view = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "FeedItemCell"), owner: self) as? NSTableCellView
                 if let textField = view?.textField
@@ -159,8 +175,7 @@ extension SourceListViewController: NSOutlineViewDelegate
         guard let outlineView = notification.object as? NSOutlineView else { return }
         
         let selectedIndex = outlineView.selectedRow
-        
-        if let feedItem = outlineView.item(atRow: selectedIndex) as? FeedItem
+        if let feedItem = outlineView.item(atRow: selectedIndex) as? Children
         {
             let name =  feedItem.name
             mainWindowController?.changeView(name: name)

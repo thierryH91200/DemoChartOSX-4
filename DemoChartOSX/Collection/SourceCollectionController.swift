@@ -101,7 +101,6 @@ class SourceCollectionController: NSViewController {
             sectionLengthArray.append(countSorted.value)
         }
 
-        
         let haveOneSection = singleSectionMode || sectionLengthArray.count < 2 || imageInfos.count <= sectionLengthArray[0]
         var realSectionLength = haveOneSection ? imageInfos.count : sectionLengthArray[0]
         var sectionAttributes = SectionAttributes(sectionOffset: 0, sectionLength: realSectionLength, sectionName: imageInfos[0].type.label)
@@ -154,24 +153,13 @@ extension SourceCollectionController : NSCollectionViewDelegate
 {
     func collectionView (_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>)
     {
-        guard let indexPath = indexPaths.first else {
-            return
-        }
+        guard let indexPath = indexPaths.first else { return }
+        
         // 3
-        guard let item = collectionView.item(at: indexPath) else {
-            return
-        }
+        guard let item = collectionView.item(at: indexPath) else { return }
+        
         (item as! CollectionViewItem).setHighlight(selected: true)
-        print(item)
-        
         let nameController = (item as! CollectionViewItem).imageInfo?.nameController
-        
-        let array = Array(indexPaths)
-        print("Allows multiple selection:", collectionView.allowsMultipleSelection)
-        print("Number of selected items:", collectionView.selectionIndexPaths.count)
-        print(indexPaths)
-        print(array[0])
-        print("")
         mainWindowController?.changeView(name: nameController!)
     }
     
@@ -190,7 +178,6 @@ extension SourceCollectionController : NSCollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        print ("numberOfItemsInSection : ", numberOfItemsInSection(section))
         return numberOfItemsInSection(section)
     }
     
@@ -201,13 +188,12 @@ extension SourceCollectionController : NSCollectionViewDataSource {
         
         let imageInfo = imageFileForIndexPath(indexPath)
         collectionViewItem.imageInfo = imageInfo
-        
         return item
     }
     
-func collectionView(_ collectionView: NSCollectionView, viewForSupplementaryElementOfKind kind: NSCollectionView.SupplementaryElementKind, at indexPath: IndexPath) -> NSView {
-
-    let view = collectionView.makeSupplementaryView(ofKind: NSCollectionView.elementKindSectionHeader, withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "HeaderView"), for: indexPath) as! HeaderView
+    func collectionView(_ collectionView: NSCollectionView, viewForSupplementaryElementOfKind kind: NSCollectionView.SupplementaryElementKind, at indexPath: IndexPath) -> NSView {
+        
+        let view = collectionView.makeSupplementaryView(ofKind: NSCollectionView.elementKindSectionHeader, withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "HeaderView"), for: indexPath) as! HeaderView
         view.sectionTitle.stringValue = "\(sectionsAttributesArray[indexPath.section].sectionName)"
         let nbOfItemsInSection = self.numberOfItemsInSection(indexPath.section)
         view.imageCount.stringValue = "\(nbOfItemsInSection) chart(s)"

@@ -36,6 +36,7 @@ open class ScatterChartViewController: NSViewController
         chartView.setScaleEnabled ( true)
         chartView.maxVisibleCount = 200
         chartView.drawBordersEnabled = true
+//        chartView.ena
         
         // MARK: xAxis
         let xAxis = chartView.xAxis
@@ -99,18 +100,21 @@ open class ScatterChartViewController: NSViewController
         set1.setScatterShape(.square )
         set1.colors =  ChartColorTemplates.liberty()
         set1.scatterShapeSize = 10.0
-        
+        set1.drawValuesEnabled = false
+
         let set2 = ScatterChartDataSet(entries: yVals2, label: "DS 2")
         set2.setScatterShape( .circle)
         set2.scatterShapeHoleColor = NSColor.blue
         set2.scatterShapeHoleRadius = 3.5
         set2.colors = ChartColorTemplates.material()
         set2.scatterShapeSize = 10.0
-        
+        set2.drawValuesEnabled = false
+
         let set3 = ScatterChartDataSet(entries: yVals3, label: "DS 3")
         set3.setScatterShape(.triangle)
         set3.colors = [NSColor.orange] //ChartColorTemplates.pastel()
         set3.scatterShapeSize = 10.0
+        set3.drawValuesEnabled = false
         
         var dataSets = [ScatterChartDataSet]()
         dataSets.append(set1)

@@ -164,9 +164,6 @@ open class LineChartTimeViewController: DemoBaseViewController
             set1.replaceEntries(values1)
             set2.replaceEntries(values2)
 
-//            set1.values = values1
-//            set2.values = values2
-            
             chartView.xAxis.resetCustomAxisMax()
             
             chartView.data?.notifyDataChanged()
@@ -222,7 +219,6 @@ open class LineChartTimeViewController: DemoBaseViewController
             
             chartView.data = data
             chartView.xAxis.axisMaximum += 1
-
         }
     }
 

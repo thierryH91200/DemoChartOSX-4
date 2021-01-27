@@ -21,8 +21,8 @@ struct Feed: Codable
 
 struct Children : Codable {
     var type: String
-    var description : String
-    var id : String
+//    var description : String
+//    var id : String
     var name : String
 }
 

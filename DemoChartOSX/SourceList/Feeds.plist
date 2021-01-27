@@ -10,8 +10,6 @@
 		<key>children</key>
 		<array>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc30</string>
 				<key>name</key>
@@ -20,8 +18,6 @@
 				<string>Line Real Time</string>
 			</dict>
 			<dict>
-				<key>description</key>
-				<string>A simple demonstration of the linechart</string>
 				<key>id</key>
 				<string>vc1</string>
 				<key>name</key>
@@ -30,8 +26,6 @@
 				<string>Line Chart</string>
 			</dict>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc12</string>
 				<key>name</key>
@@ -40,8 +34,6 @@
 				<string>Line Chart 2 (Dual YAxis)</string>
 			</dict>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc8</string>
 				<key>name</key>
@@ -50,8 +42,6 @@
 				<string>Cubic Line Chart</string>
 			</dict>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc10</string>
 				<key>name</key>
@@ -60,8 +50,6 @@
 				<string>Filled Line Chart</string>
 			</dict>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc18</string>
 				<key>name</key>
@@ -70,8 +58,6 @@
 				<string>Time Line Chart</string>
 			</dict>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc20</string>
 				<key>name</key>
@@ -89,8 +75,6 @@
 		<key>children</key>
 		<array>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc2</string>
 				<key>name</key>
@@ -108,8 +92,6 @@
 		<key>children</key>
 		<array>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc3</string>
 				<key>name</key>
@@ -118,8 +100,6 @@
 				<string>Pie Chart</string>
 			</dict>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc13</string>
 				<key>name</key>
@@ -128,8 +108,6 @@
 				<string>Half Pie Chart</string>
 			</dict>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc16</string>
 				<key>name</key>
@@ -147,8 +125,6 @@
 		<key>children</key>
 		<array>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc5</string>
 				<key>name</key>
@@ -166,8 +142,6 @@
 		<key>children</key>
 		<array>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc7</string>
 				<key>name</key>
@@ -185,8 +159,6 @@
 		<key>children</key>
 		<array>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc4</string>
 				<key>name</key>
@@ -195,8 +167,6 @@
 				<string>Bar Chart</string>
 			</dict>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc11</string>
 				<key>name</key>
@@ -205,8 +175,6 @@
 				<string>Sinus Bar Chart</string>
 			</dict>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc9</string>
 				<key>name</key>
@@ -215,8 +183,6 @@
 				<string>Stacked Bar Chart</string>
 			</dict>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc14</string>
 				<key>name</key>
@@ -225,8 +191,6 @@
 				<string>Horizontal Bar Chart</string>
 			</dict>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc15</string>
 				<key>name</key>
@@ -235,8 +199,6 @@
 				<string>Positive Negative Bar Chart</string>
 			</dict>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc17</string>
 				<key>name</key>
@@ -245,8 +207,6 @@
 				<string>Negative Stacked Bar Chart</string>
 			</dict>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc22</string>
 				<key>name</key>
@@ -255,8 +215,6 @@
 				<string>Bar Chart with Drilldown</string>
 			</dict>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc30</string>
 				<key>name</key>
@@ -274,8 +232,6 @@
 		<key>children</key>
 		<array>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc31</string>
 				<key>name</key>
@@ -293,8 +249,6 @@
 		<key>children</key>
 		<array>
 			<dict>
-				<key>description</key>
-				<string></string>
 				<key>id</key>
 				<string>vc6</string>
 				<key>name</key>

@@ -12,7 +12,7 @@
 import AppKit
 import Charts
 
-open class BubbleChartViewController: NSViewController, ChartViewDelegate
+open class BubbleChartViewController: NSViewController
 {
     
     @IBOutlet var chartView: BubbleChartView!
@@ -125,14 +125,20 @@ open class BubbleChartViewController: NSViewController, ChartViewDelegate
         
         chartView.data = data
     }
-    
-    
-    public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print("Bubble selected : x = ", entry.x)
+
+}
+
+// MARK: - ChartViewDelegate
+extension BubbleChartViewController: ChartViewDelegate
+{
+    public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight)
+    {
+        print("chartValueSelected : x = \(highlight.x)")
     }
-    
-    public func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        
+
+    public func chartValueNothingSelected(_ chartView: ChartViewBase)
+    {
+        print("chartValueNothingSelected")
     }
     
     public func chartScaled(_ chartView: ChartViewBase, scaleX: CGFloat, scaleY: CGFloat) {
@@ -144,18 +150,4 @@ open class BubbleChartViewController: NSViewController, ChartViewDelegate
     }
 
 }
-
-//// MARK: - ChartViewDelegate
-//extension BarChartViewController: ChartViewDelegate
-//{
-//    public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight)
-//    {
-//        print("chartValueSelected : x = \(highlight.x)")
-//    }
-//
-//    public func chartValueNothingSelected(_ chartView: ChartViewBase)
-//    {
-//        print("chartValueNothingSelected")
-//    }
-//}
 

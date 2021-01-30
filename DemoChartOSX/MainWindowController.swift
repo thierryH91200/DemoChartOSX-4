@@ -145,6 +145,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         
 //        setUpSourceList()
         setUpAlbumArt()
+        
         toggleArtwork(sourceCollectionController!)
         toggleCollection(sourceCollectionController!)
     }
@@ -280,7 +281,7 @@ class MainWindowController: NSWindowController , NSWindowDelegate {
         
         vc.translatesAutoresizingMaskIntoConstraints = false
         
-        var viewBindingsDict = [String: AnyObject]()
+        var viewBindingsDict = [String: Any]()
         viewBindingsDict["vc"] = vc
         chartTargetView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))
         chartTargetView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[vc]|", options: [], metrics: nil, views: viewBindingsDict))

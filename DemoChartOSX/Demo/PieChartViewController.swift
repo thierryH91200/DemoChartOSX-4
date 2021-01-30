@@ -65,6 +65,6 @@ open class PieChartViewController: NSViewController
     override open func viewWillAppear()
     {
 //        chartView.animate(xAxisDuration: 0.0, yAxisDuration: 1.0)
-        chartView.spin(duration: 3, fromAngle: 0, toAngle: 720.0)
+        chartView.spin(duration: 3, fromAngle: 0, toAngle: 360.0)
     }
 }

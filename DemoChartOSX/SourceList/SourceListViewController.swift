@@ -10,12 +10,10 @@ import AppKit
 
 class SourceListViewController: NSViewController {
         
-
     @IBOutlet weak var outlineView: NSOutlineView!
     
     var feeds = [Feed]()
     var mainWindowController: MainWindowController?
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,7 +129,7 @@ extension SourceListViewController: NSOutlineViewDataSource
     {
         if let feed = item as? Feed
         {
-            return feed.isSourceGroup
+            return (feed.children.count != 0)
         }
         return false
     }

@@ -38,16 +38,14 @@ class SourceCollectionController: NSViewController {
         // Do view setup here.
         
         collectionView.dataSource = self
-        
         configureCollectionView()
     }
     
     func registerPlotItem( imageInfo : [ImageInfo])
     {
-        if imageInfos.count > 0 {   // When not initial folder
+        if imageInfos.isEmpty == false {   // When not initial folder
             imageInfos.removeAll()
         }
-        
         imageInfos = imageInfo
         setupData()
     }
@@ -89,10 +87,11 @@ class SourceCollectionController: NSViewController {
         
         let arrayFromDic = Array(imageInfos.map{ $0.type.label })
         
-        var counts: [String: Int] = [:]
+        var counts = [String: Int]()
         for item in arrayFromDic {
             counts[item] = (counts[item] ?? 0) + 1
         }
+        
         let countsSorted = counts.sorted(by: { $0.0 < $1.0 })
         sectionLengthArray.removeAll()
         
@@ -108,7 +107,6 @@ class SourceCollectionController: NSViewController {
         
         guard !haveOneSection else {return}
 
-        
         var offset: Int
         var nextOffset: Int
         let maxNumberOfSections = sectionLengthArray.count

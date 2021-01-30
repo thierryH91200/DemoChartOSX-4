@@ -84,7 +84,7 @@ open class PositiveNegativeBarChartViewController: DemoBaseViewController
         // THIS IS THE ORIGINAL DATA YOU WANT TO PLOT
         var dataList  = [DataList]()
         dataList.append(DataList(xValue: 0, yValue : -224.1, xLabel  : "12-19"))
-        dataList.append(DataList(xValue: 1, yValue : 238.5, xLabel : "12-30"))
+        dataList.append(DataList(xValue: 1, yValue : 238.5,  xLabel : "12-30"))
         dataList.append(DataList(xValue: 2, yValue : 1280.1, xLabel : "12-31"))
         dataList.append(DataList(xValue: 3, yValue : -442.3, xLabel : "01-01"))
         dataList.append(DataList(xValue: 4, yValue : -2280.1,xLabel : "01-02"))
@@ -94,7 +94,7 @@ open class PositiveNegativeBarChartViewController: DemoBaseViewController
         var colors = [NSColor]()
         let green = NSColor.green
         let red = NSColor.red
-        
+
         for data in dataList
         {
             let entry = BarChartDataEntry(x: data.xValue, y: data.yValue)

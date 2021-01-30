@@ -15,14 +15,11 @@ import AppKit
 struct Feed: Codable
 {
     var name: String
-    var isSourceGroup :Bool
     var children : [Children]
 }
 
 struct Children : Codable {
     var type: String
-//    var description : String
-//    var id : String
     var name : String
 }
 

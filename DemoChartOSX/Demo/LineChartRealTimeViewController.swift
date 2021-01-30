@@ -111,7 +111,6 @@ class LineChartRealTimeViewController: NSViewController {
         set1.drawCirclesEnabled = false
         set1.drawFilledEnabled = false
         set1.drawValuesEnabled = false
-//        set1.mode = .stepped
 
         var dataSets = [LineChartDataSet]()
         dataSets.append(set1)

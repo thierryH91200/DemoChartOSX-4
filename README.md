@@ -1,4 +1,4 @@
-# DemoChartOSX1
+# DemoChartOSX
 
 ## Version
 

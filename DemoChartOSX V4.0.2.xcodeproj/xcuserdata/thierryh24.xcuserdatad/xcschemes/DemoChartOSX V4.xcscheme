@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C3AE379B1F4C7D0B003AD9C4"
-               BuildableName = "DemoChartOSX V4.app"
-               BlueprintName = "DemoChartOSX V3.6.0"
-               ReferencedContainer = "container:DemoChartOSX V3.6.0.xcodeproj">
+               BuildableName = "DemoChartOSX V4.0.2.app"
+               BlueprintName = "DemoChartOSX V4.0.2"
+               ReferencedContainer = "container:DemoChartOSX V4.0.2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,9 +31,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C3AE379B1F4C7D0B003AD9C4"
-            BuildableName = "DemoChartOSX V4.app"
-            BlueprintName = "DemoChartOSX V3.6.0"
-            ReferencedContainer = "container:DemoChartOSX V3.6.0.xcodeproj">
+            BuildableName = "DemoChartOSX V4.0.2.app"
+            BlueprintName = "DemoChartOSX V4.0.2"
+            ReferencedContainer = "container:DemoChartOSX V4.0.2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -42,9 +42,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C3AE37AB1F4C7D0B003AD9C4"
-               BuildableName = "DemoChartOSX V4Tests.xctest"
-               BlueprintName = "DemoChartOSX V3.6.0Tests"
-               ReferencedContainer = "container:DemoChartOSX V3.6.0.xcodeproj">
+               BuildableName = "DemoChartOSX V4.0.2Tests.xctest"
+               BlueprintName = "DemoChartOSX V4.0.2Tests"
+               ReferencedContainer = "container:DemoChartOSX V4.0.2.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -52,9 +52,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C3AE37B61F4C7D0B003AD9C4"
-               BuildableName = "DemoChartOSX V4UITests.xctest"
-               BlueprintName = "DemoChartOSX V3.6.0UITests"
-               ReferencedContainer = "container:DemoChartOSX V3.6.0.xcodeproj">
+               BuildableName = "DemoChartOSX V4.0.2UITests.xctest"
+               BlueprintName = "DemoChartOSX V4.0.2UITests"
+               ReferencedContainer = "container:DemoChartOSX V4.0.2.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -74,9 +74,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C3AE379B1F4C7D0B003AD9C4"
-            BuildableName = "DemoChartOSX V4.app"
-            BlueprintName = "DemoChartOSX V3.6.0"
-            ReferencedContainer = "container:DemoChartOSX V3.6.0.xcodeproj">
+            BuildableName = "DemoChartOSX V4.0.2.app"
+            BlueprintName = "DemoChartOSX V4.0.2"
+            ReferencedContainer = "container:DemoChartOSX V4.0.2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -98,9 +98,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C3AE379B1F4C7D0B003AD9C4"
-            BuildableName = "DemoChartOSX V4.app"
-            BlueprintName = "DemoChartOSX V3.6.0"
-            ReferencedContainer = "container:DemoChartOSX V3.6.0.xcodeproj">
+            BuildableName = "DemoChartOSX V4.0.2.app"
+            BlueprintName = "DemoChartOSX V4.0.2"
+            ReferencedContainer = "container:DemoChartOSX V4.0.2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

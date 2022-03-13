@@ -46,7 +46,7 @@ class LineChartRealTimeViewController: NSViewController {
         chartView.drawGridBackgroundEnabled = true
         chartView.gridBackgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         step = 0.2
         
@@ -156,7 +156,7 @@ class LineChartRealTimeViewController: NSViewController {
         llYAxis.lineColor = color
         llYAxis.valueTextColor = color
         llYAxis.valueFont = NSUIFont.boldSystemFont(ofSize: 16.0)
-        llYAxis.labelPosition = ChartLimitLine.LabelPosition.bottomRight
+        llYAxis.labelPosition = ChartLimitLine.LabelPosition.rightBottom
         llYAxis.lineWidth = 5.0
         
         let leftAxis = chartView.leftAxis

@@ -146,16 +146,16 @@
 		C32896491F5181B2000A7E51 /* CustomChart.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomChart.xib; sourceTree = "<group>"; };
 		C34661BE1F506D0200E5FB3F /* LineChartRealTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartRealTimeViewController.swift; sourceTree = "<group>"; };
 		C34661BF1F506D0200E5FB3F /* LineChartRealTimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineChartRealTimeViewController.xib; sourceTree = "<group>"; };
-		C3AE379C1F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DemoChartOSX V3.6.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3AE379C1F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DemoChartOSX V4.0.2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3AE379F1F4C7D0B003AD9C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3AE37A11F4C7D0B003AD9C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3AE37A41F4C7D0B003AD9C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		C3AE37A61F4C7D0B003AD9C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3AE37A71F4C7D0B003AD9C4 /* DemoChartOSX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoChartOSX.entitlements; sourceTree = "<group>"; };
-		C3AE37AC1F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DemoChartOSX V3.6.0Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3AE37AC1F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DemoChartOSX V4.0.2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3AE37B01F4C7D0B003AD9C4 /* DemoChartOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoChartOSXTests.swift; sourceTree = "<group>"; };
 		C3AE37B21F4C7D0B003AD9C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3AE37B71F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DemoChartOSX V3.6.0UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3AE37B71F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DemoChartOSX V4.0.2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3AE37BB1F4C7D0B003AD9C4 /* DemoChartOSXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoChartOSXUITests.swift; sourceTree = "<group>"; };
 		C3AE37BD1F4C7D0B003AD9C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3AE37C91F4C7D40003AD9C4 /* MainWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
@@ -306,9 +306,9 @@
 		C3AE379D1F4C7D0B003AD9C4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C3AE379C1F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0.app */,
-				C3AE37AC1F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0Tests.xctest */,
-				C3AE37B71F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0UITests.xctest */,
+				C3AE379C1F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2.app */,
+				C3AE37AC1F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2Tests.xctest */,
+				C3AE37B71F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -479,9 +479,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C3AE379B1F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0 */ = {
+		C3AE379B1F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C3AE37C01F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSX V3.6.0" */;
+			buildConfigurationList = C3AE37C01F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSX V4.0.2" */;
 			buildPhases = (
 				C3AE37981F4C7D0B003AD9C4 /* Sources */,
 				C3AE37991F4C7D0B003AD9C4 /* Frameworks */,
@@ -493,17 +493,17 @@
 			);
 			dependencies = (
 			);
-			name = "DemoChartOSX V3.6.0";
+			name = "DemoChartOSX V4.0.2";
 			packageProductDependencies = (
 				030A9E3E27DDFEAC0059B5C2 /* Charts */,
 			);
 			productName = graphMeteo;
-			productReference = C3AE379C1F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0.app */;
+			productReference = C3AE379C1F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C3AE37AB1F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0Tests */ = {
+		C3AE37AB1F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C3AE37C31F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSX V3.6.0Tests" */;
+			buildConfigurationList = C3AE37C31F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSX V4.0.2Tests" */;
 			buildPhases = (
 				C3AE37A81F4C7D0B003AD9C4 /* Sources */,
 				C3AE37A91F4C7D0B003AD9C4 /* Frameworks */,
@@ -514,14 +514,14 @@
 			dependencies = (
 				C3AE37AE1F4C7D0B003AD9C4 /* PBXTargetDependency */,
 			);
-			name = "DemoChartOSX V3.6.0Tests";
+			name = "DemoChartOSX V4.0.2Tests";
 			productName = graphMeteoTests;
-			productReference = C3AE37AC1F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0Tests.xctest */;
+			productReference = C3AE37AC1F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C3AE37B61F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0UITests */ = {
+		C3AE37B61F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C3AE37C61F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSX V3.6.0UITests" */;
+			buildConfigurationList = C3AE37C61F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSX V4.0.2UITests" */;
 			buildPhases = (
 				C3AE37B31F4C7D0B003AD9C4 /* Sources */,
 				C3AE37B41F4C7D0B003AD9C4 /* Frameworks */,
@@ -532,9 +532,9 @@
 			dependencies = (
 				C3AE37B91F4C7D0B003AD9C4 /* PBXTargetDependency */,
 			);
-			name = "DemoChartOSX V3.6.0UITests";
+			name = "DemoChartOSX V4.0.2UITests";
 			productName = graphMeteoUITests;
-			productReference = C3AE37B71F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0UITests.xctest */;
+			productReference = C3AE37B71F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -566,7 +566,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C3AE37971F4C7D0B003AD9C4 /* Build configuration list for PBXProject "DemoChartOSX V3.6.0" */;
+			buildConfigurationList = C3AE37971F4C7D0B003AD9C4 /* Build configuration list for PBXProject "DemoChartOSX V4.0.2" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -582,9 +582,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C3AE379B1F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0 */,
-				C3AE37AB1F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0Tests */,
-				C3AE37B61F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0UITests */,
+				C3AE379B1F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2 */,
+				C3AE37AB1F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2Tests */,
+				C3AE37B61F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -760,12 +760,12 @@
 /* Begin PBXTargetDependency section */
 		C3AE37AE1F4C7D0B003AD9C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C3AE379B1F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0 */;
+			target = C3AE379B1F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2 */;
 			targetProxy = C3AE37AD1F4C7D0B003AD9C4 /* PBXContainerItemProxy */;
 		};
 		C3AE37B91F4C7D0B003AD9C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C3AE379B1F4C7D0B003AD9C4 /* DemoChartOSX V3.6.0 */;
+			target = C3AE379B1F4C7D0B003AD9C4 /* DemoChartOSX V4.0.2 */;
 			targetProxy = C3AE37B81F4C7D0B003AD9C4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -960,7 +960,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.DemoChartOSXTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoChartOSX V3.6.0.app/Contents/MacOS/DemoChartOSX V3.6.0";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoChartOSX V4.0.2.app/Contents/MacOS/DemoChartOSX V4.0.2";
 			};
 			name = Debug;
 		};
@@ -981,7 +981,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = thierryH24100.DemoChartOSXTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoChartOSX V3.6.0.app/Contents/MacOS/DemoChartOSX V3.6.0";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoChartOSX V4.0.2.app/Contents/MacOS/DemoChartOSX V4.0.2";
 			};
 			name = Release;
 		};
@@ -1028,7 +1028,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C3AE37971F4C7D0B003AD9C4 /* Build configuration list for PBXProject "DemoChartOSX V3.6.0" */ = {
+		C3AE37971F4C7D0B003AD9C4 /* Build configuration list for PBXProject "DemoChartOSX V4.0.2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C3AE37BE1F4C7D0B003AD9C4 /* Debug */,
@@ -1037,7 +1037,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C3AE37C01F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSX V3.6.0" */ = {
+		C3AE37C01F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSX V4.0.2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C3AE37C11F4C7D0B003AD9C4 /* Debug */,
@@ -1046,7 +1046,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C3AE37C31F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSX V3.6.0Tests" */ = {
+		C3AE37C31F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSX V4.0.2Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C3AE37C41F4C7D0B003AD9C4 /* Debug */,
@@ -1055,7 +1055,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C3AE37C61F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSX V3.6.0UITests" */ = {
+		C3AE37C61F4C7D0B003AD9C4 /* Build configuration list for PBXNativeTarget "DemoChartOSX V4.0.2UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C3AE37C71F4C7D0B003AD9C4 /* Debug */,
@@ -1072,7 +1072,7 @@
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.6.0;
+				minimumVersion = 4.0.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

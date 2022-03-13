@@ -74,7 +74,7 @@ open class StackedBarChartViewController: NSViewController
         legend.xEntrySpace = 6.0
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         //  #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
         
         let marker = RectMarker(color: .black, font: NSFont.systemFont(ofSize: CGFloat(12.0)), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 20.0, right: 8.0))

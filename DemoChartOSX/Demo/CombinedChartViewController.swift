@@ -75,7 +75,7 @@ open class CombinedChartViewController: NSViewController
         legend.drawInside                   = false
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         let marker = RectMarker(color: .yellow, font: .systemFont(ofSize: CGFloat(12.0)), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
         marker.chartView = chartView
@@ -259,7 +259,7 @@ extension CombinedChartViewController: ChartViewDelegate
         print("chartValueNothingSelected")
     }
     
-    public class BarChartFormatter: NSObject, IAxisValueFormatter
+    public class BarChartFormatter: NSObject, AxisValueFormatter
     {
         var months: [String]! = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         

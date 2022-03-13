@@ -39,7 +39,7 @@ open class DemoBaseViewController: NSViewController
             chartView.needsDisplay = true
             
         case "Highlight":
-            chartView.data!.highlightEnabled = !chartView.data!.highlightEnabled
+            chartView.data!.isHighlightEnabled = !chartView.data!.isHighlightEnabled
             chartView.needsDisplay = true
             
         case "Animate X":
@@ -93,7 +93,7 @@ open class DemoBaseViewController: NSViewController
         chartView.holeRadiusPercent = 0.58
         chartView.transparentCircleRadiusPercent = 0.61
         
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         //        chartView.setExtraOffsetsWithLeft(5.0, top: 10.0, right: 5.0, bottom: 5.0)
         chartView.drawCenterTextEnabled = true
@@ -130,7 +130,7 @@ open class DemoBaseViewController: NSViewController
     }
     
     func setup(barLineChartView chartView: BarLineChartViewBase) {
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         chartView.dragEnabled = true
         chartView.setScaleEnabled(true)
@@ -145,7 +145,7 @@ open class DemoBaseViewController: NSViewController
     }
 
     func setup(radarChartView chartView: RadarChartView) {
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
     }
 }
 

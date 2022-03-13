@@ -60,12 +60,12 @@ open class LineChart1ViewController: DemoBaseViewController
         llXAxis.lineDashLengths = [10.0, 10.0, 0.0]
         llXAxis.valueTextColor = NSColor.black
         llXAxis.valueFont = NSFont.systemFont(ofSize: CGFloat(10.0))
-        llXAxis.labelPosition = .bottomRight
+        llXAxis.labelPosition = .rightBottom
         
         let llXAxis2 = ChartLimitLine(limit: 30.0, label: "Index 30")
         llXAxis2.lineWidth = 4.0
         llXAxis2.lineDashLengths = [10.0, 10.0, 0.0]
-        llXAxis2.labelPosition = .bottomRight
+        llXAxis2.labelPosition = .rightBottom
         llXAxis2.valueFont = NSFont.systemFont(ofSize: CGFloat(10.0))
         llXAxis2.lineColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
         
@@ -84,13 +84,13 @@ open class LineChart1ViewController: DemoBaseViewController
         let ll1 = ChartLimitLine(limit: 150.0, label: "Upper Limit")
         ll1.lineWidth = 4.0
         ll1.lineDashLengths = [5.0, 5.0]
-        ll1.labelPosition = .topLeft
+        ll1.labelPosition = .leftTop
         ll1.valueFont = NSFont.systemFont(ofSize: CGFloat(10.0))
         
         let ll2 = ChartLimitLine(limit: -30.0, label: "Lower Limit")
         ll2.lineWidth = 4.0
         ll2.lineDashLengths = [5.0, 5.0]
-        ll2.labelPosition = .bottomRight
+        ll2.labelPosition = .rightBottom
         ll2.valueFont = NSFont.systemFont(ofSize: CGFloat(10.0))
         
         let leftAxis = chartView.leftAxis
@@ -118,7 +118,7 @@ open class LineChart1ViewController: DemoBaseViewController
         chartView.legend.form = .line
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         let marker = BalloonMarker(
             color: #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1),

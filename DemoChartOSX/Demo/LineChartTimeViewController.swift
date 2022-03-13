@@ -91,8 +91,8 @@ open class LineChartTimeViewController: DemoBaseViewController
         legend.horizontalAlignment = .left
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
-        chartView.chartDescription?.text = "Time Line Chart"
+        chartView.chartDescription.enabled = false
+        chartView.chartDescription.text = "Time Line Chart"
         
         sliderX.doubleValue = 300.0
         slidersValueChanged(sliderX)
@@ -240,7 +240,7 @@ open class LineChartTimeViewController: DemoBaseViewController
             llXAxis.lineColor = #colorLiteral(red: 0.08062536269, green: 0.2148533463, blue: 1, alpha: 1)
             llXAxis.valueTextColor = NSColor.blue
             llXAxis.valueFont = NSFont.systemFont(ofSize: CGFloat(12.0))
-            llXAxis.labelPosition = .bottomRight
+            llXAxis.labelPosition = .rightBottom
             
             let xAxis = chartView.xAxis
             xAxis.addLimitLine(llXAxis)

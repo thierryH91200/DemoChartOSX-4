@@ -78,7 +78,7 @@ open class CubicLineChartViewController: DemoBaseViewController
         chartView.legend.enabled = false
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         sliderX.doubleValue = 132.0
         sliderY.doubleValue = 42.0
@@ -165,14 +165,14 @@ open class CubicLineChartViewController: DemoBaseViewController
     }
 }
 
-private class CubicLineSampleFillFormatter: IFillFormatter {
-    func getFillLinePosition(dataSet: ILineChartDataSet, dataProvider: LineChartDataProvider) -> CGFloat {
-        return -10
-    }
-    
-//    func getFillLinePosition(dataSet: LineChartDataSetProtocol, dataProvider: LineChartDataProvider) -> CGFloat {
+private class CubicLineSampleFillFormatter: FillFormatter {
+//    func getFillLinePosition(dataSet: ILineChartDataSet, dataProvider: LineChartDataProvider) -> CGFloat {
 //        return -10
 //    }
+    
+    func getFillLinePosition(dataSet: LineChartDataSetProtocol, dataProvider: LineChartDataProvider) -> CGFloat {
+        return -10
+    }
 }
 
 

@@ -68,7 +68,7 @@ open class ScatterChartViewController: NSViewController
         legend.xOffset = 5.0
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         let marker = BalloonMarker(color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), font: NSFont.systemFont(ofSize: CGFloat(12.0)), textColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
         marker.chartView = chartView

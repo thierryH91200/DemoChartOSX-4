@@ -74,7 +74,7 @@ open class BubbleChartViewController: NSViewController
         legend.form = .line
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         self.updateChartData()
     }

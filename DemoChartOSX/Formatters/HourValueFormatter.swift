@@ -13,7 +13,7 @@
 import Foundation
 import Charts
 
-open class HourValueFormatter : NSObject, IAxisValueFormatter
+open class HourValueFormatter : NSObject, AxisValueFormatter
 {
     var dateFormatter : DateFormatter
     

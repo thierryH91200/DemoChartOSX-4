@@ -75,7 +75,7 @@ open class LineChartFilledViewController: DemoBaseViewController
         
         
         // MARK: description
-        chartView.chartDescription?.enabled = false
+        chartView.chartDescription.enabled = false
         
         setDataCount()
     }

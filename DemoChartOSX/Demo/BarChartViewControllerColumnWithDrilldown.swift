@@ -106,10 +106,10 @@ open class BarChartViewControllerColumnWithDrilldown: DemoBaseViewController
         // MARK: description
         let bounds = chartView.bounds
         let point = CGPoint( x:bounds.width / 2, y:bounds.height * 0.25)
-        chartView.chartDescription.enabled = true
-        chartView.chartDescription.text = "Browsers"
-        chartView.chartDescription.position = point
-        chartView.chartDescription.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(24.0))!
+        chartView.chartDescription?.enabled = true
+        chartView.chartDescription?.text = "Browsers"
+        chartView.chartDescription?.position = point
+        chartView.chartDescription?.font = NSFont(name: "HelveticaNeue-Light", size: CGFloat(24.0))!
         
         setData(data : dataWebIE, label: label, colors: colors)
     }
@@ -161,7 +161,7 @@ open class BarChartViewControllerColumnWithDrilldown: DemoBaseViewController
     @IBAction func actionBack(_ sender: Any) {
         
         backToBrands.isEnabled = false
-        chartView.chartDescription.text = "Browsers"
+        chartView.chartDescription?.text = "Browsers"
         setData(data : dataWebIE, label: label, colors: colors)
     }
  }
@@ -178,7 +178,7 @@ extension BarChartViewControllerColumnWithDrilldown: ChartViewDelegate
     
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight)
     {
-        guard chartView.chartDescription.text == "Browsers" else { return }
+        guard chartView.chartDescription?.text == "Browsers" else { return }
         
         let index = Int(highlight.x)
         var label = [String]()
@@ -195,7 +195,7 @@ extension BarChartViewControllerColumnWithDrilldown: ChartViewDelegate
             return
         }
         backToBrands.isEnabled = true
-        chartView.chartDescription.text = browsers[index].name
+        chartView.chartDescription?.text = browsers[index].name
         setData(data : dataW, label : label, colors : [colors[index]])
         
        // chartView.animate(xAxisDuration: 1.0, easingOption : .linear)

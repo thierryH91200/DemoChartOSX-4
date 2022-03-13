@@ -46,7 +46,7 @@ class LineChartRealTimeViewController: NSViewController {
         chartView.drawGridBackgroundEnabled = true
         chartView.gridBackgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         
-        chartView.chartDescription.enabled = false
+        chartView.chartDescription?.enabled = false
         
         step = 0.2
         
@@ -66,7 +66,7 @@ class LineChartRealTimeViewController: NSViewController {
         let rightAxis = chartView.rightAxis
         rightAxis.enabled = false
 
-        let marker = RectMarker(color: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), font: NSFont.systemFont(ofSize: CGFloat(12.0)), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
+        let marker = RectMarker(color: .yellow, font: NSFont.systemFont(ofSize: CGFloat(12.0)), insets: NSEdgeInsets(top: 8.0, left: 8.0, bottom: 4.0, right: 4.0))
         marker.chartView = chartView
         marker.minimumSize = CGSize(width: CGFloat(60.0), height: CGFloat(30.0))
         chartView.marker = marker
@@ -156,7 +156,7 @@ class LineChartRealTimeViewController: NSViewController {
         llYAxis.lineColor = color
         llYAxis.valueTextColor = color
         llYAxis.valueFont = NSUIFont.boldSystemFont(ofSize: 16.0)
-        llYAxis.labelPosition = ChartLimitLine.LabelPosition.rightBottom
+        llYAxis.labelPosition = ChartLimitLine.LabelPosition.bottomRight
         llYAxis.lineWidth = 5.0
         
         let leftAxis = chartView.leftAxis

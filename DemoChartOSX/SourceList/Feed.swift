@@ -11,9 +11,7 @@
 
 import AppKit
 
-
-struct Feed: Codable
-{
+struct Feed: Codable {
     var name: String
     var children : [Children]
 }

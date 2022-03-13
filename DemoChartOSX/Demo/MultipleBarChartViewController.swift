@@ -118,7 +118,7 @@ open class MultipleBarChartViewController: DemoBaseViewController, ChartViewDele
         legend.yEntrySpace = 0.0
         
         // MARK: description
-        chartView.chartDescription.enabled = false
+        chartView.chartDescription?.enabled = false
         
         let marker = BalloonMarker(color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), font: NSFont.systemFont(ofSize: CGFloat(12.0)), textColor: .white, insets: NSEdgeInsetsMake(8.0, 8.0, 20.0, 8.0))
         marker.chartView = chartView

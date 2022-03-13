@@ -13,7 +13,7 @@
 import Foundation
 import Charts
 
-open class LargeValueFormatter: NSObject, ValueFormatter, AxisValueFormatter
+open class LargeValueFormatter: NSObject, IValueFormatter, IAxisValueFormatter
 {
     
     fileprivate static let MAX_LENGTH = 5

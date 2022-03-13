@@ -73,9 +73,9 @@ open class RadarChartViewController: DemoBaseViewController
         legend.textColor = .white
         
         // MARK: description
-        chartView.chartDescription.enabled = true
-        chartView.chartDescription.text = "Radar demo"
-        chartView.chartDescription.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        chartView.chartDescription?.enabled = true
+        chartView.chartDescription?.text = "Radar demo"
+        chartView.chartDescription?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         updateChartData()
     }
@@ -128,7 +128,7 @@ open class RadarChartViewController: DemoBaseViewController
     }
 }
 
-class RadarChartXValueFormatter: NSObject, AxisValueFormatter {
+class RadarChartXValueFormatter: NSObject, IAxisValueFormatter {
     
     init(withLabels labels: String...) {
         self.labels = labels

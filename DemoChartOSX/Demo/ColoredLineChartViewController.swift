@@ -78,7 +78,7 @@ open class ColoredLineChartViewController: DemoBaseViewController
         chart.legend.enabled       = false
         
         // MARK: description
-        chart.chartDescription.enabled = false
+        chart.chartDescription?.enabled = false
         
         let set             = data.dataSets[0] as! LineChartDataSet
         set.circleHoleColor = color

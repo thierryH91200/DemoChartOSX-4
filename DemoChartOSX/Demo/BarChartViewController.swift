@@ -94,7 +94,7 @@ open class BarChartViewController: DemoBaseViewController, ChartViewDelegate
         legend.drawInside = false
         
         // MARK: description
-        chartView.chartDescription.enabled = false
+        chartView.chartDescription?.enabled = false
         
         // MARK: marker
         let  marker = YMarkerView( color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), font: NSFont.systemFont(ofSize: 12.0),

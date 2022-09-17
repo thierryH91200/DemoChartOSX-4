@@ -137,7 +137,6 @@ open class LineChartTimeViewController: DemoBaseViewController
             y1 = Double(arc4random_uniform(UInt32(range)) + 50)
 
             addLimit(index: x1, x : x)
-
             x += hourSeconds
         }
         
@@ -221,7 +220,6 @@ open class LineChartTimeViewController: DemoBaseViewController
             chartView.xAxis.resetCustomAxisMax()
             chartView.leftAxis.resetCustomAxisMax()
 
-            
             chartView.data = data
             chartView.xAxis.axisMaximum += 1
         }
